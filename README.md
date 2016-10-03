@@ -27,7 +27,7 @@ java -jar sqltool.jar
 ```
 Note: Please see the resources/app.properties for connection information.
 
-## Development
+## Foundation
 
 ### Actions/Controllers
 See dlap.stripes.actions
@@ -40,4 +40,17 @@ See dlap.stripes.actions
 
 ### Java Beans & Data Model
 dlap.model
+
+### Settings
+src/main/java/resources/app.properties
+
+## Development
+Note: Very high level. More detail to be added as needed.
+
+### New CRUD
+Create a dlap.model class
+Create a dlap.stripes.action class
+Create a /webroot/WEB-INF/jsp page
+Add the page to dlap.common.ResourceUrls
+
 
