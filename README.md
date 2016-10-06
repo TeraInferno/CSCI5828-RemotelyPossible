@@ -2,6 +2,8 @@
 # CSCI5828-RemotelyPossible
 CSCI5828 Final Project for Team RemotelyPossible
 
+[![Throughput Graph](https://graphs.waffle.io/TeraInferno/CSCI5828-RemotelyPossible/throughput.svg)](https://waffle.io/TeraInferno/CSCI5828-RemotelyPossible/metrics/throughput)
+
 ###Common Links
 * [Gitter IM Room](https://gitter.im/CSCI5828-RemotelyPossible/Lobby)
 
