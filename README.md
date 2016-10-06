@@ -6,6 +6,7 @@ CSCI5828 Final Project for Team RemotelyPossible
 
 ###Common Links
 * [Gitter IM Room](https://gitter.im/CSCI5828-RemotelyPossible/Lobby)
+* [Waffle.io Planner](https://waffle.io/TeraInferno/CSCI5828-RemotelyPossible)
 
 # Quick Start
 1. Get a local copy
