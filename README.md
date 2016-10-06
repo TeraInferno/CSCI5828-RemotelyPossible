@@ -2,6 +2,8 @@
 # CSCI5828-RemotelyPossible
 CSCI5828 Final Project for Team RemotelyPossible
 
+###Common Links
+* [Gitter IM Room](https://gitter.im/CSCI5828-RemotelyPossible/Lobby)
 
 # Quick Start
 1. Get a local copy
@@ -52,5 +54,4 @@ Note: Very high level. More detail to be added as needed.
 * Create a dlap.stripes.action class
 * Create a /webroot/WEB-INF/jsp page
 * Add the page to dlap.common.ResourceUrls
-
 
