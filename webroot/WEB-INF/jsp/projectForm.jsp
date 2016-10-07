@@ -30,7 +30,6 @@
             <td colspan="2">
                 <strong>
                 <br />
-                <p>
                     </strong>Thanks for your interest in submitting one or more projects for the
                     Discovery Learning Apprenticeship program. Please complete all required fields,
                     which are marked with a red asterisk (<span class="style2">*</span>). You will
@@ -40,7 +39,7 @@
                     have trouble with this application or if you have questions, please contact
                     Sharon Anderson at
 					<a target="_blank" style="color: rgb(17, 85, 204); font-family: Calibri, sans-serif; font-size: 14.4444446563721px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" href="mailto:sharon.e.anderson@colorado.edu">
-					sharon.e.anderson@colorado.edu</a>.</p>
+					sharon.e.anderson@colorado.edu</a>.
                 <br />
     <span id="labelMessage1"><b><font color="Red"></font></b></span>
                 <br />
@@ -109,7 +108,7 @@
                 A longer description of the apprenticeship:<br />
                 (may not exceed 1200 characters)</td>
             <td valign="top">
-                <S:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(textLongDescription,remLen2,1200);" onKeyDown="textCounter(textLongDescription,remLen2,1200);" onKeyPress="textCounter(textLongDescription,remLen2,1200);">${project.longDescription}</textarea>
+                <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(textLongDescription,remLen2,1200);" onKeyDown="textCounter(textLongDescription,remLen2,1200);" onKeyPress="textCounter(textLongDescription,remLen2,1200);">${project.longDescription}</s:textarea>
                 <br />
 <input type="text" name="remLen2" id="remLen2" size="6" maxlength="3" value="1200" />&nbsp;
             </td>
@@ -124,7 +123,28 @@
                 PLEASE NOTE: Only students from majors you select will be allowed to apply for this project.
                 </strong></span></td>
             <td valign="top">
-                <span id="listStudMajor"><input id="listStudMajor_0" type="checkbox" name="listStudMajor$0" /><label for="listStudMajor_0">Aerospace Engineering</label><input id="listStudMajor_7" type="checkbox" name="listStudMajor$7" /><label for="listStudMajor_7">Electrical Engineering</label><br /><input id="listStudMajor_1" type="checkbox" name="listStudMajor$1" /><label for="listStudMajor_1">Applied Mathematics</label><input id="listStudMajor_8" type="checkbox" name="listStudMajor$8" /><label for="listStudMajor_8">Electrical and Computer Engineering</label><br /><input id="listStudMajor_2" type="checkbox" name="listStudMajor$2" /><label for="listStudMajor_2">Architectural Engineering</label><input id="listStudMajor_9" type="checkbox" name="listStudMajor$9" /><label for="listStudMajor_9">Engineering Physics</label><br /><input id="listStudMajor_3" type="checkbox" name="listStudMajor$3" /><label for="listStudMajor_3">Chemical Engineering</label><input id="listStudMajor_10" type="checkbox" name="listStudMajor$10" /><label for="listStudMajor_10">Environmental Engineering</label><br /><input id="listStudMajor_4" type="checkbox" name="listStudMajor$4" /><label for="listStudMajor_4">Chemical & Biological Engineering</label><input id="listStudMajor_11" type="checkbox" name="listStudMajor$11" /><label for="listStudMajor_11">Engineering Plus</label><br /><input id="listStudMajor_5" type="checkbox" name="listStudMajor$5" /><label for="listStudMajor_5">Civil Engineering</label><input id="listStudMajor_12" type="checkbox" name="listStudMajor$12" /><label for="listStudMajor_12">Mechanical Engineering</label><br /><input id="listStudMajor_6" type="checkbox" name="listStudMajor$6" /><label for="listStudMajor_6">Computer Science</label><input id="listStudMajor_13" type="checkbox" name="listStudMajor$13" /><label for="listStudMajor_13">Technology, Arts and Media</label></span>
+                <span id="listStudMajor">
+                	<s:checkbox id="listStudMajor_0" name="project.acceptedMajors[0]" value="Aerospace Engineering"/><label for="listStudMajor_0">Aerospace Engineering</label>
+                	<s:checkbox id="listStudMajor_7" name="project.acceptedMajors[7]" value="Electrical Engineering" /><label for="listStudMajor_7">Electrical Engineering</label>
+                	<br />
+                	<s:checkbox id="listStudMajor_1" name="project.acceptedMajors[1]" value="Applied Mathematics" /><label for="listStudMajor_1">Applied Mathematics</label>
+                	<s:checkbox id="listStudMajor_8" name="project.acceptedMajors[8]" value="Electrical and Computer Engineering" /><label for="listStudMajor_8">Electrical and Computer Engineering</label>
+                	<br />
+                	<s:checkbox id="listStudMajor_2" name="project.acceptedMajors[2]" value="Architectural Engineering" /><label for="listStudMajor_2">Architectural Engineering</label>
+                	<s:checkbox id="listStudMajor_9" name="project.acceptedMajors[9]" value="Engineering Physics" /><label for="listStudMajor_9">Engineering Physics</label>
+                	<br />
+                	<s:checkbox id="listStudMajor_3" name="project.acceptedMajors[3]" value="Chemical Engineering" /><label for="listStudMajor_3">Chemical Engineering</label>
+                	<s:checkbox id="listStudMajor_10" name="project.acceptedMajors[10]" value="Environmental Engineering" /><label for="listStudMajor_10">Environmental Engineering</label>
+                	<br />
+                	<s:checkbox id="listStudMajor_4" name="project.acceptedMajors[4]" value="Chemical & Biological Engineering"/><label for="listStudMajor_4">Chemical &amp; Biological Engineering</label>
+                	<s:checkbox id="listStudMajor_11" name="project.acceptedMajors[11]" value="Engineering Plus"/><label for="listStudMajor_11">Engineering Plus</label>
+                	<br />
+                	<s:checkbox id="listStudMajor_5" name="project.acceptedMajors[5]" value="Civil Engineering"/><label for="listStudMajor_5">Civil Engineering</label>
+                	<s:checkbox id="listStudMajor_12" name="project.acceptedMajors[12]" value="Mechanical Engineering"/><label for="listStudMajor_12">Mechanical Engineering</label>
+                	<br />
+                	<s:checkbox id="listStudMajor_6" name="project.acceptedMajors[6]" value="Computer Science"/><label for="listStudMajor_6">Computer Science</label>
+                	<s:checkbox id="listStudMajor_13" name="project.acceptedMajors[13]" value="Technology, Arts and Media"/><label for="listStudMajor_13">Technology, Arts and Media</label>
+                </span>
                 </td>
         </tr>
 
@@ -301,7 +321,6 @@
 					<s:option value="CSGC">Colorado Space Grant</s:option>
 					<s:option value="EnEd">Engineering Education</s:option>
 					<s:option value="ATLS">ATLAS</s:option>
-
 				</s:select>
 			</td>
         </tr>
@@ -469,6 +488,7 @@
 </div>
 
     </form>
+<script type="text/javascript" src="/js/formTools.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="//use.typekit.net/wde1aof.js"></script>
@@ -477,7 +497,6 @@
   <script>
   $( function() {
     $( "#tabs" ).tabs();
-  } );
   </script>
 </body>
 </html>
