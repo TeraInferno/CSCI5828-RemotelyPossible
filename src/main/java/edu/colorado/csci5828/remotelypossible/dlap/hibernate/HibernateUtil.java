@@ -20,8 +20,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.tool.hbm2ddl.SchemaExport;
-
 import edu.colorado.csci5828.remotelypossible.dlap.common.Constants;
 import edu.colorado.csci5828.remotelypossible.dlap.common.Settings;
 
@@ -102,7 +100,7 @@ public class HibernateUtil {
 		return schema;
 	}
 	
-	private static Collection<Class> getEntityClasses(final String pack) {
+	private static Collection<Class<?>> getEntityClasses(final String pack) {
         final StandardJavaFileManager fileManager = ToolProvider.getSystemJavaCompiler().getStandardFileManager(null, null, null);
         try {
             return StreamSupport.stream(fileManager.list(StandardLocation.CLASS_PATH, pack, Collections.singleton(JavaFileObject.Kind.CLASS), false).spliterator(), false)
