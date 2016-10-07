@@ -1,13 +1,15 @@
 package edu.colorado.csci5828.remotelypossible.dlap.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name="project")
@@ -42,7 +44,8 @@ public class Project {
 	@Column
 	private int communityDevelopmentFocus = 0;
 
-	
+	@ElementCollection
+	private List<String> acceptedMajors;
 	
 	
 	public Long getId() {
@@ -115,6 +118,14 @@ public class Project {
 
 	public void setLongDescription(String longDescription) {
 		this.longDescription = longDescription;
+	}
+
+	public List<String> getAcceptedMajors() {
+		return acceptedMajors;
+	}
+
+	public void setAcceptedMajors(List<String> acceptedMajors) {
+		this.acceptedMajors = acceptedMajors;
 	}
 	
 }
