@@ -49,7 +49,7 @@
         </tr>
 </table>
 
-<s:form method="post" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectFormAction"> 
+<s:form id="projectForm" method="post" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectFormAction"> 
 <s:hidden name="project.id"/>
 <table>
        <tr class="d1">
@@ -488,16 +488,14 @@
 </div>
 
     </form>
-<script type="text/javascript" src="/js/formTools.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="//use.typekit.net/wde1aof.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-
-  <script>
-  $( function() {
-    $( "#tabs" ).tabs();
-    });
-  </script>
+<script type="text/javascript" src="/js/formTools.js"></script>
+<script>
+$( function() {
+  $("#tabs").tabs();
+  $("#projectForm").form();
+});
+</script>
 </body>
 </html>
