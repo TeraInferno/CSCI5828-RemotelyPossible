@@ -23,14 +23,21 @@ import edu.colorado.csci5828.remotelypossible.dlap.common.Settings;
 
 public class Servers {
 
+	private Servers self;
 	private HsqlProperties hp;
 	private org.hsqldb.Server db = null;
 	private Server jetty = null;
 
 	
 	public Servers() {
+		self=this;
 		//Load file based application settings
 		Settings.loadAppProperties(getClass().getClassLoader().getResourceAsStream("app.properties"));
+		Runtime.getRuntime().addShutdownHook(new Thread() {
+		    public void run() { 
+		       self.stop();
+		     }
+		 });
 	}
 	
 	public void start() {
