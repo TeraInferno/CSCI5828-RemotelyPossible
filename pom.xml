@@ -128,12 +128,11 @@
 					<executions>
 						<execution>
 							<goals>
-								<goal>exec</goal>
+								<goal>java</goal>
 							</goals>
 						</execution>
 					</executions>
 					<configuration>
-						<executable>java</executable>
 						<mainClass>edu.colorado.csci5828.remotelypossible.dlap.Servers</mainClass>
 					</configuration>
 				</plugin>
