@@ -49,7 +49,7 @@
         </tr>
 </table>
 
-<s:form id="projectForm" method="post" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectFormAction"> 
+<s:form id="project" method="post" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectFormAction"> 
 <s:hidden name="project.id"/>
 <table>
        <tr class="d1">
@@ -494,7 +494,7 @@
 <script>
 $( function() {
   $("#tabs").tabs();
-  $("#projectForm").form();
+  $("#project").form();
 });
 </script>
 </body>
