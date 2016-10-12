@@ -133,6 +133,8 @@
 						</execution>
 					</executions>
 					<configuration>
+						<argument>-classpath</argument>
+    			        <classpath/>
 						<mainClass>edu.colorado.csci5828.remotelypossible.dlap.Servers</mainClass>
 					</configuration>
 				</plugin>
