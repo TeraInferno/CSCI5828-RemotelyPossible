@@ -33,6 +33,8 @@ public class ProjectServiceTest extends BaseServiceTest {
 	
 	@Test
 	public void addPartialProject() {
+		cleanUpProjects();
+		
 		//Create the Project DB Service
 		ProjectService ps = new ProjectService();
 		
@@ -58,6 +60,15 @@ public class ProjectServiceTest extends BaseServiceTest {
 		
 		//No projects left
 		assertTrue(pl.size() == 0);
+		
+	}
+	
+	private void cleanUpProjects() {
+		ProjectService ps = new ProjectService();
+		List<Project> pl = ps.findAll();
+		for(Project p: pl) {
+			ps.delete(p);
+		}
 		
 	}
 }
