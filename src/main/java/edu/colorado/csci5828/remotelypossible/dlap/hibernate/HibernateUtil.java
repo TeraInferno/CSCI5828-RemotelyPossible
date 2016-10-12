@@ -16,6 +16,7 @@ import javax.tools.StandardJavaFileManager;
 import javax.tools.StandardLocation;
 import javax.tools.ToolProvider;
 
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -56,10 +57,15 @@ public class HibernateUtil {
 			Configuration config = new Configuration();
 			config.configure();
 						
-			System.out.println(config.getProperty("packagesToScan"));
+			String packagesToScan = config.getProperty("packagesToScan");
+			System.out.println("Packages to scan: "+packagesToScan);
+			
+			if(StringUtils.isBlank(packagesToScan)) {
+				packagesToScan="edu.colorado.csci5828.remotelypossible.dlap.model";
+			}
 			
 			for (String packageToScan : config.getProperty("packagesToScan").trim().split("\\n")) {
-	            getEntityClasses(packageToScan).stream().forEach( config::addAnnotatedClass);
+	            getEntityClasses(packageToScan).stream().forEach(config::addAnnotatedClass);
 	        }
 	        
 			
