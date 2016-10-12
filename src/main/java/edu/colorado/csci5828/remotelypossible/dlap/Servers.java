@@ -103,7 +103,7 @@ public class Servers {
 				WebAppContext webapp = new WebAppContext();
 				webapp.setAttribute("javax.servlet.context.tempdir", getScratchDir());
 			    webapp.setAttribute("org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern",
-			          ".*/[^/]*servlet-api-[^/]*\\.jar$|.*/javax.servlet.jsp.jstl-.*\\.jar$|.*/.*taglibs.*\\.jar$|.*/stripes.*\\.jar$|.*\\.class$");
+			          ".*/[^/]*servlet-api-[^/]*\\.jar$|.*/javax.servlet.jsp.jstl-.*\\.jar$|.*/.*taglibs.*\\.jar$|.*/stripes.*\\.jar$");
 			    webapp.setAttribute("org.eclipse.jetty.containerInitializers", jspInitializers());
 				if(!Settings.isProduction()) {
 					//Enable automatic reloading in Test
