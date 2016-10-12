@@ -19,8 +19,6 @@ import javax.tools.ToolProvider;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import edu.colorado.csci5828.remotelypossible.dlap.common.Constants;
@@ -59,14 +57,11 @@ public class HibernateUtil {
 			Configuration config = new Configuration();
 			config.configure();
 						
-			/*
-			String packagesToScan = config.getProperty("packagesToSan");
-			System.out.println("Packages to scan: "+packagesToScan);
+			String packagesToScan = config.getProperty("packagesToScan");
 			
 			for (String packageToScan : packagesToScan.trim().split("\\n")) {
 	            getEntityClasses(packageToScan).stream().forEach(config::addAnnotatedClass);
 	        }
-	        */
 	        
 			
 			//Determine if the Production DB was requested. 
@@ -87,17 +82,8 @@ public class HibernateUtil {
 			config.setProperty("hibernate.connection.username", Settings.getDatabaseUser());
 			config.setProperty("hibernate.connection.password", Settings.getDatabasePassword());
 
-			final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-					.configure().applySettings(config.getProperties()) // configures settings from hibernate.cfg.xml
-					.build();
-			try {
-				sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
-			} catch(Exception e) {
-				StandardServiceRegistryBuilder.destroy( registry );
-			}
-			
-			//sessionFactory = config.buildSessionFactory(
-			//		new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build());
+			sessionFactory = config.buildSessionFactory(
+					new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build());
 		}
 		return sessionFactory;
 	}
