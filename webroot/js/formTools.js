@@ -110,21 +110,15 @@ $.widget("ui.form",{
 			 },
 	 buttons:function(element)
 		 {
-			if($(element).is(":submit"))
-			{
-			$(element).addClass("ui-priority-primary ui-corner-all ui-state-disabled hover");
-			 $(element).bind("click",function(event)
-			   {
-				   event.preventDefault();
-			   });
-			}
-			else if($(element).is(":reset"))
+			if($(element).is(":submit")) {
+				$(element).addClass("ui-priority-primary ui-corner-all ui-state-disabled hover");
+			} else if($(element).is(":reset"))
 			$(element).addClass("ui-priority-secondary ui-corner-all hover");
 			$(element).bind('mousedown mouseup', function() {
  			   $(this).toggleClass('ui-state-active');
  			 }
 
-			  );
+			);
 		 },
 	 checkboxes:function(element){
 		 $(element).parent("label").after("<span />");
