@@ -58,7 +58,7 @@
                (This is what students will see in the application, may not exceed 80
                characters)</td>
            <td>
-               <s:textarea name="project.description" rows="2" cols="60" id="textDescription" onKeyUp="textCounter(project.description,remLen1,80);" onKeyDown="textCounter(project.description,remLen1,80);" onKeyPress="textCounter(project.description,remLen1,80);">${project.description}</s:textarea>
+               <s:textarea name="project.description" rows="2" cols="60" id="textDescription" onKeyUp="textCounter(this,remLen1,80);" onKeyDown="textCounter(this,remLen1,80);" onKeyPress="textCounter(this,remLen1,80);">${project.description}</s:textarea>
                <br />
 <input type="text" name="remLen1" id="remLen1" size="3" maxlength="3" value="80" />
 &nbsp;
@@ -98,7 +98,7 @@
                 in 2 5-hour blocks, etc.)<br />
                 (may not exceed 1000 characters)</td>
             <td valign="top">
-                <s:textarea name="project.requirement" rows="5" cols="60" id="textSpecialRequirements" onKeyUp="textCounter(project.requirement,remLen3,1000);" onKeyDown="textCounter(project.requirement,remLen3,1000);" onKeyPress="textCounter(project.requirement,remLen3,1000);">${project.requirement}</s:textarea>
+                <s:textarea name="project.requirement" rows="5" cols="60" id="textSpecialRequirements" onKeyUp="textCounter(this,remLen3,1000);" onKeyDown="textCounter(this,remLen3,1000);" onKeyPress="textCounter(this,remLen3,1000);">${project.requirement}</s:textarea>
                 <br />
 <input type="text" name="remLen3" id="remLen3" size="6" maxlength="3" value="1000" /></td>
         </tr>
@@ -108,7 +108,7 @@
                 A longer description of the apprenticeship:<br />
                 (may not exceed 1200 characters)</td>
             <td valign="top">
-                <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(project.longDescription,remLen2,1200);" onKeyDown="textCounter(project.longDescription,remLen2,1200);" onKeyPress="textCounter(project.longDescription,remLen2,1200);">${project.longDescription}</s:textarea>
+                <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(this,remLen2,1200);" onKeyDown="textCounter(this,remLen2,1200);" onKeyPress="textCounter(this,remLen2,1200);">${project.longDescription}</s:textarea>
                 <br />
 <input type="text" name="remLen2" id="remLen2" size="6" maxlength="3" value="1200" />&nbsp;
             </td>

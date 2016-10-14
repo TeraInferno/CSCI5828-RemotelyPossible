@@ -1,4 +1,6 @@
 function autotab(original, destination) {
+	original = document.getElementById(original);
+	destination = document.getElementById(destination);
 	if (original.getAttribute
 			&& original.value.length == original.getAttribute("maxlength"))
 		destination.focus()
