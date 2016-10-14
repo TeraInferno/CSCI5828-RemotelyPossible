@@ -12,8 +12,8 @@ CSCI5828 Final Project for Team RemotelyPossible
 1. Get a local copy
 2. Inside the folder/directory, run:
 ```
-mvn compile
-mvn exec:java
+mvn clean package
+mvn exec:exec
 ```
 3. Point your web browser at: http://127.0.0.1:8080/
 
