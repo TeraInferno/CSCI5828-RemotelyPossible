@@ -87,7 +87,7 @@ public class Servers {
 	public void startWebserver() {
 		//Create a new WebServer
 				jetty = new Server();
-
+				
 				//Create a connector on the requested IP/Port or default values
 				ServerConnector sc = new ServerConnector(jetty);
 				if(StringUtils.isNotBlank(Settings.getWebserverIpAddress())) {
@@ -101,6 +101,7 @@ public class Servers {
 				
 				//Add a WebApp
 				WebAppContext webapp = new WebAppContext();
+				
 				webapp.setAttribute("javax.servlet.context.tempdir", getScratchDir());
 			    webapp.setAttribute("org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern",
 			          ".*/[^/]*servlet-api-[^/]*\\.jar$|.*/javax.servlet.jsp.jstl-.*\\.jar$|.*/.*taglibs.*\\.jar$|.*/stripes.*\\.jar$|.*/DLAP.jar$");
