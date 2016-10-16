@@ -16,6 +16,12 @@
 		<stripes.version>1.6.0</stripes.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	<repositories>
+  		<repository>
+		    <id>mvn_localRepo</id>
+    		<url>file://${basedir}/mvn_localRepo</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -106,6 +112,12 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
+		</dependency>
+		<!-- Local Dependency for LDAP SDK -->
+		<dependency>
+			<groupId>ldapsdk</groupId>
+			<artifactId>ldapsdk</artifactId>
+			<version>3.2</version>
 		</dependency>
 	</dependencies>
 	<build>
