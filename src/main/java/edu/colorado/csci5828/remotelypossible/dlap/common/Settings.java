@@ -19,12 +19,27 @@ public class Settings {
 	public Settings() {
 		Settings.loadAppProperties(getClass().getClassLoader().getResourceAsStream("app.properties"));
 	}
-		
+	
+	public static String getCertificateHostname() {
+		return (StringUtils.isNoneBlank(props.getProperty("certificate.hostname")) ? props.getProperty("certificate.hostname") : "localhost");
+	}
+	public static String getKeystorePassword() {
+		return (StringUtils.isNoneBlank(props.getProperty("keystore.password")) ? props.getProperty("keystore.password") : "security");
+	}
+	public static String getKeystoreFile() {
+		return (StringUtils.isNoneBlank(props.getProperty("keystore.file")) ? props.getProperty("keystore.file") : "keystore.jks");
+	}
+	public static String getWebserverPersistent() {
+		return (StringUtils.isNotBlank(props.getProperty("webserver.session.persistent")) ? props.getProperty("webserver.session.persistent") : "persistent.session");
+	}
 	public static String getWebserverIpAddress() {
 		return (StringUtils.isNotBlank(props.getProperty("webserver.ip")) ? props.getProperty("webserver.ip") : "");
 	}
 	public static String getWebserverPortHttp() {
 		return (StringUtils.isNotBlank(props.getProperty("webserver.port.http")) ? props.getProperty("webserver.port.http") : "8080");
+	}
+	public static String getWebserverPortHttps() {
+		return (StringUtils.isNotBlank(props.getProperty("webserver.port.https")) ? props.getProperty("webserver.port.https") : "8443");
 	}
 	public static String getDatabaseIpAddress() {
 		return (StringUtils.isNotBlank(props.getProperty("database.ip")) ? props.getProperty("database.ip") : "127.0.0.1");
