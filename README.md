@@ -16,6 +16,11 @@ mvn clean package
 mvn exec:exec
 ```
 3. Point your web browser at: http://127.0.0.1:8080/
+4. Enabled Transparent 80/443 forwarding (run as root)
+```
+iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-port 8080
+iptables -A PREROUTING -t nat -p tcp --dport 443 -j REDIRECT --to-port 8443
+```
 
 # Under the hood
 Note: For simplicity, all package references will be shortened: edu.colorado.csci5828.remotelypossible.dlap -> dlap
