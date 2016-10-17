@@ -1,0 +1,7 @@
+/bin/
+/target/
+.settings/
+lib/unboundid-ldapsdk-3.2.0-se/android-ldap-client
+lib/unboundid-ldapsdk-3.2.0-se/docs
+lib/unboundid-ldapsdk-3.2.0-se/tools
+shellscripts.sh
