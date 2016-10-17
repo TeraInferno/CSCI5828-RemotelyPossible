@@ -11,6 +11,7 @@ import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
+import java.security.SecureRandom;
 import java.security.Security;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
@@ -103,7 +104,7 @@ public class Servers {
 			ks.load(null, Settings.getKeystorePassword().toCharArray());
 		}
 		if (!ks.containsAlias("jetty")) {
-			SelfSignedCertificate ssc = new SelfSignedCertificate(Settings.getCertificateHostname());
+			SelfSignedCertificate ssc = new SelfSignedCertificate(Settings.getCertificateHostname(),new SecureRandom(), 2048);
 			// ks.setCertificateEntry("alias", ssc.cert());
 			ks.setKeyEntry("jetty", ssc.key(), Settings.getKeystorePassword().toCharArray(), new Certificate[] { ssc.cert() });
 			FileOutputStream fos = new FileOutputStream(keyFile);
