@@ -47,6 +47,40 @@ public class Project {
 	@ElementCollection
 	private List<String> acceptedMajors;
 	
+	@Column(length=64)
+	private String supervisionLevel;
+	
+	@Column(length=64)
+	private String supervisor;
+	
+	@Column(length=64)
+	private String natureOfWork;
+	
+	@Column(length=64)
+	private String natureOfWorkOther;
+	
+	@Column(length=64)
+	private String priorWork;
+	
+	@Column(length=64)
+	private String priorWorkOther;
+	
+	@Column(length=64)
+	private String desiredStudent;
+	
+	@Column(length=10)
+	private String speedType;
+	
+	@Column
+	private Boolean speedTypeNotSure;
+	
+	@Column(length=64)
+	private String accountingContact;
+	
+	@Column(length=5)
+	private String dlSupervisor;
+	
+	
 	
 	public Long getId() {
 		return id;
@@ -126,6 +160,94 @@ public class Project {
 
 	public void setAcceptedMajors(List<String> acceptedMajors) {
 		this.acceptedMajors = acceptedMajors;
+	}
+
+	public String getSupervisionLevel() {
+		return supervisionLevel;
+	}
+
+	public void setSupervisionLevel(String supervisionLevel) {
+		this.supervisionLevel = supervisionLevel;
+	}
+
+	public String getSupervisor() {
+		return supervisor;
+	}
+
+	public void setSupervisor(String supervisor) {
+		this.supervisor = supervisor;
+	}
+
+	public String getNatureOfWork() {
+		return natureOfWork;
+	}
+
+	public void setNatureOfWork(String natureOfWork) {
+		this.natureOfWork = natureOfWork;
+	}
+
+	public String getNatureOfWorkOther() {
+		return natureOfWorkOther;
+	}
+
+	public void setNatureOfWorkOther(String natureOfWorkOther) {
+		this.natureOfWorkOther = natureOfWorkOther;
+	}
+
+	public String getPriorWork() {
+		return priorWork;
+	}
+
+	public void setPriorWork(String priorWork) {
+		this.priorWork = priorWork;
+	}
+
+	public String getPriorWorkOther() {
+		return priorWorkOther;
+	}
+
+	public void setPriorWorkOther(String priorWorkOther) {
+		this.priorWorkOther = priorWorkOther;
+	}
+
+	public String getDesiredStudent() {
+		return desiredStudent;
+	}
+
+	public void setDesiredStudent(String desiredStudent) {
+		this.desiredStudent = desiredStudent;
+	}
+
+	public String getSpeedType() {
+		return speedType;
+	}
+
+	public void setSpeedType(String speedType) {
+		this.speedType = speedType;
+	}
+
+	public Boolean getSpeedTypeNotSure() {
+		return speedTypeNotSure;
+	}
+
+	public void setSpeedTypeNotSure(Boolean speedTypeNotSure) {
+		this.speedTypeNotSure = speedTypeNotSure;
+	}
+
+	public String getAccountingContact() {
+		return accountingContact;
+	}
+
+	public void setAccountingContact(String accountingContact) {
+		this.accountingContact = accountingContact;
+	}
+
+	public String getDlSupervisor() {
+		return dlSupervisor;
+	}
+
+	public void setDlSupervisor(String dlSupervisor) {
+		this.dlSupervisor = dlSupervisor;
 	}
 	
 }

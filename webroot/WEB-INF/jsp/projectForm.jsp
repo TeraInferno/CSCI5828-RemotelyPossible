@@ -77,12 +77,6 @@
   </ul>
   <div id="Apprenticeship">
 	  <table>
-	  <tr>
-            <td bgcolor="#000099" class="style1">
-                Apprenticeship Information</td>
-            <td valign="top">
-                &nbsp;</td>
-        </tr>
         <tr class="d0">
             <td valign="top">
                 A website link related to your apprenticeship that would provide more
@@ -152,38 +146,38 @@
             <td valign="top">
                 <span class="style2">* </span>Amount of supervision required/interaction available:</td>
             <td valign="top">
-                <span id="radioAmountSup"><input id="radioAmountSup_0" type="radio" name="radioAmountSup" value="Very little supervision; student will need to work largely independently" /><label for="radioAmountSup_0">Very little supervision; student will need to work largely independently</label><br /><input id="radioAmountSup_1" type="radio" name="radioAmountSup" value="Moderate amount of supervision and interaction with others" /><label for="radioAmountSup_1">Moderate amount of supervision and interaction with others</label><br /><input id="radioAmountSup_2" type="radio" name="radioAmountSup" value="Good deal of supervision; student will work as an integral part of a research team" /><label for="radioAmountSup_2">Good deal of supervision; student will work as an integral part of a research team</label></span>
+                <span id="radioAmountSup"><s:radio id="radioAmountSup_0" name="supervisionLevel" value="Very little supervision; student will need to work largely independently" /><label for="radioAmountSup_0">Very little supervision; student will need to work largely independently</label><br /><s:radio id="radioAmountSup_1" name="supervisionLevel" value="Moderate amount of supervision and interaction with others" /><label for="radioAmountSup_1">Moderate amount of supervision and interaction with others</label><br /><s:radio id="radioAmountSup_2" name="supervisionLevel" value="Good deal of supervision; student will work as an integral part of a research team" /><label for="radioAmountSup_2">Good deal of supervision; student will work as an integral part of a research team</label></span>
                     </td>
         </tr>
                 <tr class="d1">
             <td valign="top">
                 <span class="style2">* </span>Supervision provided by:</td>
             <td valign="top">
-                <span id="radioSupProv"><input id="radioSupProv_0" type="radio" name="radioSupProv" value="Supervision primarily by faculty supervisor" /><label for="radioSupProv_0">Supervision primarily by faculty supervisor</label><br /><input id="radioSupProv_1" type="radio" name="radioSupProv" value="Supervision primarily by graduate students" /><label for="radioSupProv_1">Supervision primarily by graduate students</label><br /><input id="radioSupProv_2" type="radio" name="radioSupProv" value="Supervision primarily a combination of faculty and graduate students" /><label for="radioSupProv_2">Supervision primarily a combination of faculty and graduate students</label></span>
+                <span id="radioSupProv"><s:radio id="radioSupProv_0" name="supervisor" value="Supervision primarily by faculty supervisor" /><label for="radioSupProv_0">Supervision primarily by faculty supervisor</label><br /><s:radio id="radioSupProv_1" name="supervisor" value="Supervision primarily by graduate students" /><label for="radioSupProv_1">Supervision primarily by graduate students</label><br /><s:radio id="radioSupProv_2" name="supervisor" value="Supervision primarily a combination of faculty and graduate students" /><label for="radioSupProv_2">Supervision primarily a combination of faculty and graduate students</label></span>
                     </td>
         </tr>
                 <tr class="d0">
             <td valign="top">
                 <span class="style2">* </span>Nature of work:</td>
             <td valign="top">
-                <span id="radioNattyWo"><input id="radioNattyWo_0" type="radio" name="radioNattyWo" value="Nature of work is primarily theoretical, most work on paper/electronic medium" /><label for="radioNattyWo_0">Nature of work is primarily theoretical, most work on paper/electronic medium</label><br /><input id="radioNattyWo_1" type="radio" name="radioNattyWo" value="Nature of work is primarily experimental, requiring hands-on work in a lab" /><label for="radioNattyWo_1">Nature of work is primarily experimental, requiring hands-on work in a lab</label><br /><input id="radioNattyWo_2" type="radio" name="radioNattyWo" value="Nature of work is primarily field based, requiring hands-on work in the field" /><label for="radioNattyWo_2">Nature of work is primarily field based, requiring hands-on work in the field</label><br /><input id="radioNattyWo_3" type="radio" name="radioNattyWo" value="Nature of work is primarily computer-related, involving coding/analysis" /><label for="radioNattyWo_3">Nature of work is primarily computer-related, involving coding/analysis</label><br /><input id="radioNattyWo_4" type="radio" name="radioNattyWo" value="Nature of work is a combination of several types of work." /><label for="radioNattyWo_4">Nature of work is a combination of several types of work.</label><br /><input id="radioNattyWo_5" type="radio" name="radioNattyWo" value="Other" /><label for="radioNattyWo_5">other, specify:</label></span>
-                <input name="textNattyWo" type="text" id="textNattyWo" onKeyPress="return disableEnterKey(event)" />
+                <span id="radioNattyWo"><s:radio id="radioNattyWo_0" name="natureOfWork" value="Nature of work is primarily theoretical, most work on paper/electronic medium" /><label for="radioNattyWo_0">Nature of work is primarily theoretical, most work on paper/electronic medium</label><br /><s:radio id="radioNattyWo_1" name="natureOfWork" value="Nature of work is primarily experimental, requiring hands-on work in a lab" /><label for="radioNattyWo_1">Nature of work is primarily experimental, requiring hands-on work in a lab</label><br /><s:radio id="radioNattyWo_2" name="natureOfWork" value="Nature of work is primarily field based, requiring hands-on work in the field" /><label for="radioNattyWo_2">Nature of work is primarily field based, requiring hands-on work in the field</label><br /><s:radio id="radioNattyWo_3" name="natureOfWork" value="Nature of work is primarily computer-related, involving coding/analysis" /><label for="radioNattyWo_3">Nature of work is primarily computer-related, involving coding/analysis</label><br /><s:radio id="radioNattyWo_4" name="natureOfWork" value="Nature of work is a combination of several types of work." /><label for="radioNattyWo_4">Nature of work is a combination of several types of work.</label><br /><s:radio id="radioNattyWo_5" name="natureOfWork" value="Other" /><label for="radioNattyWo_5">other, specify:</label></span>
+                <s:text name="natureOfWorkOther" id="textNattyWo" onKeyPress="return disableEnterKey(event)" />
                     </td>
         </tr>
                 <tr class="d1">
             <td valign="top">
                 <span class="style2">* </span>Amount of prior work conducted in association with this project:</td>
             <td valign="top">
-                <span id="radioAmountPri"><input id="radioAmountPri_0" type="radio" name="radioAmountPri" value="No prior work; student will be starting from basic idea" /><label for="radioAmountPri_0">No prior work; student will be starting from basic idea</label><br /><input id="radioAmountPri_1" type="radio" name="radioAmountPri" value="Some prior work; student will build on work of others" /><label for="radioAmountPri_1">Some prior work; student will build on work of others</label><br /><input id="radioAmountPri_2" type="radio" name="radioAmountPri" value="Well-established body of work; student will refine/improved upon efforts of others" /><label for="radioAmountPri_2">Well-established body of work; student will refine/improved upon efforts of others</label><br /><input id="radioAmountPri_3" type="radio" name="radioAmountPri" value="Other" /><label for="radioAmountPri_3">other, specify:</label></span>
-                <input name="textAmountPro" type="text" id="textAmountPro" onKeyPress="return disableEnterKey(event)" />
+                <span id="radioAmountPri"><s:radio id="radioAmountPri_0" name="priorWork" value="No prior work; student will be starting from basic idea" /><label for="radioAmountPri_0">No prior work; student will be starting from basic idea</label><br /><s:radio id="radioAmountPri_1" type="radio" name="priorWork" value="Some prior work; student will build on work of others" /><label for="radioAmountPri_1">Some prior work; student will build on work of others</label><br /><s:radio id="radioAmountPri_2" name="priorWork" value="Well-established body of work; student will refine/improved upon efforts of others" /><label for="radioAmountPri_2">Well-established body of work; student will refine/improved upon efforts of others</label><br /><s:radio id="radioAmountPri_3" name="priorWork" value="Other" /><label for="radioAmountPri_3">other, specify:</label></span>
+                <s:text name="priorWorkOther" type="text" id="textAmountPro" onKeyPress="return disableEnterKey(event)" />
                     </td>
         </tr>
 
         <tr class="d0">
             <td valign="top">
-                Name of specific student desired: (if any) – be sure to ask them to apply!</td>
+                Name of specific student desired: (if any) and be sure to ask them to apply!</td>
             <td valign="top">
-                <input name="textStudName" type="text" id="textStudName" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="desiredStudent" id="textStudName" onKeyPress="return disableEnterKey(event)" />
             </td>
         </tr>
         <tr>
@@ -197,7 +191,7 @@
   </div>
   <div id="Members">
 	  <table>
-        <tr>
+        <tr <tr class="d1">
             <td width="200" bgcolor="#000099" class="style1">
                 Faculty Member Info</td>
             <td>
@@ -376,10 +370,6 @@
 	  
   </div>
   
-  </s:form>
-  
-  <form>
-  
   
   <div id="Other">
 	  <table>
@@ -394,9 +384,9 @@
                 <span class="style2">* </span>What speed type will you use for your 50% match of the funding?
                 (should be in the form XXXXXXXX, all numbers)</td>
             <td valign="top">
-                <input name="textSpeedType" type="text" maxlength="8" id="textSpeedType" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="speedType" maxlength="8" id="textSpeedType" onKeyPress="return disableEnterKey(event)" />
 &nbsp;or
-                <input id="checkSpeedType" type="checkbox" name="checkSpeedType" /><label for="checkSpeedType"> Not Sure</label>
+                <s:checkbox id="speedTypeNotSure" name="checkSpeedType" /><label for="checkSpeedType"> Not Sure</label>
                 <br />
                 &nbsp;
             </td>
@@ -405,7 +395,7 @@
             <td>
                 <span class="style2">* </span>Accounting contact for your project:</td>
             <td>
-                <input name="textAccounting" type="text" id="textAccounting" onKeyPress="return disableEnterKey(event)" />
+                <input name="accountingContact" type="text" id="textAccounting" onKeyPress="return disableEnterKey(event)" />
                 &nbsp;
             </td>
         </tr>
@@ -427,7 +417,7 @@
                 (<i>this question intended for the faculty supervisor, not the graduate student
                 or post-doc)</i></td>
             <td valign="top">
-                <span id="radioDLsupervisor"><input id="radioDLsupervisor_0" type="radio" name="radioDLsupervisor" value="1" onclick="javascript:setTimeout('__doPostBack(\'radioDLsupervisor$0\',\'\')', 0)" /><label for="radioDLsupervisor_0">Yes</label><input id="radioDLsupervisor_1" type="radio" name="radioDLsupervisor" value="3" onclick="javascript:setTimeout('__doPostBack(\'radioDLsupervisor$1\',\'\')', 0)" /><label for="radioDLsupervisor_1">No</label></span>
+                <span id="radioDLsupervisor"><s:radio id="radioDLsupervisor_0" name="dlSupervisor" value="Yes" /><label for="radioDLsupervisor_0">Yes</label><s:radio id="radioDLsupervisor_1" name="dlSupervisor" value="No" /><label for="radioDLsupervisor_1">No</label></span>
             </td>
         </tr>
         <tr class="d0">
@@ -453,7 +443,6 @@
         </tr>
         <tr>
             <td colspan="2">
-                <input type="submit" name="Submit" value="Submit Request" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;Submit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="Submit" />
                 <br />
     <span id="labelMessage3"><b><font color="Red"></font></b></span>
                 <br />
@@ -487,7 +476,8 @@
 
 </div>
 
-    </form>
+</s:form>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/js/formTools.js"></script>
