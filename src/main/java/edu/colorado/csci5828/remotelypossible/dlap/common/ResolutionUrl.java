@@ -17,8 +17,9 @@ public class ResolutionUrl {
 	public static final Resolution FORWARD_INDEX = new ForwardResolution("/WEB-INF/jsp/index.jsp");
 	public static final Resolution FORWARD_PROJECT_FORM = new ForwardResolution("/WEB-INF/jsp/projectForm.jsp");
 	
-	
 	public static final Resolution FORWARD_PROJECT_LIST = new ForwardResolution("/WEB-INF/jsp/projectList.jsp");
 	public static final Resolution REDIRECT_PROJECT_LIST = new RedirectResolution("/do/project/list");
+	
+	public static final Resolution FORWARD_APPLICANT_FORM = new ForwardResolution("/WEB-INF/jsp/applicantForm.jsp");
 	
 }
