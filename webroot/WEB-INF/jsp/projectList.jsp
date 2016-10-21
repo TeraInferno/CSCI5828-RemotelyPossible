@@ -14,29 +14,43 @@
   <![endif]-->
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css">
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 
 </head>
 
-<body>
+<body class="ui-widget-content">
 <s:useActionBean var="actionBean" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectListAction"  />
 <a href="/do/project/form">Add a new project</a>
 <br/><br/><br/>
-<c:choose>
-<c:when test="${not empty actionBean.projectList}">
-Existing Projects:<br/> 
-<c:forEach items="${actionBean.projectList}" var="project" varStatus="loop"> 
-<a href="/do/project/form/${project.id}">${project.description}</a></br>
-</c:forEach>
-</c:when>
-<c:otherwise>
-No projects have been created.
-</c:otherwise>
-</c:choose>
+Existing Projects:<br/>
+<table id="projects" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Description</th>
+            </tr>
+        </tfoot>
+        <tbody>
+        <c:forEach items="${actionBean.projectList}" var="project" varStatus="loop"> 
+			<tr><td><a href="/do/project/form/${project.id}">${project.description}</a></td></tr>
+		</c:forEach>
+        </tbody>
+</table>
+ 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="//use.typekit.net/wde1aof.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.3/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.12/js/dataTables.jqueryui.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#projects').DataTable();
+} );
+</script>
 </body>
 </html>
+
