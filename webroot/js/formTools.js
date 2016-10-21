@@ -50,9 +50,7 @@ $.widget("ui.form", {
       $(this).addClass('ui-state-default ui-corner-all');
       $(this).wrap("<label />");
 
-      if ($(this).is(":reset ,:submit"))
-        object.buttons(this);
-      else if ($(this).is(":checkbox"))
+      if ($(this).is(":checkbox"))
         object.checkboxes(this);
       else if ($(this).is("input[type='text']") || $(this).is("textarea") || $(this).is("input[type='password']"))
         object.textelements(this);

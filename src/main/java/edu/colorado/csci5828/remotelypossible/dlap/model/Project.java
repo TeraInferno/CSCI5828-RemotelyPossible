@@ -47,16 +47,16 @@ public class Project {
 	@ElementCollection
 	private List<String> acceptedMajors;
 	
-	@Column(length=64)
+	@Column(length=128)
 	private String supervisionLevel;
 	
-	@Column(length=64)
+	@Column(length=128)
 	private String supervisor;
 	
-	@Column(length=64)
+	@Column(length=128)
 	private String natureOfWork;
 	
-	@Column(length=64)
+	@Column(length=128)
 	private String natureOfWorkOther;
 	
 	@Column(length=64)
