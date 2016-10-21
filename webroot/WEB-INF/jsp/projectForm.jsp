@@ -13,10 +13,15 @@
   <![endif]-->
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css">
-
+<style>
+tr > td
+{
+  padding-bottom: 1em;
+}
+</style>
 </head>
 
-<body>
+<body class="ui-widget-content">
 
     <table>
         <tr>
@@ -32,7 +37,7 @@
                 <br />
                     </strong>Thanks for your interest in submitting one or more projects for the
                     Discovery Learning Apprenticeship program. Please complete all required fields,
-                    which are marked with a red asterisk (<span class="style2">*</span>). You will
+                    which are marked with a red asterisk (<span>*</span>). You will
                     receive a confirmation after you enter your project indicating that your project
                     has been received. You may re-enter the application if you have more than one
                     project to advertise. If you have a correction or change to your project, if you
@@ -52,9 +57,9 @@
 <s:form id="project" method="post" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectFormAction"> 
 <s:hidden name="project.id"/>
 <table>
-       <tr class="d1">
+       <tr>
            <td valign="top">
-               <span class="style2">* </span>A title/description for the apprenticeship:<br />
+               <span>* </span>A title/description for the apprenticeship:<br />
                (This is what students will see in the application, may not exceed 80
                characters)</td>
            <td>
@@ -77,7 +82,7 @@
   </ul>
   <div id="Apprenticeship">
 	  <table>
-        <tr class="d0">
+        <tr>
             <td valign="top">
                 A website link related to your apprenticeship that would provide more
                 information to interested students?</td>
@@ -85,7 +90,7 @@
                 <s:text name="project.url" size="79" id="textWeb" onKeyPress="return disableEnterKey(event)" />
             </td>
         </tr>
-        <tr class="d1">
+        <tr>
             <td valign="top">
                 Special Requirements that applicants must meet?<br />
                 (eg: Must have had certain course, certain class standing, available to work
@@ -96,9 +101,9 @@
                 <br />
 <input type="text" name="remLen3" id="remLen3" size="6" maxlength="3" value="1000" /></td>
         </tr>
-        <tr class="d0">
+        <tr>
             <td valign="top">
-                <span class="style2">*</span>
+                <span>*</span>
                 A longer description of the apprenticeship:<br />
                 (may not exceed 1200 characters)</td>
             <td valign="top">
@@ -107,9 +112,9 @@
 <input type="text" name="remLen2" id="remLen2" size="6" maxlength="3" value="1200" />&nbsp;
             </td>
         </tr>
-                <tr class="d1">
+                <tr>
             <td valign="top">
-                <span class="style2">* </span>From what areas do you wish to recruit students?<br />
+                <span>* </span>From what areas do you wish to recruit students?<br />
                 <br />
                 (check all that apply)<br />
                 <span class="style3"><strong>
@@ -141,39 +146,61 @@
                 </span>
                 </td>
         </tr>
-
-         <tr class="d0">
+         <tr>
             <td valign="top">
-                <span class="style2">* </span>Amount of supervision required/interaction available:</td>
+                <span>* </span>Amount of supervision required/interaction available:</td>
             <td valign="top">
-                <span id="radioAmountSup"><s:radio id="radioAmountSup_0" name="supervisionLevel" value="Very little supervision; student will need to work largely independently" /><label for="radioAmountSup_0">Very little supervision; student will need to work largely independently</label><br /><s:radio id="radioAmountSup_1" name="supervisionLevel" value="Moderate amount of supervision and interaction with others" /><label for="radioAmountSup_1">Moderate amount of supervision and interaction with others</label><br /><s:radio id="radioAmountSup_2" name="supervisionLevel" value="Good deal of supervision; student will work as an integral part of a research team" /><label for="radioAmountSup_2">Good deal of supervision; student will work as an integral part of a research team</label></span>
-                    </td>
+            	<s:select name="supervisionLevel">
+					<s:option value="Very little supervision; student will need to work largely independently">Very little supervision; student will need to work largely independently</s:option>
+					<s:option value="Moderate amount of supervision and interaction with others">Moderate amount of supervision and interaction with others</s:option>
+					<s:option value="Good deal of supervision; student will work as an integral part of a research team">Good deal of supervision; student will work as an integral part of a research team</s:option>
+				</s:select>
+           </td>
         </tr>
-                <tr class="d1">
+                <tr>
             <td valign="top">
-                <span class="style2">* </span>Supervision provided by:</td>
+                <span>* </span>Supervision provided by:</td>
             <td valign="top">
-                <span id="radioSupProv"><s:radio id="radioSupProv_0" name="supervisor" value="Supervision primarily by faculty supervisor" /><label for="radioSupProv_0">Supervision primarily by faculty supervisor</label><br /><s:radio id="radioSupProv_1" name="supervisor" value="Supervision primarily by graduate students" /><label for="radioSupProv_1">Supervision primarily by graduate students</label><br /><s:radio id="radioSupProv_2" name="supervisor" value="Supervision primarily a combination of faculty and graduate students" /><label for="radioSupProv_2">Supervision primarily a combination of faculty and graduate students</label></span>
-                    </td>
+            	<s:select name="supervisor">
+            		<s:option value="Supervision primarily by faculty supervisor">Supervision primarily by faculty supervisor</s:option>
+            		<s:option value="Supervision primarily by graduate students">Supervision primarily by graduate students</s:option>
+            		<s:option value="Supervision primarily a combination of faculty and graduate students">Supervision primarily a combination of faculty and graduate students</s:option>
+            	</s:select>
+           </td>
         </tr>
-                <tr class="d0">
+                <tr>
             <td valign="top">
-                <span class="style2">* </span>Nature of work:</td>
+                <span>* </span>Nature of work:</td>
             <td valign="top">
-                <span id="radioNattyWo"><s:radio id="radioNattyWo_0" name="natureOfWork" value="Nature of work is primarily theoretical, most work on paper/electronic medium" /><label for="radioNattyWo_0">Nature of work is primarily theoretical, most work on paper/electronic medium</label><br /><s:radio id="radioNattyWo_1" name="natureOfWork" value="Nature of work is primarily experimental, requiring hands-on work in a lab" /><label for="radioNattyWo_1">Nature of work is primarily experimental, requiring hands-on work in a lab</label><br /><s:radio id="radioNattyWo_2" name="natureOfWork" value="Nature of work is primarily field based, requiring hands-on work in the field" /><label for="radioNattyWo_2">Nature of work is primarily field based, requiring hands-on work in the field</label><br /><s:radio id="radioNattyWo_3" name="natureOfWork" value="Nature of work is primarily computer-related, involving coding/analysis" /><label for="radioNattyWo_3">Nature of work is primarily computer-related, involving coding/analysis</label><br /><s:radio id="radioNattyWo_4" name="natureOfWork" value="Nature of work is a combination of several types of work." /><label for="radioNattyWo_4">Nature of work is a combination of several types of work.</label><br /><s:radio id="radioNattyWo_5" name="natureOfWork" value="Other" /><label for="radioNattyWo_5">other, specify:</label></span>
+            	<s:select name="natureOfWork">
+            		<s:option value="Nature of work is primarily theoretical, most work on paper/electronic medium">Nature of work is primarily theoretical, most work on paper/electronic medium</s:option>
+            		<s:option value="Nature of work is primarily experimental, requiring hands-on work in a lab">Nature of work is primarily experimental, requiring hands-on work in a lab</s:option>
+            		<s:option value="Nature of work is primarily field based, requiring hands-on work in the field">Nature of work is primarily field based, requiring hands-on work in the field</s:option>
+            		<s:option value="Nature of work is primarily computer-related, involving coding/analysis">Nature of work is primarily computer-related, involving coding/analysis</s:option>
+            		<s:option value="Nature of work is a combination of several types of work">Nature of work is a combination of several types of work</s:option>
+            		<s:option value="Other">Other, specify:</s:option>
+            	</s:select>
+            	<br/>
                 <s:text name="natureOfWorkOther" id="textNattyWo" onKeyPress="return disableEnterKey(event)" />
-                    </td>
+			</td>
         </tr>
-                <tr class="d1">
+        <tr>
             <td valign="top">
-                <span class="style2">* </span>Amount of prior work conducted in association with this project:</td>
+                <span>* </span>Amount of prior work conducted in association with this project:
+            </td>
             <td valign="top">
-                <span id="radioAmountPri"><s:radio id="radioAmountPri_0" name="priorWork" value="No prior work; student will be starting from basic idea" /><label for="radioAmountPri_0">No prior work; student will be starting from basic idea</label><br /><s:radio id="radioAmountPri_1" type="radio" name="priorWork" value="Some prior work; student will build on work of others" /><label for="radioAmountPri_1">Some prior work; student will build on work of others</label><br /><s:radio id="radioAmountPri_2" name="priorWork" value="Well-established body of work; student will refine/improved upon efforts of others" /><label for="radioAmountPri_2">Well-established body of work; student will refine/improved upon efforts of others</label><br /><s:radio id="radioAmountPri_3" name="priorWork" value="Other" /><label for="radioAmountPri_3">other, specify:</label></span>
+            	<s:select name="priorWork">
+            		<s:option value="No prior work; student will be starting from basic idea">No prior work; student will be starting from basic idea</s:option>
+            		<s:option value="Some prior work; student will build on work of others">Some prior work; student will build on work of others</s:option>
+            		<s:option value="Well-established body of work; student will refine/improved upon efforts of others">Well-established body of work; student will refine/improved upon efforts of others</s:option>
+            		<s:option value="Other">Other, specify:</s:option>
+            	</s:select>
+				<br/>
                 <s:text name="priorWorkOther" type="text" id="textAmountPro" onKeyPress="return disableEnterKey(event)" />
-                    </td>
+            </td>
         </tr>
 
-        <tr class="d0">
+        <tr>
             <td valign="top">
                 Name of specific student desired: (if any) and be sure to ask them to apply!</td>
             <td valign="top">
@@ -191,24 +218,24 @@
   </div>
   <div id="Members">
 	  <table>
-        <tr <tr class="d1">
-            <td width="200" bgcolor="#000099" class="style1">
-                Faculty Member Info</td>
-            <td>
-                &nbsp;</td>
+        <tr>
+            <td bgcolor="#000099" colspan="2">Faculty Member Info</td>
+           
         </tr>
-        <tr class="d0">
-            <td width="200" valign="top">
-                <span class="style2">*</span>
+        <tr>
+            <td width="300" valign="top">
+                <span>*</span>
                 Faculty name:</td>
             <td valign="top">
                 <s:text name="project.faculty1.name"/>
                 &nbsp;
             </td>
         </tr>
-        <tr class="d1">
-            <td width="200" valign="top">
-                Faculty phone number:</td>
+        <tr>
+            <td width="300" valign="top">
+            	<span>&nbsp;&nbsp;</span>
+                Faculty phone number:
+             </td>
             <td>
                ( <s:text name="project.faculty1.phone.areacode"  maxlength="3" size="2" id="textbldrphone1" onkeyup="autotab(textbldrphone1, textbldrphone2)" />
                 ) <s:text name="project.faculty1.phone.prefix" type="text" maxlength="3" size="2" id="textbldrphone2" onkeyup="autotab(textbldrphone2,textbldrphone3)" />
@@ -218,18 +245,18 @@
                         &nbsp;
                         </td>
         </tr>
-        <tr class="d0">
-            <td width="200" valign="top">
-                <span class="style2">*</span> Faculty email address:</td>
+        <tr>
+            <td width="300" valign="top">
+                <span>*</span> Faculty email address:</td>
             <td>
                 <s:text name="project.faculty1.email" maxlength="50" size="30" id="textEmail" onKeyPress="return disableEnterKey(event)" />
                 &nbsp;
 
                 </td>
         </tr>
-        <tr class="d1">
+        <tr>
             <td valign="top">
-                <span class="style2">* </span>Faculty department/program:</td>
+                <span>* </span>Faculty department/program:</td>
             <td valign="top">
                 <s:select name="project.faculty1.program" id="listMajor">
 					<s:option value="">Please Select</s:option>
@@ -249,7 +276,7 @@
                 &nbsp;
                 </td>
         </tr>
-        <tr class="d1">
+        <tr>
             <td valign="top">
                 Does this project have a focus on Engineering for Developing Communities?</td>
             <td valign="top">
@@ -263,19 +290,16 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td bgcolor="#000099" class="style1">
-                Second Faculty Member (Optional)</td>
-            <td valign="top">
-                &nbsp;</td>
+            <td bgcolor="#000099" colspan="2">Second Faculty Member (Optional)</td>
         </tr>
-        <tr class="d0">
+        <tr>
             <td valign="top">
                 Faculty name:</td>
             <td valign="top">
                 <s:text name="project.faculty2.name" id="textNameAlt" onKeyPress="return disableEnterKey(event)" />
                 </td>
         </tr>
-        <tr class="d1" valign="top">
+        <tr valign="top">
             <td valign="top">
                 Faculty phone number:</td>
             <td valign="top">
@@ -289,7 +313,7 @@
                         &nbsp;
                         </td>
         </tr>
-        <tr class="d0">
+        <tr>
             <td valign="top">
                 Faculty email address:</td>
             <td valign="top">
@@ -297,7 +321,7 @@
 
                 </td>
         </tr>
-        <tr class="d1">
+        <tr>
             <td valign="top">
             Faculty department/program:</td>
             <td valign="top">
@@ -325,19 +349,17 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td width="200" bgcolor="#000099" class="style1">
+            <td width="400" bgcolor="#000099" colspan="2">
                 Grad Student/Post Doc Info (Optional)</td>
-            <td valign="top">
-                &nbsp;</td>
         </tr>
-        <tr class="d0">
+        <tr>
             <td valign="top">
                 Grad Student/Post Doc name:</td>
             <td valign="top">
                 <s:text name="project.graduate.name" id="textGradName" onKeyPress="return disableEnterKey(event)" />
                 </td>
         </tr>
-        <tr class="d1">
+        <tr>
             <td valign="top">
                 Grad Student/Post Doc phone number:</td>
             <td valign="top">
@@ -352,7 +374,7 @@
                         &nbsp;
                         </td>
         </tr>
-        <tr class="d0">
+        <tr>
             <td valign="top">
                 Grad Student/Post Doc email address:</td>
             <td valign="top">
@@ -374,14 +396,11 @@
   <div id="Other">
 	  <table>
 	  <tr>
-            <td bgcolor="#000099" class="style1">
-                Finances</td>
-            <td>
-                &nbsp;</td>
+            <td bgcolor="#000099" colspan="2">Finances</td>
         </tr>
-        <tr class="d0">
+        <tr>
             <td valign="top">
-                <span class="style2">* </span>What speed type will you use for your 50% match of the funding?
+                <span>* </span>What speed type will you use for your 50% match of the funding?
                 (should be in the form XXXXXXXX, all numbers)</td>
             <td valign="top">
                 <s:text name="speedType" maxlength="8" id="textSpeedType" onKeyPress="return disableEnterKey(event)" />
@@ -391,27 +410,26 @@
                 &nbsp;
             </td>
         </tr>
-        <tr class="d1">
+        <tr>
             <td>
-                <span class="style2">* </span>Accounting contact for your project:</td>
+                <span>*</span>Accounting contact for your project:</td>
             <td>
                 <input name="accountingContact" type="text" id="textAccounting" onKeyPress="return disableEnterKey(event)" />
                 &nbsp;
             </td>
         </tr>
         <tr>
-            <td>
-                &nbsp;</td>
+            <td>&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+        </tr>
+        <tr>
+            <td bgcolor="#000099" colspan="2">
+               Other
+            </td>
             <td valign="top">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td bgcolor="#000099" class="style1">
-                Other</td>
-            <td valign="top">
-                &nbsp;</td>
-        </tr>
-        <tr class="d0">
             <td>
                 Have you supervised a Discovery Learning Apprentice in the past?<br />
                 (<i>this question intended for the faculty supervisor, not the graduate student
@@ -420,7 +438,7 @@
                 <span id="radioDLsupervisor"><s:radio id="radioDLsupervisor_0" name="dlSupervisor" value="Yes" /><label for="radioDLsupervisor_0">Yes</label><s:radio id="radioDLsupervisor_1" name="dlSupervisor" value="No" /><label for="radioDLsupervisor_1">No</label></span>
             </td>
         </tr>
-        <tr class="d0">
+        <tr>
             <td>
 
             </td>
