@@ -15,7 +15,7 @@
   <![endif]-->
 
 <link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css">
+	href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
 </head>
 
 

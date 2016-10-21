@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
 <style>
 tr > td
 {
