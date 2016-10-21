@@ -20,7 +20,8 @@
 <br/><br/>
 <a href="/do/project/list">Project List Page</a>
 <br/><br/>
-
+<a href="/do/applicant/form">Applicant Form</a>
+<br/><br/>
 
 </body>
 </html>
