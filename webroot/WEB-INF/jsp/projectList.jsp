@@ -48,7 +48,9 @@ Existing Projects:<br/>
 <script type="text/javascript" src="//cdn.datatables.net/1.10.12/js/dataTables.jqueryui.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#projects').DataTable();
+    $('#projects').DataTable({
+        stateSave: true
+    } );
 } );
 </script>
 </body>
