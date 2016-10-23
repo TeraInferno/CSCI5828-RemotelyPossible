@@ -9,7 +9,7 @@
   <meta name="author" content="RemotelyPossible">
 
   <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
@@ -405,7 +405,7 @@ tr > td
             <td valign="top">
                 <s:text name="project.speedType" maxlength="8" id="textSpeedType" onKeyPress="return disableEnterKey(event)" />
 &nbsp;or
-                <s:checkbox id="speedTypeNotSure" name="project.checkSpeedTypeNotSure" /><label for="checkSpeedType"> Not Sure</label>
+                <s:checkbox id="speedTypeNotSure" name="project.speedTypeNotSure" /><label for="checkSpeedType"> Not Sure</label>
                 <br />
                 &nbsp;
             </td>
@@ -435,8 +435,7 @@ tr > td
                 (<i>this question intended for the faculty supervisor, not the graduate student
                 or post-doc)</i></td>
             <td valign="top">
-                <span id="radioDLsupervisor"><s:radio id="radioDLsupervisor_0" name="project.dlSupervisor" value="Yes" /><label for="radioDLsupervisor_0">Yes</label><s:radio id="radioDLsupervisor_1" name="pe
-                project.dlSupervisor" value="No" /><label for="radioDLsupervisor_1">No</label></span>
+                <span id="radioDLsupervisor"><s:radio id="radioDLsupervisor_0" name="project.dlSupervisor" value="Yes" /><label for="radioDLsupervisor_0">Yes</label><s:radio id="radioDLsupervisor_1" name="project.dlSupervisor" value="No" /><label for="radioDLsupervisor_1">No</label></span>
             </td>
         </tr>
         <tr>
@@ -497,8 +496,8 @@ tr > td
 
 </s:form>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/js/formTools.js"></script>
 <script>
 $( function() {
