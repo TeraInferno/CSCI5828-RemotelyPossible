@@ -10,28 +10,26 @@
   <meta name="author" content="RemotelyPossible">
 
   <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
-  <link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-
+  <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+  
 </head>
 
 <body class="ui-widget-content">
 <s:useActionBean var="actionBean" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectListAction"  />
-<a href="/do/project/form">Add a new project</a>
+<a id="addProject" href="/do/project/form">Add a new project</a>
 <br/><br/><br/>
-Existing Projects:<br/>
 <table id="projects" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>Description</th>
+                <th>Project Description</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
-                <th>Description</th>
+                <th>Project Description</th>
             </tr>
         </tfoot>
         <tbody>
@@ -42,16 +40,12 @@ Existing Projects:<br/>
 </table>
  
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.3/jquery-ui.min.js"></script>
-<script type="text/javascript" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="//cdn.datatables.net/1.10.12/js/dataTables.jqueryui.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#projects').DataTable({
-        stateSave: true
-    } );
-} );
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+  $( function() {
+    $( "#addProject" ).button();
+  } );
 </script>
 </body>
 </html>
