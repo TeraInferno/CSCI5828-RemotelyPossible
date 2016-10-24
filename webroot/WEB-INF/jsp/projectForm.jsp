@@ -151,17 +151,19 @@ tr > td
                 <span>* </span>Amount of supervision required/interaction available:</td>
             <td valign="top">
             	<s:select name="project.supervisionLevel">
+            		<s:option value="">Please Select</s:option>
 					<s:option value="Very little supervision; student will need to work largely independently">Very little supervision; student will need to work largely independently</s:option>
 					<s:option value="Moderate amount of supervision and interaction with others">Moderate amount of supervision and interaction with others</s:option>
 					<s:option value="Good deal of supervision; student will work as an integral part of a research team">Good deal of supervision; student will work as an integral part of a research team</s:option>
 				</s:select>
            </td>
         </tr>
-                <tr>
+        <tr>
             <td valign="top">
                 <span>* </span>Supervision provided by:</td>
             <td valign="top">
             	<s:select name="project.supervisor">
+            		<s:option value="">Please Select</s:option>
             		<s:option value="Supervision primarily by faculty supervisor">Supervision primarily by faculty supervisor</s:option>
             		<s:option value="Supervision primarily by graduate students">Supervision primarily by graduate students</s:option>
             		<s:option value="Supervision primarily a combination of faculty and graduate students">Supervision primarily a combination of faculty and graduate students</s:option>
@@ -173,6 +175,7 @@ tr > td
                 <span>* </span>Nature of work:</td>
             <td valign="top">
             	<s:select name="project.natureOfWork">
+            		<s:option value="">Please Select</s:option>
             		<s:option value="Nature of work is primarily theoretical, most work on paper/electronic medium">Nature of work is primarily theoretical, most work on paper/electronic medium</s:option>
             		<s:option value="Nature of work is primarily experimental, requiring hands-on work in a lab">Nature of work is primarily experimental, requiring hands-on work in a lab</s:option>
             		<s:option value="Nature of work is primarily field based, requiring hands-on work in the field">Nature of work is primarily field based, requiring hands-on work in the field</s:option>
@@ -190,6 +193,7 @@ tr > td
             </td>
             <td valign="top">
             	<s:select name="project.priorWork">
+            		<s:option value="">Please Select</s:option>
             		<s:option value="No prior work; student will be starting from basic idea">No prior work; student will be starting from basic idea</s:option>
             		<s:option value="Some prior work; student will build on work of others">Some prior work; student will build on work of others</s:option>
             		<s:option value="Well-established body of work; student will refine/improved upon efforts of others">Well-established body of work; student will refine/improved upon efforts of others</s:option>
@@ -259,7 +263,7 @@ tr > td
                 <span>* </span>Faculty department/program:</td>
             <td valign="top">
                 <s:select name="project.faculty1.program" id="listMajor">
-					<s:option value="">Please Select</s:option>
+                	<s:option value="">Please Select</s:option>
 					<s:option value="AES">Aerospace Engineering Sciences</s:option>
 					<s:option value="APPM">Applied Math</s:option>
 					<s:option value="CHBE">Chemical &amp; Biological Engineering</s:option>
@@ -326,7 +330,7 @@ tr > td
             Faculty department/program:</td>
             <td valign="top">
                 <s:select name="project.faculty2.program" id="listMajoralt">
-					<s:option value="">Please Select</s:option>
+                	<s:option value="">Please Select</s:option>
 					<s:option value="AES">Aerospace Engineering Sciences</s:option>
 					<s:option value="APPM">Applied Math</s:option>
 					<s:option value="CHBE">Chemical &amp; Biological Engineering</s:option>
@@ -503,6 +507,7 @@ tr > td
 $( function() {
   $("#tabs").tabs();
   $("#project").form();
+  validateForm('project',highlightErrors);
 });
 </script>
 </body>

@@ -33,8 +33,9 @@ function disableEnterKey(e) {
 	return (key != 13);
 }
 
-//JavaScript Document 
-
+//
+// JQuery-UI a form
+//
 (function ($) {
 $.widget("ui.form", {
   _init:function() {
@@ -243,3 +244,36 @@ $.widget("ui.form", {
 
 
 })(jQuery);
+
+
+//
+//Validation Tools
+//
+var highlightErrors = function(data, status) {
+  	console.log(data);
+	var errors = data;
+	console.log(errors.length);
+	$(".ui-state-error").removeClass('ui-state-error');
+	for(var x = 0; x < errors.length; x++) {
+		$('[name="'+errors[x]+'"]').closest('tr').addClass('ui-state-error');
+	}
+};
+
+var validateForm = function(formId, successCallback) {
+	var formEle = $('#'+formId);
+	$.ajax({
+        url: formEle.action,
+        type: formEle.method,
+        dataType: "JSON",
+        data: formEle.serialize()+"&validate=true",
+        processData: false,
+        contentType: false,
+        success: successCallback,
+        error: function (xhr, desc, err) {
+        	alert("Error validating form input");
+
+        }
+    });
+	return;
+};
+

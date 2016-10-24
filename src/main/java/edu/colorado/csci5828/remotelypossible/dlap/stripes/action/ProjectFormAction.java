@@ -1,15 +1,21 @@
 package edu.colorado.csci5828.remotelypossible.dlap.stripes.action;
 
 
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
+
+import com.google.gson.Gson;
 
 import edu.colorado.csci5828.remotelypossible.dlap.common.Constants;
 import edu.colorado.csci5828.remotelypossible.dlap.common.ResolutionUrl;
 import edu.colorado.csci5828.remotelypossible.dlap.model.Project;
+import edu.colorado.csci5828.remotelypossible.dlap.model.validation.ProjectValidator;
 import edu.colorado.csci5828.remotelypossible.dlap.service.ProjectService;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.HttpCache;
 import net.sourceforge.stripes.action.Resolution;
+import net.sourceforge.stripes.action.StreamingResolution;
 import net.sourceforge.stripes.action.UrlBinding;
 
 @UrlBinding("/do/project/form/{id}")
@@ -24,10 +30,20 @@ public class ProjectFormAction extends BaseAction {
 	
 	//Save button 
 	private String save;
+	
+	//Validation flag
+	private Boolean validate = false;
 			
 	@DefaultHandler
 	public Resolution process() {
-		if(StringUtils.isNotBlank(save)) {
+		if(validate) {
+			if(project == null) {
+				//Validating a completely blank form
+				project = new Project();
+			}
+			List<String> errors = ProjectValidator.validate(project);
+			return new StreamingResolution("application/json",(new Gson()).toJson(errors));
+		} else if(StringUtils.isNotBlank(save)) {
 			//Save Project
 			ProjectService ps = new ProjectService();
 			ps.save(project);
@@ -78,6 +94,14 @@ public class ProjectFormAction extends BaseAction {
 
 	public void setSave(String save) {
 		this.save = save;
+	}
+
+	public Boolean getValidate() {
+		return validate;
+	}
+
+	public void setValidate(Boolean validate) {
+		this.validate = validate;
 	}
 
 }
