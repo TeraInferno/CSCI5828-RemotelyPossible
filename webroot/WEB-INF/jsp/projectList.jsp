@@ -19,6 +19,7 @@
 
 <body class="ui-widget-content">
 <s:useActionBean var="actionBean" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectListAction"  />
+<br/>
 <a id="addProject" href="/do/project/form">Add a new project</a>
 <br/><br/><br/>
 <table id="projects" class="display" cellspacing="0" width="100%">
@@ -46,7 +47,7 @@
   $( function() {
     $( "#addProject" ).button();
   } );
-</script>
+1</script>
 </body>
 </html>
 
