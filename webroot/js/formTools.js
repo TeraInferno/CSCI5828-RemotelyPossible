@@ -249,25 +249,27 @@ $.widget("ui.form", {
 //
 //Validation Tools
 //
+var dlapFormComplete=false;
 var highlightErrors = function(data, status) {
-  	console.log(data);
 	var errors = data;
-	console.log(errors.length);
 	$(".ui-state-error").removeClass('ui-state-error');
 	for(var x = 0; x < errors.length; x++) {
 		$('[name="'+errors[x]+'"]').closest('tr').addClass('ui-state-error');
+	}
+	if(errors.length > 0) {
+		dlapFormComplete=false;
+	} else {
+		dlapFormComplete=true;
 	}
 };
 
 var validateForm = function(formId, successCallback) {
 	var formEle = $('#'+formId);
 	$.ajax({
-        url: formEle.action,
-        type: formEle.method,
+        url: formEle.attr('action'),
+        type: formEle.attr('method'),
         dataType: "JSON",
         data: formEle.serialize()+"&validate=true",
-        processData: false,
-        contentType: false,
         success: successCallback,
         error: function (xhr, desc, err) {
         	alert("Error validating form input");

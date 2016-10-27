@@ -80,6 +80,9 @@ public class Project {
 	@Column(length=5)
 	private String dlSupervisor;
 	
+	@Column
+	private Boolean published;
+	
 	
 	
 	public Long getId() {
@@ -248,6 +251,14 @@ public class Project {
 
 	public void setDlSupervisor(String dlSupervisor) {
 		this.dlSupervisor = dlSupervisor;
+	}
+
+	public Boolean getPublished() {
+		return published;
+	}
+
+	public void setPublished(Boolean published) {
+		this.published = published;
 	}
 	
 	

@@ -56,6 +56,7 @@ tr > td
 
 <s:form id="project" method="post" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectFormAction"> 
 <s:hidden name="project.id"/>
+<s:hidden name="project.published"/>
 <table>
        <tr>
            <td valign="top">
@@ -500,15 +501,103 @@ tr > td
 
 </s:form>
 
+<div id="dialog-description-required" title="Title/Description Required">
+  <p>
+    <span class="ui-icon ui-icon-pin-w" style="float:left; margin:0 7px 50px 0;"></span>
+    You must provide a Title/Description before a draft project can be saved.
+  </p>
+</div>
+
+<div id="dialog-publish-ready" title="Ready to Publish?">
+  <p>
+    <span class="ui-icon ui-icon-star" style="float:left; margin:0 7px 50px 0;"></span>
+    Are you ready to publish this Project so that students can apply?
+  </p>
+</div>
+
+
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/js/formTools.js"></script>
 <script>
+var updateRequiredHighlights = function() {
+	validateForm('project',highlightErrors);
+}
+var submitForm = function() {
+	$( "[name='validate']" ).val("false");
+	$( "[name='save']" ).click();
+}
 $( function() {
+
+  <!-- Init the Title/Description required dialog -->
+  $( "#dialog-description-required" ).dialog({
+    autoOpen: false,
+    modal: true,
+    close: function() {
+      $("[name='project.description']").focus();
+    },
+    buttons: {
+      Ok: function() {
+        $( this ).dialog( "close" );
+        $("[name='project.description']").focus();
+      }
+    }
+  });
+  
+  <!-- Init the Reaady to Publish dialog -->
+  $( "#dialog-publish-ready" ).dialog({
+    autoOpen: false,
+    modal: true,
+    close: function() {
+      //Save Only
+      dlapFormComplete=false;
+      submitForm();
+    },
+    buttons: {
+      Yes: function() {
+        //Publish
+        dlapFormComplete=false;
+      	$( "[name='project.published']" ).val('true');
+        submitForm();
+      },
+      No: function() {
+        //Save Only
+        dlapFormComplete=false;
+        submitForm();
+        
+      }
+    }
+  });
+
+  <!-- Attach submit event handler to prompt for Publishing when qualified -->
+  $("#project").submit(function( event ) {
+ 
+  	console.log( $("[name='project.description']").val().length);
+  	if( $("[name='project.description']").val().length < 1) {
+  	  // Do not save if there is no title/description
+  	  $( "#dialog-description-required" ).dialog("open");
+  	  event.preventDefault();
+  	  
+  	} else if(dlapFormComplete) {
+  	  //Ask if they are ready to publish the Project
+ 	  $( "#dialog-publish-ready" ).dialog("open");
+ 	  event.preventDefault();   	
+    }
+    
+  });
+
+
+
+  <!-- Setup the Tabs -->
   $("#tabs").tabs();
+  
+  <!-- Pretty form elements -->
   $("#project").form();
-  validateForm('project',highlightErrors);
+  
+  <!-- Highlight required fields -->
+  updateRequiredHighlights();  
 });
+
 </script>
 </body>
 </html>

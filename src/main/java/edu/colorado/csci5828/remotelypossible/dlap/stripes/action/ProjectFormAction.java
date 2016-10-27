@@ -31,25 +31,14 @@ public class ProjectFormAction extends BaseAction {
 	//Save button 
 	private String save;
 	
-	//Validation flag
-	private Boolean validate = false;
-			
+	private Boolean validate = Boolean.FALSE;
+	
 	@DefaultHandler
 	public Resolution process() {
 		if(validate) {
-			if(project == null) {
-				//Validating a completely blank form
-				project = new Project();
-			}
-			List<String> errors = ProjectValidator.validate(project);
-			return new StreamingResolution("application/json",(new Gson()).toJson(errors));
+			return validate();
 		} else if(StringUtils.isNotBlank(save)) {
-			//Save Project
-			ProjectService ps = new ProjectService();
-			ps.save(project);
-			
-			//Return to Project List
-			return ResolutionUrl.REDIRECT_PROJECT_LIST;
+			return save();
 			
 		} else if(StringUtils.isNotBlank(id)) {
 			//Existing project
@@ -60,6 +49,25 @@ public class ProjectFormAction extends BaseAction {
 			return form();
 						
 		}
+	}
+	
+	private Resolution validate() {
+		if(project == null) {
+			//Validating a completely blank form
+			project = new Project();
+		}
+		List<String> errors = ProjectValidator.validate(project);
+		return new StreamingResolution("application/json",(new Gson()).toJson(errors));
+
+	}
+	
+	private Resolution save() {
+		//Save Project
+		ProjectService ps = new ProjectService();
+		ps.save(project);
+		
+		//Return to Project List
+		return ResolutionUrl.REDIRECT_PROJECT_LIST;
 	}
 	
 	private Resolution edit() {
