@@ -26,16 +26,18 @@
         <thead>
             <tr>
                 <th>Project Description</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
                 <th>Project Description</th>
+                <th>Status</th>
             </tr>
         </tfoot>
         <tbody>
         <c:forEach items="${actionBean.projectList}" var="project" varStatus="loop"> 
-			<tr><td><a href="/do/project/form/${project.id}">${project.description}</a></td></tr>
+			<tr><td><a href="/do/project/form/${project.id}">${project.description}</a></td><td><c:choose><c:when test="${project.published}">Published</c:when><c:otherwise>Pending</c:otherwise></c:choose></td></tr>
 		</c:forEach>
         </tbody>
 </table>
