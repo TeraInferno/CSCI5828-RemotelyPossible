@@ -5,12 +5,15 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.Assert;
 
-import com.unboundid.ldap.listener.InMemoryDirectoryServer;
+
 
 public class LdapUtilTest {
 	
-	InMemoryDirectoryServer testServer;
+	private static final String TEST_USER_DN = "cn=John Doe,ou=Users,dc=example,dc=com";
+	private static final String TEST_USER_PW = "password";
+
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -31,8 +34,12 @@ public class LdapUtilTest {
 	}
 
 	@Test
-	public void testAuthenticate() throws Exception {
-		throw new RuntimeException("not yet implemented");
+	public void testAuthenticateDN() {
+		LdapUtil ldap = new LdapUtil();
+		
+		User testUser = ldap.authenticateDN(TEST_USER_DN, TEST_USER_PW);
+		
+		Assert.assertTrue("Test User was not authenticated!", testUser.isAuthenticated());
 	}
 
 }
