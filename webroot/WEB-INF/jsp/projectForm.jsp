@@ -117,7 +117,7 @@ tr > td
                 A longer description of the apprenticeship:<br />
                 (may not exceed 1200 characters)</td>
             <td>
-                <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(this,remLen2,1200);" onKeyDown="textCounter(this,remLen2,1200);" onKeyPress="textCounter(this,remLen2,1200);" onblur="updateRequiredHighlights();"></s:textarea>
+                <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(this,remLen2,1200);" onKeyDown="textCounter(this,remLen2,1200);" onKeyPress="textCounter(this,remLen2,1200);" onblur="updateRequiredHighlights();" onfocus="updateRequiredHighlights();"></s:textarea>
                 <br />
 <input type="text" name="remLen2" id="remLen2" size="6" maxlength="3" value="1200" />&nbsp;
             </td>
@@ -160,7 +160,7 @@ tr > td
             <td>
                 <span>* </span>Amount of supervision required/interaction available:</td>
             <td>
-            	<s:select name="project.supervisionLevel" onblur="updateRequiredHighlights();">
+            	<s:select name="project.supervisionLevel" onblur="updateRequiredHighlights();"  onfocus="updateRequiredHighlights();">
             		<s:option value="">Please Select</s:option>
 					<s:option value="Very little supervision; student will need to work largely independently">Very little supervision; student will need to work largely independently</s:option>
 					<s:option value="Moderate amount of supervision and interaction with others">Moderate amount of supervision and interaction with others</s:option>
