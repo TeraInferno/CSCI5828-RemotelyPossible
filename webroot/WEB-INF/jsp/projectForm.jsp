@@ -210,7 +210,7 @@ tr > td
             		<s:option value="Other">Other, specify:</s:option>
             	</s:select>
 				<br/>
-                <s:text name="project.priorWorkOther" type="text" id="textAmountPro" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.priorWorkOther" id="textAmountPro" onKeyPress="return disableEnterKey(event)" />
             </td>
         </tr>
 
@@ -254,8 +254,8 @@ tr > td
              </td>
             <td>
                ( <s:text name="project.faculty1.phone.areacode"  maxlength="3" size="2" id="textbldrphone1" onkeyup="autotab(textbldrphone1, textbldrphone2)" />
-                ) <s:text name="project.faculty1.phone.prefix" type="text" maxlength="3" size="2" id="textbldrphone2" onkeyup="autotab(textbldrphone2,textbldrphone3)" />
-                - <s:text name="project.faculty1.phone.number" type="text" maxlength="4" size="4" id="textbldrphone3" onKeyPress="return disableEnterKey(event)" />
+                ) <s:text name="project.faculty1.phone.prefix" maxlength="3" size="2" id="textbldrphone2" onkeyup="autotab(textbldrphone2,textbldrphone3)" />
+                - <s:text name="project.faculty1.phone.number" maxlength="4" size="4" id="textbldrphone3" onKeyPress="return disableEnterKey(event)" />
                         &nbsp;
                         &nbsp;
                         &nbsp;
@@ -324,7 +324,7 @@ tr > td
                 )
                 <s:text name="project.faculty2.phone.prefix" maxlength="3" size="2" id="textbldrphone2alt" onkeyup="autotab(textbldrphone2alt,textbldrphone3alt)" />
                 -
-                <s:text name="project.faculty2.phone.number" type="text" maxlength="4" size="4" id="textbldrphone3alt" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.faculty2.phone.number" maxlength="4" size="4" id="textbldrphone3alt" onKeyPress="return disableEnterKey(event)" />
                         &nbsp;
                         &nbsp;
                         &nbsp;
@@ -432,7 +432,7 @@ tr > td
             <td>
                 <span>*</span>Accounting contact for your project:</td>
             <td>
-                <input name="project.accountingContact" type="text" id="textAccounting" onKeyPress="return disableEnterKey(event)" onblur="updateRequiredHighlights();"/>
+                <s:text name="project.accountingContact" id="textAccounting" onKeyPress="return disableEnterKey(event)" onblur="updateRequiredHighlights();"/>
                 &nbsp;
             </td>
         </tr>
