@@ -70,7 +70,14 @@ public class ProjectValidator extends BaseValidator {
 				errors.add("project.faculty1.program");
 			}
 		}
-	
+		
+		//
+		//Other
+		//
+		if(isBlank(p.getAccountingContact())) {
+			errors.add("project.accountingContact");
+		}
+		
 		return errors;
 		
 	}
