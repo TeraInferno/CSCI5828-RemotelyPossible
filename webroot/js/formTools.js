@@ -114,12 +114,15 @@ $.widget("ui.form", {
 
     parent.parent().addClass('hover');
 
-
+    if($(element).prop('checked')) {
+    	$(element).toggleClass("ui-state-active");
+    	parent.toggleClass("ui-icon ui-icon-check");
+    }
+    
     parent.parent("span").click(function(event) {
       $(this).toggleClass("ui-state-active");
       parent.toggleClass("ui-icon ui-icon-check");
       $(element).click();
-
     });
 
   },
@@ -148,7 +151,7 @@ $.widget("ui.form", {
     parent.after("<ul class=' ui-helper-reset ui-widget-content ui-helper-hidden' style='position:inherit;z-index:50;' ></ul>");
     
     //Allow the label elements to be interact the keyboard
-    $(parent).attr('tabindex','1');
+    $(parent).prop('tabindex','1');
     
     $.each($(element).find("option"), function() {
 
@@ -166,9 +169,9 @@ $.widget("ui.form", {
       var selectedText=$(this).html();
       $(element).find("option").each(function(){
     	  if (selectedText==$(this).text()) {
-    		  $(this).attr("selected", true);
+    		  $(this).prop("selected", true);
     	  } else {
-    		  $(this).attr("selected", false);
+    		  $(this).prop("selected", false);
     	  }
       });
       $(parent).next().slideToggle('fast');
@@ -266,8 +269,8 @@ var highlightErrors = function(data, status) {
 var validateForm = function(formId, successCallback) {
 	var formEle = $('#'+formId);
 	$.ajax({
-        url: formEle.attr('action'),
-        type: formEle.attr('method'),
+        url: formEle.prop('action'),
+        type: formEle.prop('method'),
         dataType: "JSON",
         data: formEle.serialize()+"&validate=true",
         success: successCallback,
