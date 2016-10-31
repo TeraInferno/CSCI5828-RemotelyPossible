@@ -63,7 +63,7 @@ tr > td
        <tr>
            <td>
                <label for="project.description">A title/description for the apprenticeship:</label><br/>
-               <s:text name="project.description" size="80" maxlength="80" id="textDescription" placeholder="Project Title (Required)" onKeyUp="textCounter(this,remLen1,80);" onKeyDown="textCounter(this,remLen1,80);" onKeyPress="textCounter(this,remLen1,80);" required="true"></s:text>
+               <s:text name="project.description" size="80" maxlength="80" id="textDescription" placeholder="Project Title (Required)" onKeyUp="textCounter(this,remLen1,80);" onKeyDown="textCounter(this,remLen1,80);" onKeyPress="textCounter(this,remLen1,80);" required="true"  onblur="updateRequiredHighlights();"></s:text>
            </td>
             <td>
             	<s:submit id="save" name="save" value="Save"/>
@@ -117,7 +117,7 @@ tr > td
                 A longer description of the apprenticeship:<br />
                 (may not exceed 1200 characters)</td>
             <td>
-                <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(this,remLen2,1200);" onKeyDown="textCounter(this,remLen2,1200);" onKeyPress="textCounter(this,remLen2,1200);"></s:textarea>
+                <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(this,remLen2,1200);" onKeyDown="textCounter(this,remLen2,1200);" onKeyPress="textCounter(this,remLen2,1200);" onblur="updateRequiredHighlights();"></s:textarea>
                 <br />
 <input type="text" name="remLen2" id="remLen2" size="6" maxlength="3" value="1200" />&nbsp;
             </td>
@@ -160,7 +160,7 @@ tr > td
             <td>
                 <span>* </span>Amount of supervision required/interaction available:</td>
             <td>
-            	<s:select name="project.supervisionLevel">
+            	<s:select name="project.supervisionLevel" onblur="updateRequiredHighlights();">
             		<s:option value="">Please Select</s:option>
 					<s:option value="Very little supervision; student will need to work largely independently">Very little supervision; student will need to work largely independently</s:option>
 					<s:option value="Moderate amount of supervision and interaction with others">Moderate amount of supervision and interaction with others</s:option>
@@ -172,7 +172,7 @@ tr > td
             <td>
                 <span>* </span>Supervision provided by:</td>
             <td>
-            	<s:select name="project.supervisor">
+            	<s:select name="project.supervisor" onblur="updateRequiredHighlights();">
             		<s:option value="">Please Select</s:option>
             		<s:option value="Supervision primarily by faculty supervisor">Supervision primarily by faculty supervisor</s:option>
             		<s:option value="Supervision primarily by graduate students">Supervision primarily by graduate students</s:option>
@@ -184,7 +184,7 @@ tr > td
             <td>
                 <span>* </span>Nature of work:</td>
             <td>
-            	<s:select name="project.natureOfWork">
+            	<s:select name="project.natureOfWork" onblur="updateRequiredHighlights();">
             		<s:option value="">Please Select</s:option>
             		<s:option value="Nature of work is primarily theoretical, most work on paper/electronic medium">Nature of work is primarily theoretical, most work on paper/electronic medium</s:option>
             		<s:option value="Nature of work is primarily experimental, requiring hands-on work in a lab">Nature of work is primarily experimental, requiring hands-on work in a lab</s:option>
@@ -202,7 +202,7 @@ tr > td
                 <span>* </span>Amount of prior work conducted in association with this project:
             </td>
             <td>
-            	<s:select name="project.priorWork">
+            	<s:select name="project.priorWork" onblur="updateRequiredHighlights();">
             		<s:option value="">Please Select</s:option>
             		<s:option value="No prior work; student will be starting from basic idea">No prior work; student will be starting from basic idea</s:option>
             		<s:option value="Some prior work; student will build on work of others">Some prior work; student will build on work of others</s:option>
@@ -243,7 +243,7 @@ tr > td
                 <span>*</span>
                 Faculty name:</td>
             <td>
-                <s:text name="project.faculty1.name"/>
+                <s:text name="project.faculty1.name" onblur="updateRequiredHighlights();"/>
                 &nbsp;
             </td>
         </tr>
@@ -265,7 +265,7 @@ tr > td
             <td width="300">
                 <span>*</span> Faculty email address:</td>
             <td>
-                <s:text name="project.faculty1.email" maxlength="50" size="30" id="textEmail" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.faculty1.email" maxlength="50" size="30" id="textEmail" onKeyPress="return disableEnterKey(event)"  onblur="updateRequiredHighlights();"/>
                 &nbsp;
 
                 </td>
@@ -274,7 +274,7 @@ tr > td
             <td>
                 <span>* </span>Faculty department/program:</td>
             <td>
-                <s:select name="project.faculty1.program" id="listMajor">
+                <s:select name="project.faculty1.program" id="listMajor" onblur="updateRequiredHighlights();">
                 	<s:option value="">Please Select</s:option>
 					<s:option value="AES">Aerospace Engineering Sciences</s:option>
 					<s:option value="APPM">Applied Math</s:option>
@@ -432,7 +432,7 @@ tr > td
             <td>
                 <span>*</span>Accounting contact for your project:</td>
             <td>
-                <input name="project.accountingContact" type="text" id="textAccounting" onKeyPress="return disableEnterKey(event)" />
+                <input name="project.accountingContact" type="text" id="textAccounting" onKeyPress="return disableEnterKey(event)" onblur="updateRequiredHighlights();"/>
                 &nbsp;
             </td>
         </tr>
@@ -469,38 +469,6 @@ tr > td
                 &nbsp;&nbsp;</td>
             <td>
         &nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="2">
-        <span>Please ensure that <strong>all</strong>
-            information is correct before submitting your project. You will <strong>not be able
-                to return</strong> to this page to make changes or corrections. Once you are
-            sure everything is correct, you may proceed.</span></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <br />
-    <span id="labelMessage3"><b><font color="Red"></font></b></span>
-                <br />
-    <span id="labelMessage4"><b><font color="Red"></font></b></span>
-
-                <br />
-                &nbsp;
-                <br />
-                &nbsp;
-                <br />
-
-                <br />
-                &nbsp;
-                <br />
-                &nbsp;
-                <br />
-                &nbsp;
-                <br />
-                &nbsp;
-                <br />
-                &nbsp;
-            </td>
         </tr>
         <tr>
             <td colspan="2">
@@ -558,7 +526,7 @@ var submitForm = function() {
     }
   });
   
-  <!-- Init the Reaady to Publish dialog -->
+  <!-- Init the Ready to Publish dialog -->
   $( "#dialog-publish-ready" ).dialog({
     autoOpen: false,
     modal: true,
@@ -608,7 +576,6 @@ var submitForm = function() {
   <!-- Pretty form elements -->
   $("input:text, input:password, textarea, select").addClass("ui-widget ui-state-default ui-corner-all");
   $("input:radio, input:checkbox" ).checkboxradio();
-       
   $("#save").button();
     
   <!-- Highlight required fields -->
