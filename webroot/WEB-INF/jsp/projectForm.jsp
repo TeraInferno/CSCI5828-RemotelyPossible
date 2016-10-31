@@ -13,15 +13,16 @@
   <![endif]-->
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+  
 <style>
 tr > td
 {
-  padding-bottom: 1em;
+  padding: 5px 5px 5px 5px;
 }
 </style>
 </head>
 
-<body class="ui-widget-content">
+<body class="ui-widget">
 
     <table>
         <tr>
@@ -37,7 +38,7 @@ tr > td
                 <br />
                     </strong>Thanks for your interest in submitting one or more projects for the
                     Discovery Learning Apprenticeship program. Please complete all required fields,
-                    which are marked with a red asterisk (<span>*</span>). You will
+                    which are marked with an asterisk (<span>*</span>). You will
                     receive a confirmation after you enter your project indicating that your project
                     has been received. You may re-enter the application if you have more than one
                     project to advertise. If you have a correction or change to your project, if you
@@ -57,24 +58,30 @@ tr > td
 <s:form id="project" method="post" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectFormAction"> 
 <s:hidden name="project.id"/>
 <s:hidden name="project.published"/>
-<table>
+<fieldset>
+	<table>
        <tr>
-           <td valign="top">
-               <span>* </span>A title/description for the apprenticeship:<br />
-               (This is what students will see in the application, may not exceed 80
-               characters)</td>
            <td>
-               <s:textarea name="project.description" rows="2" cols="60" id="textDescription" onKeyUp="textCounter(this,remLen1,80);" onKeyDown="textCounter(this,remLen1,80);" onKeyPress="textCounter(this,remLen1,80);">${project.description}</s:textarea>
-               <br />
-<input type="text" name="remLen1" id="remLen1" size="3" maxlength="3" value="80" />
-&nbsp;
+               <label for="project.description">A title/description for the apprenticeship:</label><br/>
+               <s:text name="project.description" size="80" maxlength="80" id="textDescription" placeholder="Project Title (Required)" onKeyUp="textCounter(this,remLen1,80);" onKeyDown="textCounter(this,remLen1,80);" onKeyPress="textCounter(this,remLen1,80);" required="true"></s:text>
+           </td>
+            <td>
+            	<s:submit id="save" name="save" value="Save"/>
+            </td>
+       </tr>
+       <tr>
+           <td>
+             (This is what students will see in the application, may not exceed 80
+               characters)
+
             </td>
             <td>
-            	<s:submit name="save" value="Save"/>
+				<input type="text" name="remLen1" id="remLen1" size="3" maxlength="3" value="80" />            
             </td>
+           
         </tr>
 </table>
-
+</fieldset>
 <div id="tabs">
   <ul>
   	<li><a href="#Apprenticeship">Apprenticeship</a></li>
@@ -82,39 +89,41 @@ tr > td
     <li><a href="#Other">Other</a></li>
   </ul>
   <div id="Apprenticeship">
+  	  <fieldset>
 	  <table>
         <tr>
-            <td valign="top">
-                A website link related to your apprenticeship that would provide more
-                information to interested students?</td>
-            <td valign="top">
+            <td>
+                <label for="project.url">A website link related to your apprenticeship that would provide more
+                information to interested students?</label>
+            </td>
+            <td>
                 <s:text name="project.url" size="79" id="textWeb" onKeyPress="return disableEnterKey(event)" />
             </td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
                 Special Requirements that applicants must meet?<br />
                 (eg: Must have had certain course, certain class standing, available to work
                 in 2 5-hour blocks, etc.)<br />
                 (may not exceed 1000 characters)</td>
-            <td valign="top">
-                <s:textarea name="project.requirement" rows="5" cols="60" id="textSpecialRequirements" onKeyUp="textCounter(this,remLen3,1000);" onKeyDown="textCounter(this,remLen3,1000);" onKeyPress="textCounter(this,remLen3,1000);">${project.requirement}</s:textarea>
+            <td>
+                <s:textarea name="project.requirement" rows="5" cols="60" id="textSpecialRequirements" onKeyUp="textCounter(this,remLen3,1000);" onKeyDown="textCounter(this,remLen3,1000);" onKeyPress="textCounter(this,remLen3,1000);"></s:textarea>
                 <br />
 <input type="text" name="remLen3" id="remLen3" size="6" maxlength="3" value="1000" /></td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
                 <span>*</span>
                 A longer description of the apprenticeship:<br />
                 (may not exceed 1200 characters)</td>
-            <td valign="top">
-                <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(this,remLen2,1200);" onKeyDown="textCounter(this,remLen2,1200);" onKeyPress="textCounter(this,remLen2,1200);">${project.longDescription}</s:textarea>
+            <td>
+                <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(this,remLen2,1200);" onKeyDown="textCounter(this,remLen2,1200);" onKeyPress="textCounter(this,remLen2,1200);"></s:textarea>
                 <br />
 <input type="text" name="remLen2" id="remLen2" size="6" maxlength="3" value="1200" />&nbsp;
             </td>
         </tr>
-                <tr>
-            <td valign="top">
+        <tr>
+            <td>
                 <span>* </span>From what areas do you wish to recruit students?<br />
                 <br />
                 (check all that apply)<br />
@@ -122,7 +131,7 @@ tr > td
                 <br/><br/>
                 PLEASE NOTE: Only students from majors you select will be allowed to apply for this project.
                 </strong></span></td>
-            <td valign="top">
+            <td>
                 <span id="listStudMajor">
                 	<s:checkbox id="listStudMajor_0" name="project.acceptedMajors[0]" value="Aerospace Engineering"/><label for="listStudMajor_0">Aerospace Engineering</label>
                 	<s:checkbox id="listStudMajor_7" name="project.acceptedMajors[7]" value="Electrical Engineering" /><label for="listStudMajor_7">Electrical Engineering</label>
@@ -148,9 +157,9 @@ tr > td
                 </td>
         </tr>
          <tr>
-            <td valign="top">
+            <td>
                 <span>* </span>Amount of supervision required/interaction available:</td>
-            <td valign="top">
+            <td>
             	<s:select name="project.supervisionLevel">
             		<s:option value="">Please Select</s:option>
 					<s:option value="Very little supervision; student will need to work largely independently">Very little supervision; student will need to work largely independently</s:option>
@@ -160,9 +169,9 @@ tr > td
            </td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
                 <span>* </span>Supervision provided by:</td>
-            <td valign="top">
+            <td>
             	<s:select name="project.supervisor">
             		<s:option value="">Please Select</s:option>
             		<s:option value="Supervision primarily by faculty supervisor">Supervision primarily by faculty supervisor</s:option>
@@ -171,10 +180,10 @@ tr > td
             	</s:select>
            </td>
         </tr>
-                <tr>
-            <td valign="top">
+        <tr>
+            <td>
                 <span>* </span>Nature of work:</td>
-            <td valign="top">
+            <td>
             	<s:select name="project.natureOfWork">
             		<s:option value="">Please Select</s:option>
             		<s:option value="Nature of work is primarily theoretical, most work on paper/electronic medium">Nature of work is primarily theoretical, most work on paper/electronic medium</s:option>
@@ -189,10 +198,10 @@ tr > td
 			</td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
                 <span>* </span>Amount of prior work conducted in association with this project:
             </td>
-            <td valign="top">
+            <td>
             	<s:select name="project.priorWork">
             		<s:option value="">Please Select</s:option>
             		<s:option value="No prior work; student will be starting from basic idea">No prior work; student will be starting from basic idea</s:option>
@@ -206,9 +215,9 @@ tr > td
         </tr>
 
         <tr>
-            <td valign="top">
+            <td>
                 Name of specific student desired: (if any) and be sure to ask them to apply!</td>
-            <td valign="top">
+            <td>
                 <s:text name="project.desiredStudent" id="textStudName" onKeyPress="return disableEnterKey(event)" />
             </td>
         </tr>
@@ -220,24 +229,26 @@ tr > td
         </tr>
 
 	  </table>
+	  </fieldset>
   </div>
   <div id="Members">
+  	  <fieldset>
 	  <table>
         <tr>
             <td bgcolor="#000099" colspan="2">Faculty Member Info</td>
            
         </tr>
         <tr>
-            <td width="300" valign="top">
+            <td width="300">
                 <span>*</span>
                 Faculty name:</td>
-            <td valign="top">
+            <td>
                 <s:text name="project.faculty1.name"/>
                 &nbsp;
             </td>
         </tr>
         <tr>
-            <td width="300" valign="top">
+            <td width="300">
             	<span>&nbsp;&nbsp;</span>
                 Faculty phone number:
              </td>
@@ -251,7 +262,7 @@ tr > td
                         </td>
         </tr>
         <tr>
-            <td width="300" valign="top">
+            <td width="300">
                 <span>*</span> Faculty email address:</td>
             <td>
                 <s:text name="project.faculty1.email" maxlength="50" size="30" id="textEmail" onKeyPress="return disableEnterKey(event)" />
@@ -260,9 +271,9 @@ tr > td
                 </td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
                 <span>* </span>Faculty department/program:</td>
-            <td valign="top">
+            <td>
                 <s:select name="project.faculty1.program" id="listMajor">
                 	<s:option value="">Please Select</s:option>
 					<s:option value="AES">Aerospace Engineering Sciences</s:option>
@@ -282,32 +293,33 @@ tr > td
                 </td>
         </tr>
         <tr>
-            <td valign="top">
-                Does this project have a focus on Engineering for Developing Communities?</td>
-            <td valign="top">
+            <td>
+                Does this project have a focus on Engineering for Developing Communities?
+            </td>
+            <td>
                 <span id="radioFocusDevCom"><s:radio id="radioFocusDevCom_0" name="project.communityDevelopmentFocus" value="1" /><label for="radioFocusDevCom_0">Yes</label><s:radio id="radioFocusDevCom_1" name="project.communityDevelopmentFocus" value="3" checked="checked" /><label for="radioFocusDevCom_1">No</label></span>
-                </td>
+            </td>
         </tr>
         <tr>
             <td>
                 &nbsp;</td>
-            <td valign="top">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
             <td bgcolor="#000099" colspan="2">Second Faculty Member (Optional)</td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
                 Faculty name:</td>
-            <td valign="top">
+            <td>
                 <s:text name="project.faculty2.name" id="textNameAlt" onKeyPress="return disableEnterKey(event)" />
                 </td>
         </tr>
-        <tr valign="top">
-            <td valign="top">
+        <tr>
+            <td>
                 Faculty phone number:</td>
-            <td valign="top">
+            <td>
                 &nbsp;(<s:text name="project.faculty2.phone.areacode" maxlength="3" size="2" id="textbldrphone1alt" onkeyup="autotab(textbldrphone1alt, textbldrphone2alt)" />
                 )
                 <s:text name="project.faculty2.phone.prefix" maxlength="3" size="2" id="textbldrphone2alt" onkeyup="autotab(textbldrphone2alt,textbldrphone3alt)" />
@@ -319,17 +331,17 @@ tr > td
                         </td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
                 Faculty email address:</td>
-            <td valign="top">
+            <td>
                 <s:text name="project.faculty2.email" maxlength="50" size="30" id="textEmailalt" onKeyPress="return disableEnterKey(event)" />
 
                 </td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
             Faculty department/program:</td>
-            <td valign="top">
+            <td>
                 <s:select name="project.faculty2.program" id="listMajoralt">
                 	<s:option value="">Please Select</s:option>
 					<s:option value="AES">Aerospace Engineering Sciences</s:option>
@@ -350,7 +362,7 @@ tr > td
         <tr>
             <td>
                 &nbsp;</td>
-            <td valign="top">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
@@ -358,16 +370,16 @@ tr > td
                 Grad Student/Post Doc Info (Optional)</td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
                 Grad Student/Post Doc name:</td>
-            <td valign="top">
+            <td>
                 <s:text name="project.graduate.name" id="textGradName" onKeyPress="return disableEnterKey(event)" />
                 </td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
                 Grad Student/Post Doc phone number:</td>
-            <td valign="top">
+            <td>
                (
                 <s:text name="project.graduate.phone.areacode" maxlength="3" size="2" id="textGradphone1" onkeyup="autotab(textGradphone1, textGradphone2)" />
                 )
@@ -380,9 +392,9 @@ tr > td
                         </td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
                 Grad Student/Post Doc email address:</td>
-            <td valign="top">
+            <td>
                 <s:text name="project.graduate.name" maxlength="50" size="30" id="textGradEmail" onKeyPress="return disableEnterKey(event)" />
 
                 </td>
@@ -390,27 +402,28 @@ tr > td
         <tr>
             <td>
                 &nbsp;</td>
-            <td valign="top">
+            <td>
                 &nbsp;</td>
         </tr>
 	  </table>
-	  
+	  </fieldset>
   </div>
   
   
   <div id="Other">
+  	  <fieldset>
 	  <table>
 	  <tr>
             <td bgcolor="#000099" colspan="2">Finances</td>
         </tr>
         <tr>
-            <td valign="top">
+            <td>
                 <span>* </span>What speed type will you use for your 50% match of the funding?
                 (should be in the form XXXXXXXX, all numbers)</td>
-            <td valign="top">
+            <td>
                 <s:text name="project.speedType" maxlength="8" id="textSpeedType" onKeyPress="return disableEnterKey(event)" />
 &nbsp;or
-                <s:checkbox id="speedTypeNotSure" name="project.speedTypeNotSure" /><label for="checkSpeedType"> Not Sure</label>
+                <s:checkbox id="speedTypeNotSure" name="project.speedTypeNotSure" /><label for="speedTypeNotSure"> Not Sure</label>
                 <br />
                 &nbsp;
             </td>
@@ -425,13 +438,13 @@ tr > td
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td valign="top">&nbsp;</td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
             <td bgcolor="#000099" colspan="2">
                Other
             </td>
-            <td valign="top">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
@@ -439,7 +452,7 @@ tr > td
                 Have you supervised a Discovery Learning Apprentice in the past?<br />
                 (<i>this question intended for the faculty supervisor, not the graduate student
                 or post-doc)</i></td>
-            <td valign="top">
+            <td>
                 <span id="radioDLsupervisor"><s:radio id="radioDLsupervisor_0" name="project.dlSupervisor" value="Yes" /><label for="radioDLsupervisor_0">Yes</label><s:radio id="radioDLsupervisor_1" name="project.dlSupervisor" value="No" /><label for="radioDLsupervisor_1">No</label></span>
             </td>
         </tr>
@@ -447,7 +460,7 @@ tr > td
             <td>
 
             </td>
-            <td valign="top">
+            <td>
 
             </td>
         </tr>
@@ -494,6 +507,7 @@ tr > td
                 &nbsp;</td>
         </tr>
 	  </table>
+	  </fieldset>
   </div>
 
 
@@ -527,7 +541,7 @@ var submitForm = function() {
 	$( "[name='validate']" ).val("false");
 	$( "[name='save']" ).click();
 }
-$( function() {
+ $(document).ready(function() {
 
   <!-- Init the Title/Description required dialog -->
   $( "#dialog-description-required" ).dialog({
@@ -592,8 +606,11 @@ $( function() {
   $("#tabs").tabs();
   
   <!-- Pretty form elements -->
-  $("#project").form();
-  
+  $("input:text, input:password, textarea, select").addClass("ui-widget ui-state-default ui-corner-all");
+  $("input:radio, input:checkbox" ).checkboxradio();
+       
+  $("#save").button();
+    
   <!-- Highlight required fields -->
   updateRequiredHighlights();  
 });
