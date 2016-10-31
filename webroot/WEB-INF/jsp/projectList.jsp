@@ -14,7 +14,8 @@
   <![endif]-->
 
   <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
-  
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.jqueryui.min.css"/>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  
 </head>
 
 <body class="ui-widget-content">
@@ -43,12 +44,15 @@
 </table>
  
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script>
-  $( function() {
-    $( "#addProject" ).button();
-  } );
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.jqueryui.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#addProject").button();
+    $('#projects').DataTable();
+} );
 1</script>
 </body>
 </html>
