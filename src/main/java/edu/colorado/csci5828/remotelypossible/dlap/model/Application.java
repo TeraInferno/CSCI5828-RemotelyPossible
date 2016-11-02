@@ -1,6 +1,5 @@
 package edu.colorado.csci5828.remotelypossible.dlap.model;
 
-import javax.management.remote.SubjectDelegationPermission;
 import javax.persistence.*;
 
 @Entity
@@ -10,18 +9,38 @@ public class Application {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id = -1L;
+    private Long id = null;
 
     @OneToOne
     private Student student;
+    
+    @OneToOne
+    private ApprenticeshipInfo apprenticeshipInfo;
 
     public Long getId() {
-        return id;
+      return id;
     }
+
     public void setId(Long id) {
-        this.id = id;
+      this.id = id;
     }
-    public Student getStudent() { return student; }
-    public void setStudent(Student student) { this.student = student; }
+
+    public Student getStudent() {
+      return student;
+    }
+
+    public void setStudent(Student student) {
+      this.student = student;
+    }
+
+    public ApprenticeshipInfo getApprenticeshipInfo() {
+      return apprenticeshipInfo;
+    }
+
+    public void setApprenticeshipInfo(ApprenticeshipInfo apprenticeshipInfo) {
+      this.apprenticeshipInfo = apprenticeshipInfo;
+    }
+
+
 
 }

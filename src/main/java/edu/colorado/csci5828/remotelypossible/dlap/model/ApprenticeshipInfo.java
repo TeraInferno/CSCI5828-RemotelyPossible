@@ -9,12 +9,12 @@ public class ApprenticeshipInfo {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id = -1L;
+    private Long id = null;
 
     @Column
     private boolean appliedPreviously;
 
-    @Column
+    @Column(length=300)
     private String otherPlannedEmployment;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -38,116 +38,117 @@ public class ApprenticeshipInfo {
     @Column
     private boolean discriminationTrainingComplete;
 
-    @Column
+    @Column(length=10)
     private String discriminationTrainingSemester;
 
-    @Column
+    @Column(length=4)
     private String discriminationTrainingYear;
 
-    @Column
+    @Column(length=4)
     private String socialSecurityNumber;
 
     public Long getId() {
-        return id;
+      return id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+      this.id = id;
     }
 
     public boolean isAppliedPreviously() {
-        return appliedPreviously;
+      return appliedPreviously;
     }
 
     public void setAppliedPreviously(boolean appliedPreviously) {
-        this.appliedPreviously = appliedPreviously;
+      this.appliedPreviously = appliedPreviously;
     }
 
     public String getOtherPlannedEmployment() {
-        return otherPlannedEmployment;
+      return otherPlannedEmployment;
     }
 
     public void setOtherPlannedEmployment(String otherPlannedEmployment) {
-        this.otherPlannedEmployment = otherPlannedEmployment;
+      this.otherPlannedEmployment = otherPlannedEmployment;
     }
 
     public Project getFirstChoice() {
-        return firstChoice;
+      return firstChoice;
     }
 
     public void setFirstChoice(Project firstChoice) {
-        this.firstChoice = firstChoice;
+      this.firstChoice = firstChoice;
     }
 
     public Project getSecondChoice() {
-        return secondChoice;
+      return secondChoice;
     }
 
     public void setSecondChoice(Project secondChoice) {
-        this.secondChoice = secondChoice;
+      this.secondChoice = secondChoice;
     }
 
     public Project getThirdChoice() {
-        return thirdChoice;
+      return thirdChoice;
     }
 
     public void setThirdChoice(Project thirdChoice) {
-        this.thirdChoice = thirdChoice;
+      this.thirdChoice = thirdChoice;
     }
 
     public Project getFourthChoice() {
-        return fourthChoice;
+      return fourthChoice;
     }
 
     public void setFourthChoice(Project fourthChoice) {
-        this.fourthChoice = fourthChoice;
+      this.fourthChoice = fourthChoice;
     }
 
     public Project getFifthChoice() {
-        return fifthChoice;
+      return fifthChoice;
     }
 
     public void setFifthChoice(Project fifthChoice) {
-        this.fifthChoice = fifthChoice;
+      this.fifthChoice = fifthChoice;
     }
 
     public boolean isBackgroundCheckComplete() {
-        return backgroundCheckComplete;
+      return backgroundCheckComplete;
     }
 
     public void setBackgroundCheckComplete(boolean backgroundCheckComplete) {
-        this.backgroundCheckComplete = backgroundCheckComplete;
+      this.backgroundCheckComplete = backgroundCheckComplete;
     }
 
     public boolean isDiscriminationTrainingComplete() {
-        return discriminationTrainingComplete;
+      return discriminationTrainingComplete;
     }
 
     public void setDiscriminationTrainingComplete(boolean discriminationTrainingComplete) {
-        this.discriminationTrainingComplete = discriminationTrainingComplete;
+      this.discriminationTrainingComplete = discriminationTrainingComplete;
     }
 
     public String getDiscriminationTrainingSemester() {
-        return discriminationTrainingSemester;
+      return discriminationTrainingSemester;
     }
 
     public void setDiscriminationTrainingSemester(String discriminationTrainingSemester) {
-        this.discriminationTrainingSemester = discriminationTrainingSemester;
+      this.discriminationTrainingSemester = discriminationTrainingSemester;
     }
 
     public String getDiscriminationTrainingYear() {
-        return discriminationTrainingYear;
+      return discriminationTrainingYear;
     }
 
     public void setDiscriminationTrainingYear(String discriminationTrainingYear) {
-        this.discriminationTrainingYear = discriminationTrainingYear;
+      this.discriminationTrainingYear = discriminationTrainingYear;
     }
 
     public String getSocialSecurityNumber() {
-        return socialSecurityNumber;
+      return socialSecurityNumber;
     }
 
     public void setSocialSecurityNumber(String socialSecurityNumber) {
-        this.socialSecurityNumber = socialSecurityNumber;
+      this.socialSecurityNumber = socialSecurityNumber;
     }
+
 }
