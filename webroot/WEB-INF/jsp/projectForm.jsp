@@ -184,7 +184,7 @@ tr > td
             <td>
                 <span>* </span>Nature of work:</td>
             <td>
-            	<s:select name="project.natureOfWork" onblur="updateRequiredHighlights();">
+            	<s:select name="project.natureOfWork" onchange="checkOtherEnabled(this,'project.natureOfWorkOther')" onblur="updateRequiredHighlights();">
             		<s:option value="">Please Select</s:option>
             		<s:option value="Nature of work is primarily theoretical, most work on paper/electronic medium">Nature of work is primarily theoretical, most work on paper/electronic medium</s:option>
             		<s:option value="Nature of work is primarily experimental, requiring hands-on work in a lab">Nature of work is primarily experimental, requiring hands-on work in a lab</s:option>
@@ -194,7 +194,7 @@ tr > td
             		<s:option value="Other">Other, specify:</s:option>
             	</s:select>
             	<br/>
-                <s:text name="project.natureOfWorkOther" id="textNattyWo" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.natureOfWorkOther" id="textNattyWo" onKeyPress="return disableEnterKey(event)"  onblur="updateRequiredHighlights();" />
 			</td>
         </tr>
         <tr>
@@ -202,7 +202,7 @@ tr > td
                 <span>* </span>Amount of prior work conducted in association with this project:
             </td>
             <td>
-            	<s:select name="project.priorWork" onblur="updateRequiredHighlights();">
+            	<s:select name="project.priorWork" onchange="checkOtherEnabled(this,'project.priorWorkOther')" onblur="updateRequiredHighlights();">
             		<s:option value="">Please Select</s:option>
             		<s:option value="No prior work; student will be starting from basic idea">No prior work; student will be starting from basic idea</s:option>
             		<s:option value="Some prior work; student will build on work of others">Some prior work; student will build on work of others</s:option>
@@ -210,7 +210,7 @@ tr > td
             		<s:option value="Other">Other, specify:</s:option>
             	</s:select>
 				<br/>
-                <s:text name="project.priorWorkOther" id="textAmountPro" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.priorWorkOther" id="textAmountPro" onKeyPress="return disableEnterKey(event)"  onblur="updateRequiredHighlights();" />
             </td>
         </tr>
 
@@ -577,6 +577,9 @@ var submitForm = function() {
   $("input:text, input:password, textarea, select").addClass("ui-widget ui-state-default ui-corner-all");
   $("input:radio, input:checkbox" ).checkboxradio();
   $("#save").button();
+
+  $('[name="project.natureOfWorkOther"]').hide();
+  $('[name="project.priorWorkOther"]').hide();
     
   <!-- Highlight required fields -->
   updateRequiredHighlights();  

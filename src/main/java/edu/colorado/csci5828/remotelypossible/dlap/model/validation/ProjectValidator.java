@@ -41,7 +41,7 @@ public class ProjectValidator extends BaseValidator {
 			errors.add("project.natureOfWork");
 		} else if(p.getNatureOfWork().equals("Other") && 
 				  isBlank(p.getNatureOfWorkOther())) {
-			errors.add("project.naureOfWorkOther");
+			errors.add("project.natureOfWorkOther");
 		}
 		
 		

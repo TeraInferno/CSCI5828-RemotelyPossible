@@ -4,7 +4,7 @@ function autotab(original, destination) {
 	if (original.getAttribute
 			&& original.value.length == original.getAttribute("maxlength"))
 		destination.focus()
-}
+};
 
 function textCounter(field, cntfield, maxlimit) {
 	if (field.value.length > maxlimit) {
@@ -12,17 +12,17 @@ function textCounter(field, cntfield, maxlimit) {
 	} else {
 		cntfield.value = maxlimit - field.value.length;
 	}
-}
+};
 function fScroll(val) {
 	var hidScroll = document.getElementById('hidScroll');
 	hidScroll.value = val.scrollTop;
-}
+};
 
 // function moves scroll position to saved value
 function fScrollMove(what) {
 	var hidScroll = document.getElementById('hidScroll');
 	document.getElementById(what).scrollTop = hidScroll.value;
-}
+};
 function disableEnterKey(e) {
 	var key;
 	if (window.event) {
@@ -31,7 +31,17 @@ function disableEnterKey(e) {
 		key = e.which; // firefox
 	}
 	return (key != 13);
-}
+};
+
+
+var checkOtherEnabled = function(self,otherField) {
+	if( $(self).val() == "Other" ) {
+		$('[name="'+otherField+'"]').show();
+		$('[name="'+otherField+'"]').focus().select();
+	} else {
+		$('[name="'+otherField+'"]').hide();
+	}
+};
 
 
 //
