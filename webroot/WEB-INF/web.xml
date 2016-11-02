@@ -11,12 +11,14 @@
 			edu.colorado.csci5828.remotelypossible.dlap.stripes.utils.HibernateFilter
 		</filter-class>
 	</filter>
+ 
 	<filter-mapping>
 		<filter-name>HibernateTransactionFilter</filter-name>
 		<url-pattern>/do/*</url-pattern>
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
 
+ 
 	<filter>
 		<display-name>Stripes Filter</display-name>
 		<filter-name>StripesFilter</filter-name>
@@ -45,6 +47,11 @@
 				com.samaxes.stripes.xss.XssInterceptor
 			</param-value>
 		</init-param>
+		
+		<init-param> 
+		  <param-name>MultipartWrapper.Class</param-name> 
+		  <param-value>net.sourceforge.stripes.controller.multipart.CommonsMultipartWrapper</param-value> 
+		</init-param> 
 
 	</filter>
 
