@@ -9,8 +9,10 @@ import java.util.List;
 public class Student {
 
 	@Id
-	@Column(name="student_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id = null;
+	
+	@Column
 	private Long studentId = null;
 
 	@Column(length=50)

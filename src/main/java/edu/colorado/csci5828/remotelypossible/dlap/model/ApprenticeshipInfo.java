@@ -11,8 +11,8 @@ public class ApprenticeshipInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id = null;
 
-    @Column
-    private boolean appliedPreviously;
+    @Column(length=10)
+    private String appliedPreviously;
 
     @Column(length=300)
     private String otherPlannedEmployment;
@@ -32,11 +32,11 @@ public class ApprenticeshipInfo {
     @ManyToOne(cascade = CascadeType.ALL)
     private Project fifthChoice;
 
-    @Column
-    private boolean backgroundCheckComplete;
+    @Column(length=10)
+    private String backgroundCheckComplete;
 
-    @Column
-    private boolean discriminationTrainingComplete;
+    @Column(length=10)
+    private String discriminationTrainingComplete;
 
     @Column(length=10)
     private String discriminationTrainingSemester;
@@ -53,14 +53,6 @@ public class ApprenticeshipInfo {
 
     public void setId(Long id) {
       this.id = id;
-    }
-
-    public boolean isAppliedPreviously() {
-      return appliedPreviously;
-    }
-
-    public void setAppliedPreviously(boolean appliedPreviously) {
-      this.appliedPreviously = appliedPreviously;
     }
 
     public String getOtherPlannedEmployment() {
@@ -111,21 +103,6 @@ public class ApprenticeshipInfo {
       this.fifthChoice = fifthChoice;
     }
 
-    public boolean isBackgroundCheckComplete() {
-      return backgroundCheckComplete;
-    }
-
-    public void setBackgroundCheckComplete(boolean backgroundCheckComplete) {
-      this.backgroundCheckComplete = backgroundCheckComplete;
-    }
-
-    public boolean isDiscriminationTrainingComplete() {
-      return discriminationTrainingComplete;
-    }
-
-    public void setDiscriminationTrainingComplete(boolean discriminationTrainingComplete) {
-      this.discriminationTrainingComplete = discriminationTrainingComplete;
-    }
 
     public String getDiscriminationTrainingSemester() {
       return discriminationTrainingSemester;
@@ -149,6 +126,30 @@ public class ApprenticeshipInfo {
 
     public void setSocialSecurityNumber(String socialSecurityNumber) {
       this.socialSecurityNumber = socialSecurityNumber;
+    }
+
+    public String getAppliedPreviously() {
+      return appliedPreviously;
+    }
+
+    public void setAppliedPreviously(String appliedPreviously) {
+      this.appliedPreviously = appliedPreviously;
+    }
+
+    public String getBackgroundCheckComplete() {
+      return backgroundCheckComplete;
+    }
+
+    public void setBackgroundCheckComplete(String backgroundCheckComplete) {
+      this.backgroundCheckComplete = backgroundCheckComplete;
+    }
+
+    public String getDiscriminationTrainingComplete() {
+      return discriminationTrainingComplete;
+    }
+
+    public void setDiscriminationTrainingComplete(String discriminationTrainingComplete) {
+      this.discriminationTrainingComplete = discriminationTrainingComplete;
     }
 
 }

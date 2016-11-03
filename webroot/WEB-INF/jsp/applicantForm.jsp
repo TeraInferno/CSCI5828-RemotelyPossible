@@ -32,8 +32,8 @@
       <li><a href="#Academic">Academic</a></li>
       <li><a href="#Apprenticeship">Apprenticeship</a></li>
       <li><a href="#Qualifications">Qualifications</a></li>
-
     </ul>
+    
     <div id="Overview">
 
       <table>
@@ -41,8 +41,7 @@
           <tr>
             <td>
               <h3>
-                <span>Discovery Learning Apprenticeship
-                  Application</span>
+                <span>Discovery Learning Apprenticeship Application</span>
               </h3>
             </td>
           </tr>
@@ -50,7 +49,7 @@
             <td>
 
               <p>
-                <br> &nbsp;&nbsp;&nbsp;&nbsp; The College of
+                <br/> &nbsp;&nbsp;&nbsp;&nbsp; The College of
                 Engineering and Applied Science is pleased to offer
                 research opportunities (Discovery Learning
                 Apprenticeships) in fall 2016 and spring 2017 for <strong>undergraduate
@@ -61,7 +60,7 @@
                 graduate students and faculty on fascinating projects!
               </p>
               <p>
-                <br> &nbsp;&nbsp;&nbsp;&nbsp; Prior to submitting
+                <br/> &nbsp;&nbsp;&nbsp;&nbsp; Prior to submitting
                 an application, you are encouraged to contact the
                 supervisors of the projects in which you are interested
                 in order to obtain more information. Please be aware,
@@ -73,7 +72,7 @@
                 will be posted by April 1st, 2016).
               </p>
               <p>
-                <br> &nbsp;&nbsp;&nbsp;&nbsp; By April 30th, 2016,
+                <br/> &nbsp;&nbsp;&nbsp;&nbsp; By April 30th, 2016,
                 complete the application below and upload <b>a
                   resume and a cover letter</b> in two separate documents.
                 Applications will not be accepted after the April 30th
@@ -81,23 +80,22 @@
                 as to whether they were selected for the program.
               </p>
               <p>
-                <br> &nbsp;&nbsp;&nbsp;&nbsp; If you have any
+                <br/> &nbsp;&nbsp;&nbsp;&nbsp; If you have any
                 questions or concerns about Discovery Learning
                 Apprenticeships or your application, please contact
                 Sharon Anderson at <a target="_blank"
                   style="color: rgb(17, 85, 204); font-family: Calibri, sans-serif; font-size: 14.4444446563721px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"
                   href="mailto:sharon.e.anderson@colorado.edu">
                   sharon.e.anderson@colorado.edu</a>.
-              </p> <br> <strong>&nbsp;&nbsp;&nbsp;&nbsp;
+              </p> <br/> <strong>&nbsp;&nbsp;&nbsp;&nbsp;
                 Please ensure that all information is correct before
                 submitting your application. You will not be able to
                 return to this page to make changes or corrections.</strong>
               <p>
-                <span><span>Note that a <strong><span><span
-                        style="font-size: 14pt">*</span> </span></strong>denotes a
-                    required field.
-                </span></span>
-              </p> <span id="labelMessage1"></span><br> <span
+                <span>Note that a <strong><span style="color: #ff0000">*</span></strong>
+                denotes a required field.
+                </span>
+              </p> <span id="labelMessage1"></span><br/> <span
               id="labelMessage2"></span>
             </td>
           </tr>
@@ -108,41 +106,40 @@
       </table>
     </div>
     <div id="Demographics">
-
+      <fieldset>
+      <legend>Demographic Information</legend>
+      <br/>
       <table>
         <colgroup span="2"></colgroup>
         <colgroup width="20" span="1"></colgroup>
         <colgroup span="2"></colgroup>
         <tbody>
           <tr>
-            <td colspan="2"><span
-              style="color: White; margin-left: 0"><strong>Demographic
-                  Information</strong></span></td>
-          </tr>
-          <tr>
-            <td><strong><span style="color: #ff0000"><span>*</span></span></strong>Your
-              Name:</td>
-            <td><s:text
-                style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAALZJREFUOBFjYKAANDQ0rGWiQD9IqzgL0BQ3IKMXiB8AcSKQ/waIrYDsKUD8Fir2pKmpSf/fv3+zgPxfzMzMSbW1tbeBbAaQC+b+//9fB4h9gOwikCAQTAPyDYHYBciuBQkANfcB+WZAbPP37992kBgIUOoFBiZGRsYkIL4ExJvZ2NhAXmFgYmLKBPLPAfFuFhaWJpAYEBQC+SeA+BDQC5UQIQpJYFgdodQLLyh0w6j20RCgUggAAEREPpKMfaEsAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"
-                name="textName" maxlength="50" id="textName"
-                onkeypress="return disableEnterKey(event)" type="text" /><br>
-              <span id="RequiredFieldValidator5"
-              style="color: Red; display: none;">You must enter
-                your name.</span></td>
+            <td>
+              <strong><span style="color: #ff0000">*</span></strong>
+              Your Name:
+            </td>
+            <td>
+              <s:text style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAALZJREFUOBFjYKAANDQ0rGWiQD9IqzgL0BQ3IKMXiB8AcSKQ/waIrYDsKUD8Fir2pKmpSf/fv3+zgPxfzMzMSbW1tbeBbAaQC+b+//9fB4h9gOwikCAQTAPyDYHYBciuBQkANfcB+WZAbPP37992kBgIUOoFBiZGRsYkIL4ExJvZ2NhAXmFgYmLKBPLPAfFuFhaWJpAYEBQC+SeA+BDQC5UQIQpJYFgdodQLLyh0w6j20RCgUggAAEREPpKMfaEsAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"
+                name="application.student.name" maxlength="50" id="textName"
+                onkeypress="return disableEnterKey(event)" type="text" /><br/>
+            </td>
             <td colspan="3">&nbsp;</td>
           </tr>
           <tr>
-            <td><strong><span><span
-                  style="font-size: 14pt">* </span></span></strong>Gender:</td>
+            <td>
+              <strong><span style="color: #ff0000">*</span></strong>
+              Gender:
+            </td>
             <td>
               <table id="radioGender">
                 <tbody>
                   <tr>
                     <td><s:radio id="radioGender_0"
-                        name="radioGender" value="M" type="radio" /><label
+                        name="application.student.gender" value="M" type="radio" /><label
                       for="radioGender_0">Male</label></td>
                     <td><s:radio id="radioGender_1"
-                        name="radioGender" value="F" type="radio" /><label
+                        name="application.student.gender" value="F" type="radio" /><label
                       for="radioGender_1">Female</label></td>
                   </tr>
                 </tbody>
@@ -153,83 +150,72 @@
             <td colspan="3" width="20"></td>
           </tr>
           <tr>
-            <td colspan="2">Are you Hispanic, Chicano, Mexican,
+            <td colspan="2">
+              Are you Hispanic, Chicano, Mexican,
               Latino, Cuban, Puerto Rican, South or Central American, or
-              Spanish Origin?</td>
-            <td colspan="3">&nbsp;</td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>
-              <table id="radioHispanic">
-                <tbody>
-                  <tr>
-                    <td><s:radio id="radioHispanic_0"
-                        name="radioHispanic" value="Yes" type="radio" /><label
-                      for="radioHispanic_0">Yes</label></td>
-                  </tr>
-                  <tr>
-                    <td><s:radio id="radioHispanic_1"
-                        name="radioHispanic" value="No" type="radio" /><label
-                      for="radioHispanic_1">No</label></td>
-                  </tr>
-                  <tr>
-                    <td><s:radio id="radioHispanic_2"
-                        name="radioHispanic" value="-" type="radio" /><label
-                      for="radioHispanic_2">I do not wish to
-                        provide this information</label></td>
-                  </tr>
-                </tbody>
-              </table>
+              Spanish Origin?
             </td>
             <td colspan="3">&nbsp;</td>
           </tr>
           <tr>
-            <td colspan="2">Please check your race (select all that
-              apply):</td>
+            <td colspan="2">
+              <s:radio id="radioHispanic_0" name="application.student.hispanic" value="Yes" type="radio" />
+              <label for="radioHispanic_0">Yes</label>
+              <s:radio id="radioHispanic_1" name="application.student.hispanic" value="No" type="radio" />
+              <label for="radioHispanic_1">No</label>
+              <s:radio id="radioHispanic_2" name="application.student.hispanic" value="-" type="radio" />
+              <label for="radioHispanic_2">I do not wish to provide this information</label>
+            </td>
             <td colspan="3">&nbsp;</td>
           </tr>
           <tr>
-            <td>&nbsp;</td>
-            <td>
+            <td colspan="2">&nbsp</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              Please check your race (select all that apply):
+            </td>
+            <td colspan="3">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="2">
               <table id="checkEth">
                 <tbody>
                   <tr>
-                    <td><s:checkbox id="checkEth_0"
-                        name="checkEth$0" type="checkbox" /><label
-                      for="checkEth_0">American Indian or
-                        Alaskan Native</label></td>
+                    <td>
+                      <s:checkbox id="checkEth_0" name="application.student.race[0]" type="checkbox" />
+                      <label for="checkEth_0">American Indian or Alaskan Native</label>
+                    </td>
+                    <td>
+                      <s:checkbox id="checkEth_3" name="application.student.race[3]" type="checkbox" />
+                      <label for="checkEth_3">Asian</label>
+                    </td>
                   </tr>
                   <tr>
-                    <td><s:checkbox id="checkEth_1"
-                        name="checkEth$1" type="checkbox" /><label
-                      for="checkEth_1">Black or African-American</label></td>
+                    <td>
+                      <s:checkbox id="checkEth_1" name="application.student.race[1]" type="checkbox" />
+                      <label for="checkEth_1">Black or African-American</label>
+                    </td>
+                    <td>
+                      <s:checkbox id="checkEth_4" name="application.student.race[4]" type="checkbox" />
+                      <label for="checkEth_4">White</label>
+                    </td>
                   </tr>
                   <tr>
-                    <td><s:checkbox id="checkEth_2"
-                        name="checkEth$2" type="checkbox" /><label
-                      for="checkEth_2">Native Hawaiian or other
-                        Pacific Islander</label></td>
+                    <td>
+                      <s:checkbox id="checkEth_2" name="application.student.race[2]" type="checkbox" />
+                      <label for="checkEth_2">Native Hawaiian or other Pacific Islander</label>
+                    </td>
+                    <td>
+                      <s:checkbox id="checkEth_5" name="application.student.race[5]" type="checkbox" />
+                      <label for="checkEth_5">Other</label>
+                    </td>
                   </tr>
                   <tr>
-                    <td><s:checkbox id="checkEth_3"
-                        name="checkEth$3" type="checkbox" /><label
-                      for="checkEth_3">Asian</label></td>
-                  </tr>
-                  <tr>
-                    <td><s:checkbox id="checkEth_4"
-                        name="checkEth$4" type="checkbox" /><label
-                      for="checkEth_4">White</label></td>
-                  </tr>
-                  <tr>
-                    <td><s:checkbox id="checkEth_5"
-                        name="checkEth$5" type="checkbox" /><label
-                      for="checkEth_5">Other</label></td>
-                  </tr>
-                  <tr>
-                    <td><s:checkbox id="checkEth_6"
-                        name="checkEth$6" type="checkbox" /><label
-                      for="checkEth_6">Do Not Wish to Provide</label></td>
+                    <td colspan="2">
+                      <s:checkbox id="checkEth_6" name="application.student.race[6]" type="checkbox" />
+                      <label for="checkEth_6">Do Not Wish to Provide</label>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -238,140 +224,126 @@
           </tr>
         </tbody>
       </table>
+      </fieldset>
     </div>
     <div id="Contact">
+      <fieldset>
+      <legend>Contact Information</legend>
+      <br/>
       <table>
         <colgroup span="2"></colgroup>
         <colgroup width="20" span="1"></colgroup>
         <colgroup span="2"></colgroup>
         <tbody>
           <tr>
-            <td colspan="2"><strong>Boulder Contact
-                Information</strong></td>
+            <td colspan="2">
+              <strong>Boulder Contact Information</strong>
+            </td>
             <td></td>
-            <td colspan="2"><strong>Summer Contact
-                Information</strong> (if different)</td>
+            <td colspan="2">
+              <strong>Summer Contact Information</strong> (if different)
+            </td>
           </tr>
           <tr>
-            <td><strong><span style="color: #ff0000"><span>*</span></span></strong>Boulder
-              Address: (street, city, state, zip)</td>
-            <td><s:textarea name="textBoulderAddy" rows="3"
+            <td><strong><span style="color: #ff0000">*</span></strong>
+            Boulder Address: (street, city, state, zip)</td>
+            <td><s:textarea name="application.student.boulderAddress" rows="3"
                 cols="20" id="textBoulderAddy"></s:textarea> <span
               id="RequiredFieldValidator9"
-              style="color: Red; display: none;"><br>You
+              style="color: Red; display: none;"><br/>You
                 must enter a Boulder area address.</span></td>
-            <td valign="top" width="20"></td>
-            <td>Summer Address:<br>(street, city, state, zip)
+            <td width="20"></td>
+            <td>Summer Address:<br/>(street, city, state, zip)
             </td>
-            <td><s:textarea name="textSummerAddy" rows="3"
+            <td><s:textarea name="application.student.summerAddress" rows="3"
                 cols="20" id="textSummerAddy" /></td>
           </tr>
           <tr>
-            <td><strong><span style="color: #ff0000"><span>*</span></span></strong>Boulder
-              Phone:</td>
-            <td>( <s:text name="textbldrphone1" maxlength="3"
+            <td><strong><span style="color: #ff0000">*</span></strong>
+              Boulder Phone:
+            </td>
+            <td>( <s:text name="application.student.boulderPhone.areacode" maxlength="3"
                 size="2" id="textbldrphone1"
                 onkeypress="return disableEnterKey(event)"
                 onkeyup="autotab(textbldrphone1, textbldrphone2)"
                 style="width: 26px;" type="text" /> ) <s:text
-                name="textbldrphone2" maxlength="3" size="2"
+                name="application.student.boulderPhone.prefix" maxlength="3" size="2"
                 id="textbldrphone2"
                 onkeypress="return disableEnterKey(event)"
                 onkeyup="autotab(textbldrphone2,textbldrphone3)"
                 style="width: 26px;" type="text" /> - <s:text
-                name="textbldrphone3" maxlength="4" size="4"
+                name="application.student.boulderPhone.number" maxlength="4" size="4"
                 id="textbldrphone3"
                 onkeypress="return disableEnterKey(event)" type="text" />
-              <span id="RegularExpressionValidator1"
-              style="color: Red; visibility: hidden;"><strong>You
-                  must enter a valid area code.</strong></span> <span
-              id="RegularExpressionValidator7"
-              style="color: Red; visibility: hidden;"><strong>You
-                  must enter a valid phone prefix.</strong></span> <span
-              id="RegularExpressionValidator9"
-              style="color: Red; visibility: hidden;"><strong>You
-                  must enter a valid phone number.</strong></span> <span
-              id="RequiredFieldValidator11"><br>You must
-                enter a number you can be reached at while in the
-                Boulder area.</span></td>
-            <td valign="top" width="20"></td>
+            </td>
+            <td width="20"></td>
             <td>Summer Phone:</td>
-            <td>( <s:text name="textsmmrphone1" maxlength="3"
+            <td>( <s:text name="application.student.summerPhone.areacode" maxlength="3"
                 size="2" id="textsmmrphone1"
                 onkeypress="return disableEnterKey(event)"
                 onkeyup="autotab(textsmmrphone1, textsmmrphone2)"
                 style="width: 26px;" type="text" /> ) <s:text
-                name="textsmmrphone2" maxlength="3" size="2"
+                name="application.student.summerPhone.prefix" maxlength="3" size="2"
                 id="textsmmrphone2"
                 onkeypress="return disableEnterKey(event)"
                 onkeyup="autotab(textsmmrphone2,textsmmrphone3)"
                 style="width: 26px;" type="text" /> - <s:text
-                name="textsmmrphone3" maxlength="4" size="4"
+                name="application.student.summerPhone.number" maxlength="4" size="4"
                 id="textsmmrphone3"
                 onkeypress="return disableEnterKey(event)" type="text" />
-              <span id="RegularExpressionValidator13"
-              style="color: Red; visibility: hidden;"><strong>You
-                  must enter a valid summer area code.</strong></span> <span
-              id="RegularExpressionValidator14"
-              style="color: Red; visibility: hidden;"><strong>You
-                  must enter a valid summer phone prefix.</strong></span> <span
-              id="RegularExpressionValidator15"
-              style="color: Red; visibility: hidden;"><strong>You
-                  must enter a valid summer phone number.</strong></span>
             </td>
           </tr>
           <tr>
-            <td><strong><span style="color: #ff0000"><span>*</span></span></strong>Boulder
-              Email:</td>
-            <td><s:text name="textBoulderEmail" maxlength="50"
+            <td><strong><span style="color: #ff0000">*</span></strong>
+              Boulder Email:
+            </td>
+            <td><s:text name="application.student.boulderEmail" maxlength="50"
                 size="30" id="textBoulderEmail"
                 onkeypress="return disableEnterKey(event)" type="text" />
               <span id="RequiredFieldValidator13"
-              style="color: Red; display: none;"><br>You
+              style="color: Red; display: none;"><br/>You
                 must enter an e-mail address you can be reached at while
                 in the Boulder area.</span> <span
               id="RegularExpressionValidator6"
-              style="color: Red; display: none;"><br>That is
+              style="color: Red; display: none;"><br/>That is
                 not a valid e-mail address. Please try again.</span></td>
-            <td valign="top" width="20"></td>
+            <td width="20"></td>
             <td>Summer Email:</td>
-            <td><s:text name="textSummerEmail" maxlength="50"
+            <td><s:text name="application.student.summerEmail" maxlength="50"
                 size="30" id="textSummerEmail"
                 onkeypress="return disableEnterKey(event)" type="text" />
               <span id="RegularExpressionValidator20"
-              style="color: Red; display: none;"><br>That is
+              style="color: Red; display: none;"><br/>That is
                 not a valid e-mail address. Please try again.</span></td>
           </tr>
         </tbody>
       </table>
+      </fieldset>
     </div>
     <div id="Academic">
+      <fieldset>
+      <legend>Acdemic Information</legend>
+      <br/>
       <table>
         <colgroup span="2"></colgroup>
         <colgroup width="20" span="1"></colgroup>
         <colgroup span="2"></colgroup>
         <tbody>
-
           <tr>
-            <td colspan="5">&nbsp;&nbsp;</td>
-          </tr>
-          <tr>
-            <td colspan="5"><strong>Academic Information</strong></td>
-          </tr>
-          <tr>
-            <td colspan="2" valign="top">Please carefully enter
+            <td colspan="2">Please carefully enter
               your academic information. If you are still open option,
               indicate which major you plan to enter.</td>
-            <td valign="top">&nbsp;</td>
-            <td valign="top">&nbsp;</td>
-            <td valign="top">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td valign="top"><strong><span
-                style="color: #ff0000"><span>*</span></span></strong>Primary
-              Major:</td>
-            <td valign="top"><s:select name="listMajor"
-                id="listMajor">
+            <td>
+              <strong><span style="color: #ff0000">*</span></strong>
+              Primary Major:
+            </td>
+            <td>
+              <s:select name="application.student.primaryMajor" id="listMajor">
                 <s:option selected="selected" value="">Please Select</s:option>
                 <s:option value="ASEN">Aerospace Engineering</s:option>
                 <s:option value="AMEN">Applied Mathematics</s:option>
@@ -388,26 +360,21 @@
                 <s:option value="MCEN">Mechanical Engineering</s:option>
                 <s:option value="TMEN">Technology, Arts, and Media</s:option>
 
-              </s:select> <span id="RequiredFieldValidator3"
-              style="color: Red; display: none;"><br>You
-                must select a major.</span></td>
-            <td valign="top"></td>
-            <td valign="top"><strong><span
-                style="color: #ff0000"><span>* </span></span></strong>GPA:
-              (X.XXX)</td>
-            <td valign="top"><span id="RegularExpressionValidator3"
-              style="color: Red; visibility: hidden;"><br> <strong>That
-                  is not a valid GPA.</strong></span> <s:text name="textGPA"
-                maxlength="5" size="10" id="textGPA"
-                onkeypress="return disableEnterKey(event)" type="text" />
-              <span id="RequiredFieldValidator15"
-              style="color: Red; display: none;"><br>You
-                must enter your current GPA.</span></td>
+              </s:select> 
+            </td>
+            <td></td>
+            <td>
+              <strong><span style="color: #ff0000">*</span></strong>
+              GPA: (X.XXX)
+            </td>
+            <td>
+                  <s:text name="application.student.gpa" maxlength="5" size="10" id="textGPA" onkeypress="return disableEnterKey(event)" type="text" />
+            </td>
           </tr>
           <tr>
-            <td rowspan="3" valign="top">Secondary Major:</td>
-            <td rowspan="3" valign="top"><s:select
-                name="listMajor2" id="listMajor2">
+            <td rowspan="3">Secondary Major:</td>
+            <td rowspan="3"><s:select
+                name="listMajor2" id="application.student.secondaryMajor">
                 <s:option selected="selected" value="None">I did not have a second major</s:option>
                 <s:option value="ASEN">Aerospace Engineering</s:option>
                 <s:option value="AMEN">Applied Mathematics</s:option>
@@ -425,16 +392,17 @@
                 <s:option value="TMEN">Technology, Arts, and Media</s:option>
                 <s:option value="NEng">Non-Engineering Major</s:option>
               </s:select> <span id="CompareValidator1">You cannot have the
-                same major and secondary major.</span> <br> <span
+                same major and secondary major.</span> <br/> <span
               style="font-size: 10pt">(If you have a <strong>double
                   major</strong>. Do not select a minor here.)
             </span></td>
             <td rowspan="3"></td>
-            <td valign="top"><strong><span
-                style="color: #ff0000"><span>* </span></span></strong>Level in
-              school as of next fall:</td>
-            <td valign="top"><s:select name="listLevel"
-                id="listLevel">
+            <td>
+              <strong><span style="color: #ff0000">*</span></strong>
+              Level in school as of next fall:
+            </td>
+            <td>
+              <s:select name="application.student.schoolLevel" id="listLevel">
                 <s:option selected="selected" value="">Please Select</s:option>
                 <s:option value="Freshman">Freshman</s:option>
                 <s:option value="Sophomore">Sophomore</s:option>
@@ -450,17 +418,19 @@
             <td colspan="2">&nbsp;</td>
           </tr>
           <tr>
-            <td valign="top"><strong><span
-                style="color: #ff0000"><span>*</span></span></strong>Anticipated
-              Graduation Date:</td>
-            <td valign="top"><s:select name="listGradMonth"
-                id="listGradMonth">
+            <td>
+              <strong><span style="color: #ff0000">*</span></strong>
+              Anticipated Graduation Date:
+            </td>
+            <td>
+              <s:select name="application.student.graduationMonth" id="listGradMonth">
                 <s:option selected="selected" value="">Month</s:option>
                 <s:option value="05">May</s:option>
                 <s:option value="08">August</s:option>
                 <s:option value="12">December</s:option>
 
-              </s:select>&nbsp;<s:select name="listGradYear" id="listGradYear">
+              </s:select>
+              <s:select name="application.student.graduationYear" id="listGradYear">
                 <s:option selected="selected" value="">Year</s:option>
                 <s:option value="2016">2016</s:option>
                 <s:option value="2017">2017</s:option>
@@ -470,39 +440,40 @@
                 <s:option value="2021">2021</s:option>
                 <s:option value="2022">2022</s:option>
               </s:select> <span id="RequiredFieldValidator2"
-              style="color: Red; display: none;"><br>Please
+              style="color: Red; display: none;"><br/>Please
                 select a graduation month.</span> <span
               id="RequiredFieldValidator19"
-              style="color: Red; display: none;"><br>Please
+              style="color: Red; display: none;"><br/>Please
                 select a graduation year.</span></td>
           </tr>
           <tr>
-            <td valign="top"><strong><span
-                style="color: #ff0000"><span>*</span></span></strong>Student
-              Number:</td>
-            <td valign="top"><s:text name="textSID1" maxlength="9"
+            <td>
+              <strong><span style="color: #ff0000">*</span></strong>
+              Student Number:
+            </td>
+            <td><s:text name="application.student.studentId" maxlength="9"
                 size="2" id="textSID1" />&nbsp;(#########) <span
               id="RegularExpressionValidator19"
-              style="color: Red; visibility: hidden;"><br> <strong>Please
-                  enter a valid student number.</strong></span> <br> <span
+              style="color: Red; visibility: hidden;"><br/> <strong>Please
+                  enter a valid student number.</strong></span> <br/> <span
               id="RequiredFieldValidator33"
               style="color: Red; visibility: hidden;">You must
                 enter your student number.</span></td>
             <td></td>
-            <td valign="top">Do you have previous research
-              experience??</td>
-            <td valign="top"><table id="radioResearch">
+            <td>Do you have previous research
+              experience?</td>
+            <td><table id="radioResearch">
                 <tbody>
                   <tr>
-                    <td><s:radio id="radioResearch_0"
-                        name="radioResearch" value="1" type="radio" /><label
-                      for="radioResearch_0">Yes</label></td>
+                    <td>
+                      <s:radio id="radioResearch_0" name="application.student.previousWorkExperienceExists" value="true" type="radio" />
+                      <label for="radioResearch_0">Yes</label>
+                    </td>
                   </tr>
                   <tr>
-                    <td><s:radio id="radioResearch_1"
-                        name="radioResearch" value="3" type="radio" /><label
-                      for="radioResearch_1">No (This will not
-                        affect your eligibility!)</label></td>
+                    <td>
+                      <s:radio id="radioResearch_1" name="application.student.previousWorkExperienceExists" value="false" type="radio" />
+                      <label for="radioResearch_1">No (This will not affect your eligibility!)</label></td>
                   </tr>
                 </tbody>
               </table></td>
@@ -512,35 +483,38 @@
           </tr>
         </tbody>
       </table>
+      </fieldset>
     </div>
 
     <div id="Apprenticeship">
-
+      <fieldset>
+      <legend>Apprenticeship Information</legend>
+      <br/>
       <table>
         <colgroup span="1"></colgroup>
         <colgroup span="1"></colgroup>
         <colgroup span="1"></colgroup>
         <tbody>
           <tr>
-            <td colspan="2"><strong>Apprenticeship
-                Information</strong></td>
-          </tr>
-          <tr>
-            <td valign="top" width="150">Have you applied for a
-              Discovery Learning Apprenticeship before?</td>
+            <td >
+              Have you applied for a Discovery Learning Apprenticeship before?
+            </td>
             <td>
               <table id="radioPrevApply">
                 <tbody>
                   <tr>
-                    <td><s:radio id="radioPrevApply_0"
-                        name="radioPrevApply" value="1" type="radio" /><label
-                      for="radioPrevApply_0">Yes</label></td>
-                    <td><s:radio id="radioPrevApply_1"
-                        name="radioPrevApply" value="2" type="radio" /><label
-                      for="radioPrevApply_1">Not sure</label></td>
-                    <td><s:radio id="radioPrevApply_2"
-                        name="radioPrevApply" value="3" type="radio" /><label
-                      for="radioPrevApply_2">No</label></td>
+                    <td>
+                      <s:radio id="radioPrevApply_0" name="application.apprenticeshipInfo.appliedPreviously" value="Yes" type="radio" />
+                      <label for="radioPrevApply_0">Yes</label>
+                    </td>
+                    <td>
+                      <s:radio id="radioPrevApply_1" name="application.apprenticeshipInfo.appliedPreviously" value="Not Sure" type="radio" />
+                      <label for="radioPrevApply_1">Not sure</label>
+                    </td>
+                    <td>
+                      <s:radio id="radioPrevApply_2" name="application.apprenticeshipInfo.appliedPreviously" value="No" type="radio" />
+                      <label for="radioPrevApply_2">No</label>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -548,10 +522,12 @@
           </tr>
 
           <tr>
-            <td valign="top" width="150">Other fall employment
-              planned:</td>
-            <td><s:textarea name="textEmployment" rows="6"
-                scols="50" id="textEmployment"></s:textarea></td>
+            <td>
+              Other fall employment planned:
+            </td>
+            <td>
+              <s:textarea name="textEmployment" rows="6" cols="50" id="application.apprenticeshipInfo.otherPlannedEmployment"></s:textarea>
+            </td>
           </tr>
 
           <tr>
@@ -559,122 +535,126 @@
             <td></td>
           </tr>
           <tr>
-            <td colspan="2"><span>Please make sure you
-                selected a major before proceeding!</span><br> Indicate up
-              to five research projects in order of interest:<br> <span>Please
-                note that some projects have special requirements that
-                you must meet.<br>
-            </span>To see requirements and longer descriptions of the project,
-              look at the projects available for your major <span
-              id="Label1">here.</span> <br> <span id="Label2"></span></td>
+            <td colspan="2">
+              <span>Please make sure you selected a major before proceeding!</span><br/> 
+              Indicate up to five research projects in order of interest:<br/> 
+              <span>Please note that some projects have special requirements that you must meet.<br/> </span>
+              To see requirements and longer descriptions of the project,
+              look at the projects available for your major 
+              <span id="Label1">here.</span> <br/> <span id="Label2"></span>
+            </td>
           </tr>
           <tr>
-            <td rowspan="5" valign="top" width="150"><span
-              style="font-size: 10pt">(1 is most interested,<br>
-                5 is moderately interested)<br> <br> For a
+            <td rowspan="5" ><span
+              style="font-size: 10pt">(1 is most interested,<br/>
+                5 is moderately interested)<br/> <br/> For a
                 full listing of projects, look <a
                 href="http://engineering.colorado.edu/surveys/dla/dlafaclisting.aspx"
                 target="_blank">here</a>.
             </span></td>
-            <td valign="top">1.<strong><span><span>*</span>&nbsp;&nbsp;</span></strong>
-              <s:select name="listProject1" id="listProject1">
+            <td>
+              1.<strong><span style="color: #ff0000">* </span></strong> &nbsp;
+              <s:select name="application.apprenticeshipInfo.firstChoice" id="listProject1">
+                <s:option selected="selected" value="">Please Select</s:option>            
+              </s:select><br/> &nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2. &nbsp; &nbsp; 
+              <s:select name="application.apprenticeshipInfo.secondChoice" id="listProject2">
+                <s:option selected="selected" value="">Please Select</s:option>
+              </s:select> <br/> &nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td>3. &nbsp;&nbsp;&nbsp; <s:select
+                name="application.apprenticeshipInfo.thirdChoice" id="listProject3">
                 <s:option selected="selected" value="">Please Select</s:option>
 
-              </s:select>
+              </s:select> <br/> &nbsp;
             </td>
           </tr>
           <tr>
-            <td valign="top">2. &nbsp; &nbsp; <s:select
-                name="listProject2" id="listProject2">
-                <s:option selected="selected" value="">Please Select</s:option>
-              </s:select> <br> &nbsp;
-            </td>
-          </tr>
-          <tr>
-            <td valign="top">3. &nbsp;&nbsp;&nbsp; <s:select
-                name="listProject3" id="listProject3">
+            <td>4. &nbsp;&nbsp;&nbsp; <s:select
+                name="application.apprenticeshipInfo.fourthChoice" id="listProject4">
                 <s:option selected="selected" value="">Please Select</s:option>
 
-              </s:select> <br> &nbsp;
+              </s:select> <br/> &nbsp;
             </td>
           </tr>
           <tr>
-            <td valign="top">4. &nbsp;&nbsp;&nbsp; <s:select
-                name="listProject4" id="listProject4">
+            <td>5. &nbsp;&nbsp;&nbsp; <s:select
+                name="application.apprenticeshipInfo.fifthChoice" id="listProject5">
                 <s:option selected="selected" value="">Please Select</s:option>
-
-              </s:select> <br> &nbsp;
+              </s:select> <br/> &nbsp;
             </td>
           </tr>
           <tr>
-            <td valign="top">5. &nbsp;&nbsp;&nbsp; <s:select
-                name="listProject5" id="listProject5">
-                <s:option selected="selected" value="">Please Select</s:option>
-              </s:select> <br> &nbsp;
+            <td >
+              Have you had a background check yet (at CU)? If yes when? (Take your best guess if you aren't sure.)
             </td>
-          </tr>
-          <tr>
-            <td valign="top" width="150">Have you had a background
-              check yet (at CU)? If yes when? (Take your best guess if
-              you aren�t sure.)</td>
-            <td valign="top">
+            <td>
               <table id="radioHadBGC">
                 <tbody>
                   <tr>
-                    <td><s:radio id="radioHadBGC_0"
-                        name="radioHadBGC" value="1" type="radio" /><label
-                      for="radioHadBGC_0">Yes</label></td>
-                    <td><s:radio id="radioHadBGC_1"
-                        name="radioHadBGC" value="2" type="radio" /><label
-                      for="radioHadBGC_1">Not sure</label></td>
-                    <td><s:radio id="radioHadBGC_2"
-                        name="radioHadBGC" value="3" type="radio" /><label
-                      for="radioHadBGC_2">No</label></td>
+                    <td>
+                      <s:radio id="radioHadBGC_0" name="application.apprenticeshipInfo.backgroundCheckComplete" value="Yes" type="radio" />
+                      <label for="radioHadBGC_0">Yes</label>
+                    </td>
+                    <td>
+                      <s:radio id="radioHadBGC_1" name="application.apprenticeshipInfo.backgroundCheckComplete" value="Not Sure" type="radio" />
+                      <label for="radioHadBGC_1">Not sure</label>
+                    </td>
+                    <td>
+                      <s:radio id="radioHadBGC_2" name="application.apprenticeshipInfo.backgroundCheckComplete" value="No" type="radio" />
+                      <label for="radioHadBGC_2">No</label>
+                    </td>
                   </tr>
                 </tbody>
-              </table> <br> &nbsp;
+              </table> <br/> &nbsp;
             </td>
           </tr>
           <tr>
-            <td valign="top" width="150">Have you had
-              Discrimination and Harassment Awareness training yet (at
-              CU)? If yes when? (Take your best guess if you aren�t
-              sure.)</td>
-            <td valign="top">
+            <td>
+              Have you had Discrimination and Harassment Awareness training yet (at CU)? If yes when? (Take your best guess if you aren't sure.)
+            </td>
+            <td>
               <table id="radioDiscrim">
                 <tbody>
                   <tr>
-                    <td><s:radio id="radioDiscrim_0"
-                        name="radioDiscrim" value="Yes" type="radio" /><label
-                      for="radioDiscrim_0">Yes</label></td>
-                    <td><s:radio id="radioDiscrim_1"
-                        name="radioDiscrim" value="Not Sure"
-                        type="radio" /><label for="radioDiscrim_1">Not
-                        sure</label></td>
-                    <td><s:radio id="radioDiscrim_2"
-                        name="radioDiscrim" value="No" type="radio" /><label
-                      for="radioDiscrim_2">No</label></td>
+                    <td>
+                      <s:radio id="radioDiscrim_0" name="application.apprenticeshipInfo.discriminationTrainingComplete" value="Yes" type="radio" />
+                      <label for="radioDiscrim_0">Yes</label>
+                    </td>
+                    <td>
+                      <s:radio id="radioDiscrim_1" name="application.apprenticeshipInfo.discriminationTrainingComplete" value="Not Sure" type="radio" />
+                      <label for="radioDiscrim_1">Not sure</label>
+                    </td>
+                    <td>
+                      <s:radio id="radioDiscrim_2" name="application.apprenticeshipInfo.discriminationTrainingComplete" value="No" type="radio" />
+                      <label for="radioDiscrim_2">No</label>
+                    </td>
                   </tr>
                 </tbody>
-              </table> <br> &nbsp;
+              </table> <br/> &nbsp;
             </td>
           </tr>
           <tr>
-            <td valign="top" width="150">Last four digits of your
-              Social Security Number:<br> (this will only be used
-              to access your background check information)
+            <td >
+              Last four digits of your Social Security Number:<br/> (this will only be used to access your background check information)
             </td>
-            <td valign="top"><s:text name="textSSN" maxlength="4"
-                size="8" id="textSSN" type="text" /></td>
-          </tr>
-          <tr>
-            <td valign="top">&nbsp;</td>
-            <td width="300"></td>
+            <td>
+             <s:text name="application.apprenticeshipInfo.socialSecurityNumber" maxlength="4" size="8" id="textSSN" type="text" /></td>
           </tr>
         </tbody>
       </table>
+      </fieldset>
     </div>
     <div id="Qualifications">
+      <fieldset>
+      <legend>Qualifications</legend>
+      <br/>
       <table>
         <colgroup span="1"></colgroup>
         <colgroup span="1">
@@ -682,13 +662,14 @@
         <colgroup span="1"></colgroup>
         <tbody>
           <tr>
-            <td colspan="2"><strong><span>Skills,
-                  Resume, and Cover Letter</span></strong></td>
+            <td colspan="2">
+              <strong><span>Skills, Resume, and Cover Letter</span></strong>
+            </td>
           </tr>
           <tr>
-            <td colspan="2" valign="top">Please list the three
+            <td colspan="2">Please list the three
               skills or qualifications that you feel make you a great
-              candidate for the positions you selected:<br> (Could
+              candidate for the positions you selected:<br/> (Could
               be knowledge of a programming language, knowledge of a
               field, courses taken, personal characteristics, etc. If
               appropriate, note your match to requirements in job
@@ -697,8 +678,8 @@
             </td>
           </tr>
           <tr>
-            <td colspan="2" valign="top">1.&nbsp; <s:text
-                name="textSkill1" size="100" id="textSkill1"
+            <td colspan="2">1.&nbsp; <s:text
+                name="application.student.firstSkill" size="100" id="textSkill1"
                 onkeypress="textCounter(textSkill1,remLen1,75);"
                 onkeyup="textCounter(textSkill1,remLen1,75);"
                 onkeydown="textCounter(textSkill1,remLen1,75);"
@@ -707,8 +688,8 @@
               type="text"></td>
           </tr>
           <tr>
-            <td colspan="2" valign="top">2.&nbsp; <s:text
-                name="textSkill2" size="100" id="textSkill2"
+            <td colspan="2">2.&nbsp; <s:text
+                name="application.student.secondSkill" size="100" id="textSkill2"
                 onkeypress="textCounter(textSkill2,remLen2,75);"
                 onkeyup="textCounter(textSkill2,remLen2,75);"
                 onkeydown="textCounter(textSkill2,remLen2,75);"
@@ -717,8 +698,8 @@
               type="text"></td>
           </tr>
           <tr>
-            <td colspan="2" valign="top">3.&nbsp; <s:text
-                name="textSkill3" size="100" id="textSkill3"
+            <td colspan="2">3.&nbsp; <s:text
+                name="application.student.thirdSkill" size="100" id="textSkill3"
                 onkeypress="textCounter(textSkill3,remLen3,75);"
                 onkeyup="textCounter(textSkill3,remLen3,75);"
                 onkeydown="textCounter(textSkill3,remLen3,75);"
@@ -727,35 +708,38 @@
               type="text"></td>
           </tr>
           <tr>
-            <td colspan="2" valign="top">&nbsp;</td>
+            <td colspan="2">&nbsp;</td>
           </tr>
           <tr>
-            <td colspan="2" valign="top">To complete the
+            <td colspan="2">To complete the
               application, you <strong>must</strong> submit a resume and
               a cover letter. You can submit both using the form below.
               Please use either the pdf format or a text document. To
               improve your chances of being selected for an
               apprenticeship, please take the time to construct a
-              well-written cover letter and resume.<br> <br> <a
+              well-written cover letter and resume.<br/> <br/> <a
               href="http://engineering.colorado.edu/surveys/dla/Writing%20Tips%20for%20Cover%20Letters%20and%20Resumes.doc"
               target="_blank"> <strong>Click here</strong></a><strong>
                 for some tips, which we highly recommend you review
-                before submitting your cover letter and resume.</strong> <br>
-              <br>
+                before submitting your cover letter and resume.</strong> <br/>
+              <br/>
             </td>
           </tr>
           <tr>
-            <td valign="top">Resume:</td>
-            <td valign="top"><s:file name="resumeupload"
-                id="resumeupload" type="file" /></td>
+            <td>Resume:</td>
+            <td>
+              <s:file name="resumeupload" id="resumeupload" type="file" />
+            </td>
           </tr>
           <tr>
-            <td valign="top">Cover letter:</td>
-            <td valign="top"><s:file name="coverupload"
-                id="coverupload" type="file" /></td>
+            <td>Cover letter:</td>
+            <td>
+              <s:file name="coverupload" id="coverupload" type="file" />
+            </td>
           </tr>
         </tbody>
       </table>
+      </fieldset>
     </div>
   </div>
 </s:form>
