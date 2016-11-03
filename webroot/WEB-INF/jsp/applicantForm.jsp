@@ -11,11 +11,16 @@
 <meta name="author" content="RemotelyPossible">
 
 <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<![endif]-->
 
-<link rel="stylesheet"
-  href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+<style>
+tr > td
+{
+  padding: 5px 5px 5px 5px;
+}
+</style>
 </head>
 
 
@@ -124,7 +129,6 @@
                 name="application.student.name" maxlength="50" id="textName"
                 onkeypress="return disableEnterKey(event)" type="text" /><br/>
             </td>
-            <td colspan="3">&nbsp;</td>
           </tr>
           <tr>
             <td>
@@ -132,22 +136,11 @@
               Gender:
             </td>
             <td>
-              <table id="radioGender">
-                <tbody>
-                  <tr>
-                    <td><s:radio id="radioGender_0"
-                        name="application.student.gender" value="M" type="radio" /><label
-                      for="radioGender_0">Male</label></td>
-                    <td><s:radio id="radioGender_1"
-                        name="application.student.gender" value="F" type="radio" /><label
-                      for="radioGender_1">Female</label></td>
-                  </tr>
-                </tbody>
-              </table> <span id="RequiredFieldValidator27"
-              style="color: Red; visibility: hidden;"><strong>You
-                  must indicate your gender.</strong></span>
+              <s:radio id="radioGender_0" name="application.student.gender" value="M" type="radio" />
+              <label for="radioGender_0">Male</label>
+              <s:radio id="radioGender_1" name="application.student.gender" value="F" type="radio" />
+              <label for="radioGender_1">Female</label>
             </td>
-            <td colspan="3" width="20"></td>
           </tr>
           <tr>
             <td colspan="2">
@@ -169,7 +162,7 @@
             <td colspan="3">&nbsp;</td>
           </tr>
           <tr>
-            <td colspan="2">&nbsp</td>
+            <td colspan="2">&nbsp;</td>
           </tr>
           <tr>
             <td colspan="2">
@@ -231,32 +224,18 @@
       <legend>Contact Information</legend>
       <br/>
       <table>
-        <colgroup span="2"></colgroup>
-        <colgroup width="20" span="1"></colgroup>
-        <colgroup span="2"></colgroup>
         <tbody>
           <tr>
             <td colspan="2">
               <strong>Boulder Contact Information</strong>
             </td>
-            <td></td>
-            <td colspan="2">
-              <strong>Summer Contact Information</strong> (if different)
-            </td>
           </tr>
           <tr>
             <td><strong><span style="color: #ff0000">*</span></strong>
             Boulder Address: (street, city, state, zip)</td>
-            <td><s:textarea name="application.student.boulderAddress" rows="3"
-                cols="20" id="textBoulderAddy"></s:textarea> <span
-              id="RequiredFieldValidator9"
-              style="color: Red; display: none;"><br/>You
-                must enter a Boulder area address.</span></td>
-            <td width="20"></td>
-            <td>Summer Address:<br/>(street, city, state, zip)
-            </td>
-            <td><s:textarea name="application.student.summerAddress" rows="3"
-                cols="20" id="textSummerAddy" /></td>
+            <td>
+              <s:textarea name="application.student.boulderAddress" rows="3"
+                cols="20" id="textBoulderAddy"></s:textarea>
           </tr>
           <tr>
             <td><strong><span style="color: #ff0000">*</span></strong>
@@ -276,7 +255,28 @@
                 id="textbldrphone3"
                 onkeypress="return disableEnterKey(event)" type="text" />
             </td>
-            <td width="20"></td>
+          </tr>
+          <tr>
+            <td><strong><span style="color: #ff0000">*</span></strong>
+              Boulder Email:
+            </td>
+            <td><s:text name="application.student.boulderEmail" maxlength="50"
+                size="30" id="textBoulderEmail"
+                onkeypress="return disableEnterKey(event)" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <strong>Summer Contact Information</strong> (if different)
+            </td>
+          </tr>
+          <tr>
+            <td>Summer Address:<br/>(street, city, state, zip)
+            </td>
+            <td><s:textarea name="application.student.summerAddress" rows="3"
+                cols="20" id="textSummerAddy" /></td>
+          </tr>
+          <tr>
             <td>Summer Phone:</td>
             <td>( <s:text name="application.student.summerPhone.areacode" maxlength="3"
                 size="2" id="textsmmrphone1"
@@ -294,27 +294,10 @@
             </td>
           </tr>
           <tr>
-            <td><strong><span style="color: #ff0000">*</span></strong>
-              Boulder Email:
-            </td>
-            <td><s:text name="application.student.boulderEmail" maxlength="50"
-                size="30" id="textBoulderEmail"
-                onkeypress="return disableEnterKey(event)" type="text" />
-              <span id="RequiredFieldValidator13"
-              style="color: Red; display: none;"><br/>You
-                must enter an e-mail address you can be reached at while
-                in the Boulder area.</span> <span
-              id="RegularExpressionValidator6"
-              style="color: Red; display: none;"><br/>That is
-                not a valid e-mail address. Please try again.</span></td>
-            <td width="20"></td>
             <td>Summer Email:</td>
             <td><s:text name="application.student.summerEmail" maxlength="50"
                 size="30" id="textSummerEmail"
                 onkeypress="return disableEnterKey(event)" type="text" />
-              <span id="RegularExpressionValidator20"
-              style="color: Red; display: none;"><br/>That is
-                not a valid e-mail address. Please try again.</span></td>
           </tr>
         </tbody>
       </table>
@@ -362,20 +345,12 @@
 
               </s:select> 
             </td>
-            <td></td>
-            <td>
-              <strong><span style="color: #ff0000">*</span></strong>
-              GPA: (X.XXX)
-            </td>
-            <td>
-                  <s:text name="application.student.gpa" maxlength="5" size="10" id="textGPA" onkeypress="return disableEnterKey(event)" type="text" />
-            </td>
           </tr>
           <tr>
-            <td rowspan="3">Secondary Major:</td>
-            <td rowspan="3"><s:select
-                name="listMajor2" id="application.student.secondaryMajor">
-                <s:option selected="selected" value="None">I did not have a second major</s:option>
+            <td>Secondary Major:</td>
+            <td ><s:select
+                name="application.student.secondaryMajor" id="listMajor2">
+                <s:option selected="selected" value="">I did not have a second major</s:option>
                 <s:option value="ASEN">Aerospace Engineering</s:option>
                 <s:option value="AMEN">Applied Mathematics</s:option>
                 <s:option value="AREN">Architectural Engineering</s:option>
@@ -391,12 +366,32 @@
                 <s:option value="MCEN">Mechanical Engineering</s:option>
                 <s:option value="TMEN">Technology, Arts, and Media</s:option>
                 <s:option value="NEng">Non-Engineering Major</s:option>
-              </s:select> <span id="CompareValidator1">You cannot have the
-                same major and secondary major.</span> <br/> <span
-              style="font-size: 10pt">(If you have a <strong>double
+              </s:select> 
+              <br/>
+              <span style="font-size: 10pt">(If you have a <strong>double
                   major</strong>. Do not select a minor here.)
-            </span></td>
-            <td rowspan="3"></td>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong><span style="color: #ff0000">*</span></strong>
+              Student Number:
+            </td>
+            <td>
+              <s:text name="application.student.studentId" maxlength="9" size="2" id="textSID1" />&nbsp;(#########) 
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong><span style="color: #ff0000">*</span></strong>
+              GPA: (X.XXX)
+            </td>
+            <td>
+                  <s:text name="application.student.gpa" maxlength="5" size="10" id="textGPA" onkeypress="return disableEnterKey(event)" type="text" />
+            </td>
+          </tr>
+          <tr>
             <td>
               <strong><span style="color: #ff0000">*</span></strong>
               Level in school as of next fall:
@@ -413,9 +408,6 @@
               </s:select> <span id="RequiredFieldValidator31"
               style="color: Red; visibility: hidden;">You must
                 indicate your level in school.</span></td>
-          </tr>
-          <tr>
-            <td colspan="2">&nbsp;</td>
           </tr>
           <tr>
             <td>
@@ -439,48 +431,23 @@
                 <s:option value="2020">2020</s:option>
                 <s:option value="2021">2021</s:option>
                 <s:option value="2022">2022</s:option>
-              </s:select> <span id="RequiredFieldValidator2"
-              style="color: Red; display: none;"><br/>Please
-                select a graduation month.</span> <span
-              id="RequiredFieldValidator19"
-              style="color: Red; display: none;"><br/>Please
-                select a graduation year.</span></td>
+              </s:select>
+            </td>
           </tr>
           <tr>
-            <td>
-              <strong><span style="color: #ff0000">*</span></strong>
-              Student Number:
-            </td>
-            <td><s:text name="application.student.studentId" maxlength="9"
-                size="2" id="textSID1" />&nbsp;(#########) <span
-              id="RegularExpressionValidator19"
-              style="color: Red; visibility: hidden;"><br/> <strong>Please
-                  enter a valid student number.</strong></span> <br/> <span
-              id="RequiredFieldValidator33"
-              style="color: Red; visibility: hidden;">You must
-                enter your student number.</span></td>
-            <td></td>
             <td>Do you have previous research
-              experience?</td>
-            <td><table id="radioResearch">
-                <tbody>
-                  <tr>
-                    <td>
-                      <s:radio id="radioResearch_0" name="application.student.previousWorkExperienceExists" value="true" type="radio" />
-                      <label for="radioResearch_0">Yes</label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <s:radio id="radioResearch_1" name="application.student.previousWorkExperienceExists" value="false" type="radio" />
-                      <label for="radioResearch_1">No (This will not affect your eligibility!)</label></td>
-                  </tr>
-                </tbody>
-              </table></td>
+              experience?<br/>(This will not affect your eligibility!)</td>
+            <td>
+	         <s:radio id="radioResearch_0" name="application.student.previousWorkExperienceExists" value="true" type="radio" />
+             <label for="radioResearch_0">Yes</label>
+             <s:radio id="radioResearch_1" name="application.student.previousWorkExperienceExists" value="false" type="radio" />
+             <label for="radioResearch_1">No</label>
+           </td>
           </tr>
           <tr>
             <td colspan="5">&nbsp;&nbsp;</td>
           </tr>
+          
         </tbody>
       </table>
       </fieldset>
@@ -526,7 +493,7 @@
               Other fall employment planned:
             </td>
             <td>
-              <s:textarea name="textEmployment" rows="6" cols="50" id="application.apprenticeshipInfo.otherPlannedEmployment"></s:textarea>
+              <s:textarea name="application.apprenticeshipInfo.otherPlannedEmployment" rows="6" cols="50" id="textEmployment"></s:textarea>
             </td>
           </tr>
 
@@ -545,54 +512,62 @@
             </td>
           </tr>
           <tr>
-            <td rowspan="5" ><span
-              style="font-size: 10pt">(1 is most interested,<br/>
-                5 is moderately interested)<br/> <br/> For a
-                full listing of projects, look <a
-                href="http://engineering.colorado.edu/surveys/dla/dlafaclisting.aspx"
-                target="_blank">here</a>.
-            </span></td>
             <td>
-              1.<strong><span style="color: #ff0000">* </span></strong> &nbsp;
+              <strong><span style="color: #ff0000">* </span></strong> &nbsp;
+              First Choice
+            </td>
+            <td>
               <s:select name="application.apprenticeshipInfo.firstChoice" id="listProject1">
                 <s:option selected="selected" value="">Please Select</s:option>            
-              </s:select><br/> &nbsp;
+              </s:select>
             </td>
           </tr>
           <tr>
             <td>
-              2. &nbsp; &nbsp; 
+              Second Choice
+            </td>
+            <td> 
               <s:select name="application.apprenticeshipInfo.secondChoice" id="listProject2">
                 <s:option selected="selected" value="">Please Select</s:option>
-              </s:select> <br/> &nbsp;
+              </s:select>
             </td>
           </tr>
           <tr>
-            <td>3. &nbsp;&nbsp;&nbsp; <s:select
-                name="application.apprenticeshipInfo.thirdChoice" id="listProject3">
+            <td>
+              Third Choice
+            </td>
+            <td>
+              <s:select name="application.apprenticeshipInfo.thirdChoice" id="listProject3">
                 <s:option selected="selected" value="">Please Select</s:option>
 
-              </s:select> <br/> &nbsp;
+              </s:select>
             </td>
           </tr>
           <tr>
-            <td>4. &nbsp;&nbsp;&nbsp; <s:select
-                name="application.apprenticeshipInfo.fourthChoice" id="listProject4">
+            <td>
+              Fourth Choice
+            </td>
+            <td>
+              <s:select name="application.apprenticeshipInfo.fourthChoice" id="listProject4">
                 <s:option selected="selected" value="">Please Select</s:option>
 
-              </s:select> <br/> &nbsp;
+              </s:select>
             </td>
           </tr>
           <tr>
-            <td>5. &nbsp;&nbsp;&nbsp; <s:select
-                name="application.apprenticeshipInfo.fifthChoice" id="listProject5">
+            <td>
+              Fifth Choice
+            </td>
+            <td>
+              <s:select name="application.apprenticeshipInfo.fifthChoice" id="listProject5">
                 <s:option selected="selected" value="">Please Select</s:option>
-              </s:select> <br/> &nbsp;
+              </s:select>
             </td>
           </tr>
           <tr>
             <td >
-              Have you had a background check yet (at CU)? If yes when? (Take your best guess if you aren't sure.)
+              Have you had a background check yet (at CU)? <br/> 
+              If yes when? (Take your best guess if you aren't sure.)
             </td>
             <td>
               <table id="radioHadBGC">
@@ -617,7 +592,8 @@
           </tr>
           <tr>
             <td>
-              Have you had Discrimination and Harassment Awareness training yet (at CU)? If yes when? (Take your best guess if you aren't sure.)
+              Have you had Discrimination and Harassment Awareness training yet (at CU)? <br/>
+              If yes when? (Take your best guess if you aren't sure.)
             </td>
             <td>
               <table id="radioDiscrim">
@@ -750,6 +726,13 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/js/formTools.js"></script>
 <script>
+var updateRequiredHighlights = function() {
+	validateForm('application',highlightErrors);
+}
+var submitForm = function() {
+	$( "[name='save']" ).click();
+}
+
 $(document).ready(function() {
   <!-- Setup the Tabs -->
   $("#tabs").tabs();

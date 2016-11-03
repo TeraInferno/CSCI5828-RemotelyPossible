@@ -1,15 +1,21 @@
 package edu.colorado.csci5828.remotelypossible.dlap.stripes.action;
 
 
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
+
+import com.google.gson.Gson;
 
 import edu.colorado.csci5828.remotelypossible.dlap.common.Constants;
 import edu.colorado.csci5828.remotelypossible.dlap.common.ResolutionUrl;
 import edu.colorado.csci5828.remotelypossible.dlap.model.Application;
+import edu.colorado.csci5828.remotelypossible.dlap.model.validation.ApplicationValidator;
 import edu.colorado.csci5828.remotelypossible.dlap.service.ApplicationService;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.HttpCache;
 import net.sourceforge.stripes.action.Resolution;
+import net.sourceforge.stripes.action.StreamingResolution;
 import net.sourceforge.stripes.action.UrlBinding;
 
 @UrlBinding("/do/applicant/form/{id}")
@@ -24,27 +30,42 @@ public class ApplicantFormAction extends BaseAction {
 	
 	//Save button 
 	private String save;
+	
+	//Validation indicator
+	private Boolean validate = Boolean.FALSE;
 			
 	@DefaultHandler
 	public Resolution process() {
-		if(StringUtils.isNotBlank(save)) {
-			//Save Project
-			ApplicationService as = new ApplicationService();
-			as.save(application);
-			
-			//Return to Project List
-			return ResolutionUrl.REDIRECT_PROJECT_LIST;
-			
-		} else if(StringUtils.isNotBlank(id)) {
-			//Existing project
-			return edit();
+	  if(validate) {
+      return validate();
+    } else if(StringUtils.isNotBlank(save)) {
+      return save();
+      
+    } else if(StringUtils.isNotBlank(id)) {
+      //Existing project
+      return edit();
 
-		} else {
-			//New project
-			return form();
-						
-		}
+    } else {
+      //New project
+      return form();
+            
+    }
 	}
+	
+	private Resolution validate() {
+    List<String> errors = ApplicationValidator.validate(application);
+    return new StreamingResolution("application/json",(new Gson()).toJson(errors));
+
+  }
+  
+  private Resolution save() {
+    //Save Project
+    ApplicationService as = new ApplicationService();
+    as.save(application);
+    
+    //Return to Project List
+    return ResolutionUrl.REDIRECT_PROJECT_LIST;
+  }
 	
 	private Resolution edit() {
 		//Load existing project
@@ -80,6 +101,14 @@ public class ApplicantFormAction extends BaseAction {
 	public void setSave(String save) {
 		this.save = save;
 	}
+
+  public Boolean getValidate() {
+    return validate;
+  }
+
+  public void setValidate(Boolean validate) {
+    this.validate = validate;
+  }
 
 
 }
