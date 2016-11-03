@@ -31,6 +31,7 @@ public class ProjectFormAction extends BaseAction {
 	//Save button 
 	private String save;
 	
+	//Validation indicator
 	private Boolean validate = Boolean.FALSE;
 	
 	@DefaultHandler
@@ -52,10 +53,6 @@ public class ProjectFormAction extends BaseAction {
 	}
 	
 	private Resolution validate() {
-		if(project == null) {
-			//Validating a completely blank form
-			project = new Project();
-		}
 		List<String> errors = ProjectValidator.validate(project);
 		return new StreamingResolution("application/json",(new Gson()).toJson(errors));
 
