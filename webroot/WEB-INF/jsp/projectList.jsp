@@ -39,11 +39,14 @@
             </tr>
         </tfoot>
         <tbody>
-        <c:forEach items="${actionBean.projectList}" var="project" varStatus="loop"> 
+        <c:forEach items="${actionBean.projectList}" var="project" varStatus="loop">
+          <c:forEach items="${project.acceptedMajors}" var="major"> 
 			<tr>
 			  <td><a href="/do/project/form/${project.id}">${project.description}</a></td>
 			  <td>${project.faculity1.program}</td>
-			  <td></td>
+			  <td>${major}</td>
+			</tr>
+		  </c:forEach>
 		</c:forEach>
         </tbody>
 </table>
