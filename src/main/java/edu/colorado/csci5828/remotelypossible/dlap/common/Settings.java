@@ -74,6 +74,18 @@ public class Settings {
 		}
 		return false;
 	}
+
+	public static String getS3Bucket() {
+		return getProperty("s3.bucket");
+	}
+
+	public static String getS3ResumeKeyPrefix() {
+		return getProperty("s3.resume_key_prefix");
+	}
+
+	public static String getS3CoverLetterKeyPrefix() {
+		return getProperty("s3.cover_letter_key_prefix");
+	}
 	
 	public static void loadAppProperties(InputStream is) {
 		props = new Properties();
@@ -84,6 +96,10 @@ public class Settings {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	private static String getProperty(String property) {
+		return (StringUtils.isNotBlank(props.getProperty(property)) ? props.getProperty(property) : "test");
 	}
 
 }
