@@ -3,6 +3,8 @@ package edu.colorado.csci5828.remotelypossible.dlap.util;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
+import com.amazonaws.auth.SystemPropertiesCredentialsProvider;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.PutObjectRequest;
@@ -16,6 +18,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
+/**
+ * Note on credentials:
+ * The aws access key id should be stored in the system environmental variable AWS_ACCESS_KEY_ID.
+ * The aws secret access key should be stored in the system environmental variable AWS_SECRET_ACCESS_KEY.
+ */
 public class AwsS3Util {
 
     public enum UPLOAD_TYPE {
@@ -30,11 +37,7 @@ public class AwsS3Util {
     private final String coverLetterKeyPrefix;
 
     public AwsS3Util() {
-        final String accessKeyId = Settings.getS3AwsAccessKeyId();
-        final String secretAccessKey = Settings.getS3AwsSecretAccessKey();
-        AWSCredentials credentials = new BasicAWSCredentials(accessKeyId, secretAccessKey);
-
-        s3client = new AmazonS3Client(credentials);
+        s3client = new AmazonS3Client(new EnvironmentVariableCredentialsProvider());
         s3Bucket = Settings.getS3Bucket();
         resumeKeyPrefix = Settings.getS3ResumeKeyPrefix();
         coverLetterKeyPrefix = Settings.getS3CoverLetterKeyPrefix();
@@ -62,11 +65,22 @@ public class AwsS3Util {
         return key;
     }
 
+    /**
+     * Get the file contents of a student file in the studentuploads s3 bucket.
+     * @param key The path to the file in the bucket
+     * @return An InputStream of the file contents
+     */
     public InputStream downloadStudentFile(String key) {
         S3Object object = s3client.getObject(s3Bucket, key);
         return object.getObjectContent();
     }
 
+    /**
+     * Generate a key which will be used to upload a file to the studentuploads s3 bucket
+     * @param prefix The folder inside the bucket to upload to
+     * @param filename The filename of the user-supplied file
+     * @return The generated key
+     */
     private String generateKey(String prefix, String filename) {
         return prefix + filename + "-" + currentTime.format(new Date());
     }

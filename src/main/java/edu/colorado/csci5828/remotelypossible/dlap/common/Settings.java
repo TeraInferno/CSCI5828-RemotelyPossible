@@ -79,14 +79,6 @@ public class Settings {
 		return getProperty("s3.bucket");
 	}
 
-	public static String getS3AwsAccessKeyId() {
-		return getProperty("s3.aws_access_key_id");
-	}
-
-	public static String getS3AwsSecretAccessKey() {
-		return getProperty("s3.aws_secret_access_key");
-	}
-
 	public static String getS3ResumeKeyPrefix() {
 		return getProperty("s3.resume_key_prefix");
 	}
