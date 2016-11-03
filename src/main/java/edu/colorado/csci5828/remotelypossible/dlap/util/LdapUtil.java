@@ -12,7 +12,7 @@ import com.unboundid.ldap.sdk.SimpleBindRequest;
 
 public class LdapUtil {
 
-	private static final String LDAP_HOST = "localhost";
+	private static final String LDAP_HOST = "54.218.73.5";
 	private static final int LDAP_PORT = 10389;
 	private static final int POOL_CONNECTIONS_COUNT = 10;
 	
