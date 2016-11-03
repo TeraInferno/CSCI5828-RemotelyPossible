@@ -157,6 +157,13 @@
     		<artifactId>gson</artifactId>
     		<version>2.7</version>
 		</dependency>
+
+		<!-- aws-java-sdk -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.11.49</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>DLAP</finalName>
