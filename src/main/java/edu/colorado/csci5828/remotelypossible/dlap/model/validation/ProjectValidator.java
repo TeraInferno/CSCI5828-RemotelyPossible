@@ -10,6 +10,12 @@ public class ProjectValidator extends BaseValidator {
 	
 	public static List<String> validate(Project p) {
 		List<String> errors = new ArrayList<String>();
+
+    if(p == null) {
+      //Validating a completely blank form
+      p = new Project();
+    }
+
 		
 		//
 		//Description (only not null field in the DB)
