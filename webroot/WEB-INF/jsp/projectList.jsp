@@ -23,22 +23,27 @@
 <br/>
 <a id="addProject" href="/do/project/form">Add a new project</a>
 <br/><br/><br/>
-<table id="projects" class="display" cellspacing="0" width="100%">
+<table id="projects" class="display" width="100%">
         <thead>
             <tr>
                 <th>Project Description</th>
-                <th>Status</th>
+                <th>Department</th>
+                <th>Major</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
                 <th>Project Description</th>
-                <th>Status</th>
+                <th>Department</th>
+                <th>Major</th>
             </tr>
         </tfoot>
         <tbody>
         <c:forEach items="${actionBean.projectList}" var="project" varStatus="loop"> 
-			<tr><td><a href="/do/project/form/${project.id}">${project.description}</a></td><td><c:choose><c:when test="${project.published}">Published</c:when><c:otherwise>Pending</c:otherwise></c:choose></td></tr>
+			<tr>
+			  <td><a href="/do/project/form/${project.id}">${project.description}</a></td>
+			  <td>${project.faculity1.program}</td>
+			  <td></td>
 		</c:forEach>
         </tbody>
 </table>
