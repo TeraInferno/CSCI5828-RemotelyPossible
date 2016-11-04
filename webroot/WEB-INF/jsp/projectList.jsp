@@ -21,7 +21,7 @@
 <body class="ui-widget-content">
 <s:useActionBean var="actionBean" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectListAction"  />
 <br/>
-<a id="addProject" href="/do/project/form">Add a new project</a>
+
 <br/><br/><br/>
 <table id="projects" class="display" width="100%">
         <thead>
@@ -59,8 +59,14 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $("#addProject").button();
-    $('#projects').DataTable();
+    $('#projects').DataTable({
+   	  "search": {
+    	"smart": false
+  	  },
+  	  "stateSave": true,
+  	  "stateDuration": -1
+    });
+    $("#projects_filter :input").addClass("ui-widget ui-state-default ui-corner-all");
 } );
 1</script>
 </body>
