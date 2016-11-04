@@ -26,27 +26,28 @@
 <table id="projects" class="display" width="100%">
         <thead>
             <tr>
-                <th>Project Description</th>
-                <th>Department</th>
-                <th>Major</th>
+                <th>Project</th>
+                <th>Contact</th>
+                <th>Description</th>
+                <th>Requirements</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
-                <th>Project Description</th>
-                <th>Department</th>
-                <th>Major</th>
+                <th>Project</th>
+                <th>Contact</th>
+                <th>Description</th>
+                <th>Requirements</th>
             </tr>
         </tfoot>
         <tbody>
         <c:forEach items="${actionBean.projectList}" var="project" varStatus="loop">
-          <c:forEach items="${project.acceptedMajors}" var="major"> 
 			<tr>
-			  <td><a href="/do/project/form/${project.id}">${project.description}</a></td>
-			  <td>${project.faculity1.program}</td>
-			  <td>${major}</td>
+			  <td>${project.faculty1.program} - <a href="/do/project/form/${project.id}">${project.description}</a></td>
+			  <td>${project.faculty1.name}<br/>${project.faculty1.phone}<br/>${project.faculty1.email}</td>
+			  <td>${project.longDescription}</td>
+			  <td><li>Requirements: ${project.requirement}<li>Supervision: ${project.supervisionLevel}<li>Supervisor: ${project.supervisor}<li>Prior work:${project.priorWork}</td>
 			</tr>
-		  </c:forEach>
 		</c:forEach>
         </tbody>
 </table>

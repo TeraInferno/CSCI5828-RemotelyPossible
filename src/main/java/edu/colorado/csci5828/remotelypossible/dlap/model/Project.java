@@ -26,10 +26,10 @@ public class Project {
 	@Column(name="url", length=256)
 	private String url;
 	
-	@Column(name="requirement", length=1000)
+	@Column(name="requirement", length=1200)
 	private String requirement;
 	
-	@Column(name="longdescription", length=1200)
+	@Column(name="longdescription", length=1500)
 	private String longDescription;
 		
 	@OneToOne
@@ -59,10 +59,10 @@ public class Project {
 	@Column(length=128)
 	private String natureOfWorkOther;
 	
-	@Column(length=64)
+	@Column(length=150)
 	private String priorWork;
 	
-	@Column(length=64)
+	@Column(length=150)
 	private String priorWorkOther;
 	
 	@Column(length=64)
