@@ -73,7 +73,7 @@
         <tbody>
         <c:forEach items="${actionBean.projectList}" var="project" varStatus="loop">
 			<tr>
-			  <td><a href="/do/project/form/${project.id}">${project.faculty1.program} - ${project.description}</a></td>
+			  <td>${project.faculty1.program} - ${project.description}</td>
 			  <td>${project.faculty1.name}<br/><c:if test="${project.faculty1.phone.areacode != null}">${project.faculty1.phone}</c:if><br/>${project.faculty1.email}</td>
 			  <td>${project.longDescription}</td>
 			  <td><li>Requirements: ${project.requirement}<li>Supervision: ${project.supervisionLevel}<li>Supervisor: ${project.supervisor}<li>Prior work: ${project.priorWork}</td>
