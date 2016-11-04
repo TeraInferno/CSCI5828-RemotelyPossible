@@ -22,7 +22,37 @@
 <s:useActionBean var="actionBean" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectListAction"  />
 <br/>
 
+ <div style="text-align: center;">
+                <h1>
+                Complete Listing of Discovery Learning Apprenticeships<br />
+                    by Faculty Affiliation with a Department or Program</h1>
+                <div class="style1">
+                    Please note that this list is sorted by the department or program of the faculty member 
+                    offering the apprenticeship.<br />
+                    Students from other majors may still be able to 
+                    apply for the project.<br />
+                    Please see the list <a href="dlalisting.aspx">here</a> to 
+                    view the projects sorted by the majors to which the project is available.
+                    <br />
+                <br />
+                    <a href="#tableTop" onclick="javascript:autoFilter('AES');">[Aerospace Engineering Sciences]</a>&nbsp;
+                    <a href="#tableTop" onclick="javascript:autoFilter('APPM');">[Applied Mathematics]</a>&nbsp;
+                    <a href="#tableTop" onclick="javascript:autoFilter('ChBE');">[Chemical and Biological Engineering]</a><br />
+                    <a href="#tableTop" onclick="javascript:autoFilter('CEAE');">[Civil, Architectural and Environmental Engineering]</a>&nbsp;
+                    <a href="#tableTop" onclick="javascript:autoFilter('CS');">[Computer Science]</a><br />
+                    <a href="#tableTop" onclick="javascript:autoFilter('ECEE');">[Electrical, Computer, and Energy Engineering]</a>
+                    <a href="#tableTop" onclick="javascript:autoFilter('PHYS');">[Physics]</a>&nbsp;
+                    <a href="#tableTop" onclick="javascript:autoFilter('EVEN');">[Environmental Engineering]</a><br />
+                    <a href="#tableTop" onclick="javascript:autoFilter('ME');">[Mechanical Engineering]</a>&nbsp;
+                    <a href="#tableTop" onclick="javascript:autoFilter('CSGC');">[Colorado Space Grant]</a>&nbsp;
+                    <a href="#tableTop" onclick="javascript:autoFilter('EnEd');">[Engineering Education]</a>
+                    <a href="#tableTop" onclick="javascript:autoFilter('ATLS');">[ATLAS]</a>
+                    
+                    <br />
+</div>         
+
 <br/><br/><br/>
+<a name="tableTop">
 <table id="projects" class="display" width="100%">
         <thead>
             <tr>
@@ -58,6 +88,9 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.jqueryui.min.js"></script>
 
 <script type="text/javascript">
+var autoFilter = function(dept) {
+	$("#projects_filter :input").val(dept+" - ").keyup();
+}
   $(document).ready(function() {
     $('#projects').DataTable({
    	  "search": {
