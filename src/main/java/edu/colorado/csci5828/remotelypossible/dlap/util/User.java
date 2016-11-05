@@ -5,6 +5,7 @@ public class User {
 	private boolean authenticated;
 	private String name;
 	private String role;
+	private String uid;
 	
 	public User()
 	{
@@ -48,5 +49,15 @@ public class User {
 	public void setRole(String newRole)
 	{
 		role = newRole;
+	}
+	
+	public String getUID()
+	{
+		return uid;
+	}
+	
+	public void setUID(String newUID)
+	{
+		uid = newUID;
 	}
 }
