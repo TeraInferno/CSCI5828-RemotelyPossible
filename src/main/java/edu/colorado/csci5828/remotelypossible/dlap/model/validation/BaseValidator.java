@@ -15,7 +15,9 @@ public class BaseValidator {
 		return StringUtils.isBlank(b);
 	}
 	public static boolean isPhoneNumber(PhoneNumber p) {
-	  
+	  if(p == null) {
+	    return false;
+	  }
 	  if(StringUtils.isBlank(p.getAreacode()) ||
 	      StringUtils.isBlank(p.getPrefix()) ||
 	      StringUtils.isBlank(p.getNumber())) {
