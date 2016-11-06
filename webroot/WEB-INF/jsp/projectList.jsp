@@ -23,36 +23,34 @@
 <br/>
 
  <div style="text-align: center;">
-                <h1>
-                Complete Listing of Discovery Learning Apprenticeships<br />
-                    by Faculty Affiliation with a Department or Program</h1>
-                <div class="style1">
-                    Please note that this list is sorted by the department or program of the faculty member 
-                    offering the apprenticeship.<br />
-                    Students from other majors may still be able to 
-                    apply for the project.<br />
-                    Please see the list <a href="dlalisting.aspx">here</a> to 
-                    view the projects sorted by the majors to which the project is available.
-                    <br />
-                <br />
-                    <a href="#tableTop" onclick="javascript:autoFilter('AES');">[Aerospace Engineering Sciences]</a>&nbsp;
-                    <a href="#tableTop" onclick="javascript:autoFilter('APPM');">[Applied Mathematics]</a>&nbsp;
-                    <a href="#tableTop" onclick="javascript:autoFilter('ChBE');">[Chemical and Biological Engineering]</a><br />
-                    <a href="#tableTop" onclick="javascript:autoFilter('CEAE');">[Civil, Architectural and Environmental Engineering]</a>&nbsp;
-                    <a href="#tableTop" onclick="javascript:autoFilter('CS');">[Computer Science]</a><br />
-                    <a href="#tableTop" onclick="javascript:autoFilter('ECEE');">[Electrical, Computer, and Energy Engineering]</a>
-                    <a href="#tableTop" onclick="javascript:autoFilter('PHYS');">[Physics]</a>&nbsp;
-                    <a href="#tableTop" onclick="javascript:autoFilter('EVEN');">[Environmental Engineering]</a><br />
-                    <a href="#tableTop" onclick="javascript:autoFilter('ME');">[Mechanical Engineering]</a>&nbsp;
-                    <a href="#tableTop" onclick="javascript:autoFilter('CSGC');">[Colorado Space Grant]</a>&nbsp;
-                    <a href="#tableTop" onclick="javascript:autoFilter('EnEd');">[Engineering Education]</a>
-                    <a href="#tableTop" onclick="javascript:autoFilter('ATLS');">[ATLAS]</a>
-                    
-                    <br />
+  <h1>
+    Complete Listing of Discovery Learning Apprenticeships<br />
+    by Faculty Affiliation with a Department or Program</h1>
+      Please note that this list is sorted by the department or program of the faculty member 
+      offering the apprenticeship.<br />
+      Students from other majors may still be able to 
+      apply for the project.<br />
+      Please see the list <a href="dlalisting.aspx">here</a> to 
+      view the projects sorted by the majors to which the project is available.
+	 <br />
+      <br />
+      <a href="#tableTop" onclick="javascript:autoFilter('AES');">[Aerospace Engineering Sciences]</a>&nbsp;
+      <a href="#tableTop" onclick="javascript:autoFilter('APPM');">[Applied Mathematics]</a>&nbsp;
+      <a href="#tableTop" onclick="javascript:autoFilter('ChBE');">[Chemical and Biological Engineering]</a><br />
+      <a href="#tableTop" onclick="javascript:autoFilter('CEAE');">[Civil, Architectural and Environmental Engineering]</a>&nbsp;
+      <a href="#tableTop" onclick="javascript:autoFilter('CS');">[Computer Science]</a><br />
+      <a href="#tableTop" onclick="javascript:autoFilter('ECEE');">[Electrical, Computer, and Energy Engineering]</a>
+      <a href="#tableTop" onclick="javascript:autoFilter('PHYS');">[Physics]</a>&nbsp;
+      <a href="#tableTop" onclick="javascript:autoFilter('EVEN');">[Environmental Engineering]</a><br />
+      <a href="#tableTop" onclick="javascript:autoFilter('ME');">[Mechanical Engineering]</a>&nbsp;
+      <a href="#tableTop" onclick="javascript:autoFilter('CSGC');">[Colorado Space Grant]</a>&nbsp;
+      <a href="#tableTop" onclick="javascript:autoFilter('EnEd');">[Engineering Education]</a>
+      <a href="#tableTop" onclick="javascript:autoFilter('ATLS');">[ATLAS]</a>
+      <br />
 </div>         
 
 <br/><br/><br/>
-<a name="tableTop">
+<a id="tableTop"></a>
 <table id="projects" class="display" width="100%">
         <thead>
             <tr>
@@ -76,7 +74,7 @@
 			  <td>${project.faculty1.program} - ${project.description}</td>
 			  <td>${project.faculty1.name}<br/><c:if test="${project.faculty1.phone.areacode != null}">${project.faculty1.phone}</c:if><br/>${project.faculty1.email}</td>
 			  <td>${project.longDescription}</td>
-			  <td><li>Requirements: ${project.requirement}<li>Supervision: ${project.supervisionLevel}<li>Supervisor: ${project.supervisor}<li>Prior work: ${project.priorWork}</td>
+			  <td><ul><li>Requirements: ${project.requirement}<li>Supervision: ${project.supervisionLevel}<li>Supervisor: ${project.supervisor}<li>Prior work: ${project.priorWork}</ul></td>
 			</tr>
 		</c:forEach>
         </tbody>

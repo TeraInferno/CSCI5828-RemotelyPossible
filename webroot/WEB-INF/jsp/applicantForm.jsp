@@ -127,7 +127,7 @@ tr > td
             <td>
               <s:text style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAALZJREFUOBFjYKAANDQ0rGWiQD9IqzgL0BQ3IKMXiB8AcSKQ/waIrYDsKUD8Fir2pKmpSf/fv3+zgPxfzMzMSbW1tbeBbAaQC+b+//9fB4h9gOwikCAQTAPyDYHYBciuBQkANfcB+WZAbPP37992kBgIUOoFBiZGRsYkIL4ExJvZ2NhAXmFgYmLKBPLPAfFuFhaWJpAYEBQC+SeA+BDQC5UQIQpJYFgdodQLLyh0w6j20RCgUggAAEREPpKMfaEsAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"
                 name="application.student.name" maxlength="50" id="textName"
-                onkeypress="return disableEnterKey(event)" type="text" /><br/>
+                onkeypress="return disableEnterKey(event)" type="text" onblur="updateRequiredHighlights();"/><br/>
             </td>
           </tr>
           <tr>
@@ -136,11 +136,14 @@ tr > td
               Gender:
             </td>
             <td>
-              <s:radio id="radioGender_0" name="application.student.gender" value="M" type="radio" />
+              <s:radio id="radioGender_0" name="application.student.gender" value="M" type="radio"  onblur="updateRequiredHighlights();" />
               <label for="radioGender_0">Male</label>
-              <s:radio id="radioGender_1" name="application.student.gender" value="F" type="radio" />
+              <s:radio id="radioGender_1" name="application.student.gender" value="F" type="radio"  onblur="updateRequiredHighlights();" />
               <label for="radioGender_1">Female</label>
             </td>
+          </tr>
+          <tr>
+            <td>&nbps;</td>
           </tr>
           <tr>
             <td colspan="2">
@@ -235,7 +238,7 @@ tr > td
             Boulder Address: (street, city, state, zip)</td>
             <td>
               <s:textarea name="application.student.boulderAddress" rows="3"
-                cols="20" id="textBoulderAddy"></s:textarea>
+                cols="20" id="textBoulderAddy" onblur="updateRequiredHighlights();"></s:textarea>
           </tr>
           <tr>
             <td><strong><span style="color: #ff0000">*</span></strong>
@@ -245,15 +248,15 @@ tr > td
                 size="2" id="textbldrphone1"
                 onkeypress="return disableEnterKey(event)"
                 onkeyup="autotab(textbldrphone1, textbldrphone2)"
-                style="width: 26px;" type="text" /> ) <s:text
+                style="width: 26px;" type="text"  onblur="updateRequiredHighlights();"/> ) <s:text
                 name="application.student.boulderPhone.prefix" maxlength="3" size="2"
                 id="textbldrphone2"
                 onkeypress="return disableEnterKey(event)"
                 onkeyup="autotab(textbldrphone2,textbldrphone3)"
-                style="width: 26px;" type="text" /> - <s:text
+                style="width: 26px;" type="text"  onblur="updateRequiredHighlights();"/> - <s:text
                 name="application.student.boulderPhone.number" maxlength="4" size="4"
                 id="textbldrphone3"
-                onkeypress="return disableEnterKey(event)" type="text" />
+                onkeypress="return disableEnterKey(event)" type="text"  onblur="updateRequiredHighlights();"/>
             </td>
           </tr>
           <tr>
@@ -326,7 +329,7 @@ tr > td
               Primary Major:
             </td>
             <td>
-              <s:select name="application.student.primaryMajor" id="listMajor">
+              <s:select name="application.student.primaryMajor" id="listMajor"  onchange="updateRequiredHighlights();">
                 <s:option selected="selected" value="">Please Select</s:option>
                 <s:option value="ASEN">Aerospace Engineering</s:option>
                 <s:option value="AMEN">Applied Mathematics</s:option>
@@ -379,7 +382,7 @@ tr > td
               Student Number:
             </td>
             <td>
-              <s:text name="application.student.studentId" maxlength="9" size="2" id="textSID1" />&nbsp;(#########) 
+              <s:text name="application.student.studentId" maxlength="9" size="2" id="textSID1" onblur="updateRequiredHighlights();" />&nbsp;(#########) 
             </td>
           </tr>
           <tr>
@@ -388,7 +391,7 @@ tr > td
               GPA: (X.XXX)
             </td>
             <td>
-                  <s:text name="application.student.gpa" maxlength="5" size="10" id="textGPA" onkeypress="return disableEnterKey(event)" type="text" />
+                  <s:text name="application.student.gpa" maxlength="5" size="10" id="textGPA" onkeypress="return disableEnterKey(event)" type="text" onblur="updateRequiredHighlights();" />
             </td>
           </tr>
           <tr>
@@ -397,7 +400,7 @@ tr > td
               Level in school as of next fall:
             </td>
             <td>
-              <s:select name="application.student.schoolLevel" id="listLevel">
+              <s:select name="application.student.schoolLevel" id="listLevel" onchange="updateRequiredHighlights();">
                 <s:option selected="selected" value="">Please Select</s:option>
                 <s:option value="Freshman">Freshman</s:option>
                 <s:option value="Sophomore">Sophomore</s:option>
@@ -415,14 +418,14 @@ tr > td
               Anticipated Graduation Date:
             </td>
             <td>
-              <s:select name="application.student.graduationMonth" id="listGradMonth">
+              <s:select name="application.student.graduationMonth" id="listGradMonth" onchange="updateRequiredHighlights();">
                 <s:option selected="selected" value="">Month</s:option>
                 <s:option value="05">May</s:option>
                 <s:option value="08">August</s:option>
                 <s:option value="12">December</s:option>
 
               </s:select>
-              <s:select name="application.student.graduationYear" id="listGradYear">
+              <s:select name="application.student.graduationYear" id="listGradYear" onchange="updateRequiredHighlights();">
                 <s:option selected="selected" value="">Year</s:option>
                 <s:option value="2016">2016</s:option>
                 <s:option value="2017">2017</s:option>
@@ -517,7 +520,7 @@ tr > td
               First Choice
             </td>
             <td>
-              <s:select name="application.apprenticeshipInfo.firstChoice" id="listProject1">
+              <s:select name="application.apprenticeshipInfo.firstChoice" id="listProject1"  onchange="updateRequiredHighlights();">
                 <s:option selected="selected" value="">Please Select</s:option>            
               </s:select>
             </td>

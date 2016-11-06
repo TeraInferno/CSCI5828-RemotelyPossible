@@ -12,15 +12,11 @@ import javax.servlet.ServletResponse;
 import edu.colorado.csci5828.remotelypossible.dlap.hibernate.HibernateSessionUtil;
 
 public class HibernateFilter implements Filter {
-	private FilterConfig filterConfig = null;
 
-	public void init(FilterConfig filterConfig) throws ServletException {
-		this.filterConfig = filterConfig;
-	}
 
-	public void destroy() {
-		this.filterConfig = null;
-	}
+	public void init(FilterConfig filterConfig) throws ServletException { }
+
+	public void destroy() { }
 
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
 			throws IOException, ServletException {
