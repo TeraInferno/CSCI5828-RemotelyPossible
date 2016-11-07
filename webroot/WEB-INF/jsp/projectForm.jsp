@@ -76,7 +76,7 @@ tr > td
 
             </td>
             <td>
-				<input type="text" name="remLen1" id="remLen1" size="3" maxlength="3" value="80" />            
+				<input type="text" name="remLen1" id="remLen1" size="3" maxlength="3" value="80" tabindex="-1"/>            
             </td>
            
         </tr>
@@ -109,7 +109,7 @@ tr > td
             <td>
                 <s:textarea name="project.requirement" rows="5" cols="60" id="textSpecialRequirements" onKeyUp="textCounter(this,remLen3,1000);" onKeyDown="textCounter(this,remLen3,1000);" onKeyPress="textCounter(this,remLen3,1000);"></s:textarea>
                 <br />
-<input type="text" name="remLen3" id="remLen3" size="6" maxlength="3" value="1000" /></td>
+<input type="text" name="remLen3" id="remLen3" size="6" maxlength="3" value="1000" tabindex="-1" /></td>
         </tr>
         <tr>
             <td>
@@ -119,7 +119,7 @@ tr > td
             <td>
                 <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(this,remLen2,1200);" onKeyDown="textCounter(this,remLen2,1200);" onKeyPress="textCounter(this,remLen2,1200);" onblur="updateRequiredHighlights();" onfocus="updateRequiredHighlights();"></s:textarea>
                 <br />
-<input type="text" name="remLen2" id="remLen2" size="6" maxlength="3" value="1200" />&nbsp;
+<input type="text" name="remLen2" id="remLen2" size="6" maxlength="3" value="1200" tabindex="-1" />&nbsp;
             </td>
         </tr>
         <tr>
