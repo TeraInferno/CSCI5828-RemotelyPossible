@@ -1,7 +1,12 @@
 package edu.colorado.csci5828.remotelypossible.dlap.service;
 
-import org.hibernate.Session;
+import java.util.List;
+import javax.persistence.Tuple;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
+import org.hibernate.Session;
 import edu.colorado.csci5828.remotelypossible.dlap.model.Project;
 
 public class ProjectService extends BaseEntityService<Project,Long> {
@@ -34,4 +39,16 @@ public class ProjectService extends BaseEntityService<Project,Long> {
 		
 		return p.getId();
 	}
+	
+	public List<Tuple> findAllByMajor(String major) {
+	  CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
+    CriteriaQuery<Tuple> cq = cb.createTupleQuery();
+    Root<Project> root = cq.from(entityClass());
+    
+    cq.multiselect(root.get("id"),root.get("description"))
+      .where(cb.isMember(major, root.get("acceptedMajors")));
+    
+    
+    return getCurrentSession().createQuery(cq).getResultList();
+  }
 }

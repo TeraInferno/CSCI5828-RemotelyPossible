@@ -329,7 +329,7 @@ tr > td
               Primary Major:
             </td>
             <td>
-              <s:select name="application.student.primaryMajor" id="listMajor"  onchange="updateRequiredHighlights();">
+              <s:select name="application.student.primaryMajor" id="listMajor"  onchange="updateRequiredHighlights();loadProjects();">
                 <s:option selected="selected" value="">Please Select</s:option>
                 <s:option value="ASEN">Aerospace Engineering</s:option>
                 <s:option value="AMEN">Applied Mathematics</s:option>
@@ -521,7 +521,7 @@ tr > td
             </td>
             <td>
               <s:select name="application.apprenticeshipInfo.firstChoice" id="listProject1"  onchange="updateRequiredHighlights();">
-                <s:option selected="selected" value="">Please Select</s:option>            
+                <s:option selected="selected" value="">Please Select a Major first.</s:option>            
               </s:select>
             </td>
           </tr>
@@ -531,7 +531,7 @@ tr > td
             </td>
             <td> 
               <s:select name="application.apprenticeshipInfo.secondChoice" id="listProject2">
-                <s:option selected="selected" value="">Please Select</s:option>
+                <s:option selected="selected" value="">Please Select a Major first.</s:option>
               </s:select>
             </td>
           </tr>
@@ -541,7 +541,7 @@ tr > td
             </td>
             <td>
               <s:select name="application.apprenticeshipInfo.thirdChoice" id="listProject3">
-                <s:option selected="selected" value="">Please Select</s:option>
+                <s:option selected="selected" value="">Please Select a Major first.</s:option>
 
               </s:select>
             </td>
@@ -552,7 +552,7 @@ tr > td
             </td>
             <td>
               <s:select name="application.apprenticeshipInfo.fourthChoice" id="listProject4">
-                <s:option selected="selected" value="">Please Select</s:option>
+                <s:option selected="selected" value="">Please Select a Major first.</s:option>
 
               </s:select>
             </td>
@@ -563,7 +563,7 @@ tr > td
             </td>
             <td>
               <s:select name="application.apprenticeshipInfo.fifthChoice" id="listProject5">
-                <s:option selected="selected" value="">Please Select</s:option>
+                <s:option selected="selected" value="">Please Select a Major first.</s:option>
               </s:select>
             </td>
           </tr>
@@ -711,6 +711,52 @@ tr > td
   src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/js/formTools.js"></script>
 <script>
+var projectSelects = ['application.apprenticeshipInfo.firstChoice','application.apprenticeshipInfo.secondChoice','application.apprenticeshipInfo.thirdChoice','application.apprenticeshipInfo.fourthChoice','application.apprenticeshipInfo.fifthChoice'];
+var emptyProjects = function() {
+	//Default the project selects to blank
+	var selectNum = 0;
+	for(selectNum = 0; selectNum < projectSelects.length; selectNum++) {
+		var ele = $('[name="'+projectSelects[selectNum]+'"]');
+		ele.empty();
+		ele.append($('<option>', {
+		    value: '',
+		    text: 'Please Select a Major first'
+		}));
+	}
+}
+var setProjects = function(projectList, status) {
+
+	emptyProjects();
+	
+	var selectNum = 0, projectNum = 0;
+	for(selectNum = 0; selectNum < projectSelects.length; selectNum++) {
+		var ele = $('[name="'+projectSelects[selectNum]+'"]');
+		
+		for(projectNum = 0; projectNum < projectList.length; projectNum++) {
+			ele.append($('<option>', {
+			    value: projectList[projectNum]['tuples'][0],
+			    text: projectList[projectNum]['tuples'][1]
+			}));
+		}
+	}
+};
+var loadProjects = function() {
+	var selectedVal = $('[name="application.student.primaryMajor"]').val();
+	if(selectedVal != "") {
+		$.ajax({
+	        url: "/do/project/list/"+selectedVal,
+	        type: "GET",
+	        dataType: "JSON",
+	        success: setProjects,
+	        error: function (xhr, desc, err) {
+	        	alert("Error loading project list by major.");
+
+	        }
+	    });	
+	} else {
+	  emptyProjects();
+	}
+};
 var updateRequiredHighlights = function() {
 	validateForm('application',highlightErrors);
 };
