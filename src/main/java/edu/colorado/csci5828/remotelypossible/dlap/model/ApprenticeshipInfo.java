@@ -42,10 +42,7 @@ public class ApprenticeshipInfo {
     private String discriminationTrainingComplete;
 
     @Column(length=10)
-    private String discriminationTrainingSemester;
-
-    @Column(length=4)
-    private String discriminationTrainingYear;
+    private String discriminationTrainingDate;
 
     @Column(length=4)
     private String socialSecurityNumber;
@@ -106,23 +103,6 @@ public class ApprenticeshipInfo {
       this.fifthChoice = fifthChoice;
     }
 
-
-    public String getDiscriminationTrainingSemester() {
-      return discriminationTrainingSemester;
-    }
-
-    public void setDiscriminationTrainingSemester(String discriminationTrainingSemester) {
-      this.discriminationTrainingSemester = discriminationTrainingSemester;
-    }
-
-    public String getDiscriminationTrainingYear() {
-      return discriminationTrainingYear;
-    }
-
-    public void setDiscriminationTrainingYear(String discriminationTrainingYear) {
-      this.discriminationTrainingYear = discriminationTrainingYear;
-    }
-
     public String getSocialSecurityNumber() {
       return socialSecurityNumber;
     }
@@ -161,6 +141,14 @@ public class ApprenticeshipInfo {
 
     public void setBackgroundCheckDate(String backgroundCheckDate) {
       this.backgroundCheckDate = backgroundCheckDate;
+    }
+
+    public String getDiscriminationTrainingDate() {
+      return discriminationTrainingDate;
+    }
+
+    public void setDiscriminationTrainingDate(String discriminationTrainingDate) {
+      this.discriminationTrainingDate = discriminationTrainingDate;
     }
 
 }

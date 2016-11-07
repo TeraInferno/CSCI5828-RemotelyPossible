@@ -590,24 +590,15 @@ tr > td
               If yes when? (Take your best guess if you aren't sure.)
             </td>
             <td>
-              <table id="radioDiscrim">
-                <tbody>
-                  <tr>
-                    <td>
-                      <s:radio id="radioDiscrim_0" name="application.apprenticeshipInfo.discriminationTrainingComplete" value="Yes" type="radio" />
-                      <label for="radioDiscrim_0">Yes</label>
-                    </td>
-                    <td>
-                      <s:radio id="radioDiscrim_1" name="application.apprenticeshipInfo.discriminationTrainingComplete" value="Not Sure" type="radio" />
-                      <label for="radioDiscrim_1">Not sure</label>
-                    </td>
-                    <td>
-                      <s:radio id="radioDiscrim_2" name="application.apprenticeshipInfo.discriminationTrainingComplete" value="No" type="radio" />
-                      <label for="radioDiscrim_2">No</label>
-                    </td>
-                  </tr>
-                </tbody>
-              </table> <br/> &nbsp;
+	           <s:radio id="radioDiscrim_0" name="application.apprenticeshipInfo.discriminationTrainingComplete" value="Yes" type="radio" onclick="checkDateNeeded('application.apprenticeshipInfo.discriminationTrainingComplete','application.apprenticeshipInfo.discriminationTrainingDate');" />
+               <label for="radioDiscrim_0">Yes</label>
+               <s:radio id="radioDiscrim_1" name="application.apprenticeshipInfo.discriminationTrainingComplete" value="Not Sure" type="radio" onclick="checkDateNeeded('application.apprenticeshipInfo.discriminationTrainingComplete','application.apprenticeshipInfo.discriminationTrainingDate');" />
+               <label for="radioDiscrim_1">Not sure</label>
+               <s:radio id="radioDiscrim_2" name="application.apprenticeshipInfo.discriminationTrainingComplete" value="No" type="radio" onclick="checkDateNeeded('application.apprenticeshipInfo.discriminationTrainingComplete','application.apprenticeshipInfo.discriminationTrainingDate');" />
+               <label for="radioDiscrim_2">No</label>
+               <br/><br/>
+               <s:text name="application.apprenticeshipInfo.discriminationTrainingDate" size="12" maxlength="10" />
+               <br/> &nbsp;
             </td>
           </tr>
           <tr>
@@ -745,12 +736,15 @@ $(document).ready(function() {
   $("input:radio, input:checkbox" ).checkboxradio();
   $("#save").button();
   $( '[name="application.apprenticeshipInfo.backgroundCheckDate"]' ).datepicker();
+  $( '[name="application.apprenticeshipInfo.discriminationTrainingDate"]' ).datepicker();
 
   <!-- Hide optional fields -->
   if($('[name="application.apprenticeshipInfo.backgroundCheckDate"]:checked').val() != 'yes') {
   	$('[name="application.apprenticeshipInfo.backgroundCheckDate"]').hide();
   }
-
+  if($('[name="application.apprenticeshipInfo.discriminationTrainingDate"]:checked').val() != 'yes') {
+	$('[name="application.apprenticeshipInfo.discriminationTrainingDate"]').hide();
+  }
     
   <!-- Highlight required fields -->
   updateRequiredHighlights();
