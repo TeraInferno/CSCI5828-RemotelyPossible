@@ -573,24 +573,15 @@ tr > td
               If yes when? (Take your best guess if you aren't sure.)
             </td>
             <td>
-              <table id="radioHadBGC">
-                <tbody>
-                  <tr>
-                    <td>
-                      <s:radio id="radioHadBGC_0" name="application.apprenticeshipInfo.backgroundCheckComplete" value="Yes" type="radio" />
-                      <label for="radioHadBGC_0">Yes</label>
-                    </td>
-                    <td>
-                      <s:radio id="radioHadBGC_1" name="application.apprenticeshipInfo.backgroundCheckComplete" value="Not Sure" type="radio" />
-                      <label for="radioHadBGC_1">Not sure</label>
-                    </td>
-                    <td>
-                      <s:radio id="radioHadBGC_2" name="application.apprenticeshipInfo.backgroundCheckComplete" value="No" type="radio" />
-                      <label for="radioHadBGC_2">No</label>
-                    </td>
-                  </tr>
-                </tbody>
-              </table> <br/> &nbsp;
+              <s:radio id="radioHadBGC_0" name="application.apprenticeshipInfo.backgroundCheckComplete" value="Yes" type="radio" onclick="checkDateNeeded('application.apprenticeshipInfo.backgroundCheckComplete','application.apprenticeshipInfo.backgroundCheckDate');"/>
+	          <label for="radioHadBGC_0">Yes</label>
+              <s:radio id="radioHadBGC_1" name="application.apprenticeshipInfo.backgroundCheckComplete" value="Not Sure" type="radio" onclick="checkDateNeeded('application.apprenticeshipInfo.backgroundCheckComplete','application.apprenticeshipInfo.backgroundCheckDate');" />
+              <label for="radioHadBGC_1">Not sure</label>
+              <s:radio id="radioHadBGC_2" name="application.apprenticeshipInfo.backgroundCheckComplete" value="No" type="radio" onclick="checkDateNeeded('application.apprenticeshipInfo.backgroundCheckComplete','application.apprenticeshipInfo.backgroundCheckDate');" />
+              <label for="radioHadBGC_2">No</label>
+              <br/><br/>
+              <s:text name="application.apprenticeshipInfo.backgroundCheckDate" size="12" maxlength="10" />
+              <br/> &nbsp;
             </td>
           </tr>
           <tr>
@@ -731,10 +722,19 @@ tr > td
 <script>
 var updateRequiredHighlights = function() {
 	validateForm('application',highlightErrors);
-}
+};
 var submitForm = function() {
 	$( "[name='save']" ).click();
-}
+};
+
+var checkDateNeeded = function(selfName, dateName) {
+	if( $('input[name="'+selfName+'"]:checked').val() == 'Yes') {
+		$('input[name="'+dateName+'"]').show().focus();	
+		
+	} else {
+		$('input[name="'+dateName+'"]').hide();
+	}
+};
 
 $(document).ready(function() {
   <!-- Setup the Tabs -->
@@ -744,6 +744,13 @@ $(document).ready(function() {
   $("input:text, input:password, textarea, select").addClass("ui-widget ui-state-default ui-corner-all");
   $("input:radio, input:checkbox" ).checkboxradio();
   $("#save").button();
+  $( '[name="application.apprenticeshipInfo.backgroundCheckDate"]' ).datepicker();
+
+  <!-- Hide optional fields -->
+  if($('[name="application.apprenticeshipInfo.backgroundCheckDate"]:checked').val() != 'yes') {
+  	$('[name="application.apprenticeshipInfo.backgroundCheckDate"]').hide();
+  }
+
     
   <!-- Highlight required fields -->
   updateRequiredHighlights();

@@ -34,6 +34,9 @@ public class ApprenticeshipInfo {
 
     @Column(length=10)
     private String backgroundCheckComplete;
+    
+    @Column(length=10)
+    private String backgroundCheckDate;
 
     @Column(length=10)
     private String discriminationTrainingComplete;
@@ -150,6 +153,14 @@ public class ApprenticeshipInfo {
 
     public void setDiscriminationTrainingComplete(String discriminationTrainingComplete) {
       this.discriminationTrainingComplete = discriminationTrainingComplete;
+    }
+
+    public String getBackgroundCheckDate() {
+      return backgroundCheckDate;
+    }
+
+    public void setBackgroundCheckDate(String backgroundCheckDate) {
+      this.backgroundCheckDate = backgroundCheckDate;
     }
 
 }
