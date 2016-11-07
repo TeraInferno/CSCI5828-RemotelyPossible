@@ -1,6 +1,10 @@
 package edu.colorado.csci5828.remotelypossible.dlap.stripes.action;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -21,6 +25,9 @@ import net.sourceforge.stripes.action.UrlBinding;
 @HttpCache(allow=false)
 public class TestLoadAction extends BaseAction {
 
+  private List<String> MAJORS = Arrays.asList(new String[] { "ASEN","AMEN","AREN","CHEN","CBEN","CVEN","CSEN","EEEN","ECEN","EPEN","EVEN","GEEN","MCEN","TMEN" });
+
+  
   @DefaultHandler
   public Resolution load() {
     
@@ -35,7 +42,6 @@ public class TestLoadAction extends BaseAction {
       for(int y = 0; y < s.getLastRowNum(); y++) {
         Row r = s.getRow(y);
         Project p = new Project();
-System.out.println("Row# "+y);
         String program = r.getCell(0).getStringCellValue();
         p.setDescription(r.getCell(1).getStringCellValue());
 
@@ -44,7 +50,6 @@ System.out.println("Row# "+y);
         p.setFaculty2(getFaculty(r,6));
         p.setGraduate(getFaculty(r,10));
         
-        System.out.println("LongDesciption: "+r.getCell(14).getStringCellValue().length());
         p.setLongDescription(r.getCell(14).getStringCellValue());
         p.setUrl(r.getCell(15).getStringCellValue());
         p.setRequirement(r.getCell(16).getStringCellValue());
@@ -54,9 +59,14 @@ System.out.println("Row# "+y);
         
         p.setNatureOfWork(r.getCell(19).getStringCellValue());
         
-        System.out.println("PRIORWORK: "+r.getCell(20).getStringCellValue().length());
         p.setPriorWork(r.getCell(20).getStringCellValue());
         
+        int numMajors = ThreadLocalRandom.current().nextInt(1, MAJORS.size()+1);      
+        List<String> acceptedMajors = new ArrayList<String>(numMajors);
+        for(int x = 0; x < numMajors; x++) {
+          acceptedMajors.add(MAJORS.get(x));
+        }
+        p.setAcceptedMajors(acceptedMajors);
         
         ps.save(p);
       }

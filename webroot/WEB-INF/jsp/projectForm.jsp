@@ -134,24 +134,24 @@ tr > td
             <td>
                 <span id="listStudMajor">
                 	<s:checkbox id="listStudMajor_0" name="project.acceptedMajors[0]" value="ASEN"/><label for="listStudMajor_0">Aerospace Engineering</label>
-                	<s:checkbox id="listStudMajor_7" name="project.acceptedMajors[7]" value="EEEN" /><label for="listStudMajor_7">Electrical Engineering</label>
-                	<br />
                 	<s:checkbox id="listStudMajor_1" name="project.acceptedMajors[1]" value="AMEN" /><label for="listStudMajor_1">Applied Mathematics</label>
-                	<s:checkbox id="listStudMajor_8" name="project.acceptedMajors[8]" value="ECEN" /><label for="listStudMajor_8">Electrical and Computer Engineering</label>
                 	<br />
                 	<s:checkbox id="listStudMajor_2" name="project.acceptedMajors[2]" value="AREN" /><label for="listStudMajor_2">Architectural Engineering</label>
-                	<s:checkbox id="listStudMajor_9" name="project.acceptedMajors[9]" value="EPEN" /><label for="listStudMajor_9">Engineering Physics</label>
-                	<br />
                 	<s:checkbox id="listStudMajor_3" name="project.acceptedMajors[3]" value="CHEN" /><label for="listStudMajor_3">Chemical Engineering</label>
-                	<s:checkbox id="listStudMajor_10" name="project.acceptedMajors[10]" value="EVEN" /><label for="listStudMajor_10">Environmental Engineering</label>
                 	<br />
                 	<s:checkbox id="listStudMajor_4" name="project.acceptedMajors[4]" value="CBEN"/><label for="listStudMajor_4">Chemical &amp; Biological Engineering</label>
+                	<s:checkbox id="listStudMajor_5" name="project.acceptedMajors[5]" value="CVEN"/><label for="listStudMajor_5">Civil Engineering</label>
+                  	<br />
+                  	<s:checkbox id="listStudMajor_6" name="project.acceptedMajors[6]" value="CSEN"/><label for="listStudMajor_6">Computer Science</label>
+                	<s:checkbox id="listStudMajor_7" name="project.acceptedMajors[7]" value="EEEN" /><label for="listStudMajor_7">Electrical Engineering</label>
+                	<br />
+                	<s:checkbox id="listStudMajor_8" name="project.acceptedMajors[8]" value="ECEN" /><label for="listStudMajor_8">Electrical and Computer Engineering</label>
+                	<s:checkbox id="listStudMajor_9" name="project.acceptedMajors[9]" value="EPEN" /><label for="listStudMajor_9">Engineering Physics</label>
+                	<br />
+					<s:checkbox id="listStudMajor_10" name="project.acceptedMajors[10]" value="EVEN" /><label for="listStudMajor_10">Environmental Engineering</label>
                 	<s:checkbox id="listStudMajor_11" name="project.acceptedMajors[11]" value="GEEN"/><label for="listStudMajor_11">Engineering Plus</label>
                 	<br />
-                	<s:checkbox id="listStudMajor_5" name="project.acceptedMajors[5]" value="CVEN"/><label for="listStudMajor_5">Civil Engineering</label>
                 	<s:checkbox id="listStudMajor_12" name="project.acceptedMajors[12]" value="MCEN"/><label for="listStudMajor_12">Mechanical Engineering</label>
-                	<br />
-                	<s:checkbox id="listStudMajor_6" name="project.acceptedMajors[6]" value="CSEN"/><label for="listStudMajor_6">Computer Science</label>
                 	<s:checkbox id="listStudMajor_13" name="project.acceptedMajors[13]" value="TMEN"/><label for="listStudMajor_13">Technology, Arts and Media</label>
                 </span>
                 </td>
