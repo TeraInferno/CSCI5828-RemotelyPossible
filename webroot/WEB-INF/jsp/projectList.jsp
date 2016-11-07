@@ -51,7 +51,7 @@
 
 <br/><br/><br/>
 <a id="tableTop"></a>
-<table id="projects" class="display" width="100%">
+<table id="projects" class="display">
         <thead>
             <tr>
                 <th>Project</th>
@@ -86,18 +86,23 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.jqueryui.min.js"></script>
 
 <script type="text/javascript">
+<!-- Hyperlinks to filtered table list -->
 var autoFilter = function(dept) {
-	$("#projects_filter :input").val(dept+" - ").keyup();
+  $("#projects_filter :input").val(dept+" - ").keyup();
 }
-  $(document).ready(function() {
-    $('#projects').DataTable({
-   	  "search": {
-    	"smart": false
-  	  },
-  	  "stateSave": true,
-  	  "stateDuration": -1
-    });
-    $("#projects_filter :input").addClass("ui-widget ui-state-default ui-corner-all");
+
+$(document).ready(function() {
+  <!-- Enable data table from project list -->
+  $('#projects').DataTable({
+      "search": {
+	  "smart": false
+    },
+    "stateSave": true,
+    "stateDuration": -1
+});
+
+<!-- Style the DataTable filter with JQueryUI -->
+$("#projects_filter :input").addClass("ui-widget ui-state-default ui-corner-all");
 } );
 1</script>
 </body>
