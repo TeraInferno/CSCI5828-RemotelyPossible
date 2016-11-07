@@ -143,7 +143,7 @@ tr > td
             </td>
           </tr>
           <tr>
-            <td>&nbps;</td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
             <td colspan="2">
@@ -664,7 +664,7 @@ tr > td
                 onkeydown="textCounter(textSkill1,remLen1,75);"
                 type="text" /> <input name="remLen1" id="remLen1"
               size="4" maxlength="3" value="75" disabled="disabled"
-              type="text"></td>
+              type="text" tabindex="-1" /></td>
           </tr>
           <tr>
             <td colspan="2">2.&nbsp; <s:text
@@ -674,7 +674,7 @@ tr > td
                 onkeydown="textCounter(textSkill2,remLen2,75);"
                 type="text" /> <input name="remLen2" id="remLen2"
               size="4" maxlength="3" value="75" disabled="disabled"
-              type="text"></td>
+              type="text"  tabindex="-1" /></td>
           </tr>
           <tr>
             <td colspan="2">3.&nbsp; <s:text
@@ -684,7 +684,7 @@ tr > td
                 onkeydown="textCounter(textSkill3,remLen3,75);"
                 type="text" /> <input name="remLen3" id="remLen3"
               size="4" maxlength="3" value="75" disabled="disabled"
-              type="text"></td>
+              type="text" tabindex="-1" /></td>
           </tr>
           <tr>
             <td colspan="2">&nbsp;</td>
