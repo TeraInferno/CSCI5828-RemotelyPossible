@@ -22,4 +22,7 @@ public class ResolutionUrl {
 	
 	public static final Resolution FORWARD_APPLICANT_FORM = new ForwardResolution("/WEB-INF/jsp/applicantForm.jsp");
 	
+	public static final Resolution FORWARD_LOGIN = new ForwardResolution("/WEB-INF/jsp/login.jsp");
+  public static final Resolution REDIRECT_LOGIN = new RedirectResolution("/do/login");
+	
 }

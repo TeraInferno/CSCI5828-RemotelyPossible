@@ -1,5 +1,6 @@
 package edu.colorado.csci5828.remotelypossible.dlap.stripes.action;
 
+import edu.colorado.csci5828.remotelypossible.dlap.util.User;
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
 
@@ -23,6 +24,13 @@ public class BaseAction implements ActionBean {
 	@Override
 	public void setContext(ActionBeanContext context) {
 		cntx = context;
-		
 	}
+	
+	public User getUser() {
+    return (User) cntx.getRequest().getSession().getAttribute("user_profile"); 
+	} 
+
+	public void setUser(User userProfile) { 
+    cntx.getRequest().getSession().setAttribute("user_profile", userProfile); 
+	} 
 }
