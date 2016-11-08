@@ -14,7 +14,8 @@
 </head>
 
 <body>
-
+<br/><br/>
+<a href="/do/login">Login Page</a>
 <br/><br/>
 <a href="/do/project/form">Project Submission Page</a>
 <br/><br/>
