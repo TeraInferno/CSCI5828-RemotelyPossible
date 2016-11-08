@@ -132,7 +132,9 @@ tr > td
                 PLEASE NOTE: Only students from majors you select will be allowed to apply for this project.
                 </strong></span></td>
             <td>
-                <span id="listStudMajor">
+            	<input id="allMajors" type="button" name="allMajors" value="Select All"/>
+            	<br/><br/>
+                <span id="listStudyMajor">
                 	<s:checkbox id="listStudMajor_0" name="project.acceptedMajors[0]" value="ASEN"/><label for="listStudMajor_0">Aerospace Engineering</label>
                 	<s:checkbox id="listStudMajor_1" name="project.acceptedMajors[1]" value="AMEN" /><label for="listStudMajor_1">Applied Mathematics</label>
                 	<br />
@@ -502,6 +504,23 @@ tr > td
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/js/formTools.js"></script>
 <script>
+var toggleAllMajors = function() {
+	if($('#allMajors').val() == 'Select All') {
+		$('#allMajors').val('Select None');
+		$('#listStudyMajor :checkbox').each(function () {
+			if(! $(this).is(':checked')) {
+				$(this).click();
+			}
+         });
+	} else {
+		$('#listStudyMajor :checkbox').each(function () {
+		$('#allMajors').val('Select All');
+			if( $(this).is(':checked')) {
+				$(this).click();
+			}
+         });
+	}
+};
 var updateRequiredHighlights = function() {
 	validateForm('project',highlightErrors);
 }
@@ -578,6 +597,9 @@ var submitForm = function() {
   $("input:radio, input:checkbox" ).checkboxradio();
   $("#save").button();
 
+  
+  $('#allMajors').button().click(toggleAllMajors);
+  
   $('[name="project.natureOfWorkOther"]').hide();
   $('[name="project.priorWorkOther"]').hide();
     
