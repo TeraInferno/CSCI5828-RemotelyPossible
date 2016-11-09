@@ -712,21 +712,28 @@ tr > td
 <script type="text/javascript" src="/js/formTools.js"></script>
 <script>
 var projectSelects = ['application.apprenticeshipInfo.firstChoice','application.apprenticeshipInfo.secondChoice','application.apprenticeshipInfo.thirdChoice','application.apprenticeshipInfo.fourthChoice','application.apprenticeshipInfo.fifthChoice'];
-var emptyProjects = function() {
+var emptyProjects = function(isPrep) {
 	//Default the project selects to blank
 	var selectNum = 0;
 	for(selectNum = 0; selectNum < projectSelects.length; selectNum++) {
 		var ele = $('[name="'+projectSelects[selectNum]+'"]');
 		ele.empty();
-		ele.append($('<option>', {
+		if(isPrep) {
+			ele.append($('<option>', {
+			    value: '',
+			    text: 'Please Select'
+			}));
+		} else {
+		  ele.append($('<option>', {
 		    value: '',
 		    text: 'Please Select a Major first'
-		}));
+		  }));
+		}
 	}
 }
 var setProjects = function(projectList, status) {
 
-	emptyProjects();
+	emptyProjects(true);
 	
 	var selectNum = 0, projectNum = 0;
 	for(selectNum = 0; selectNum < projectSelects.length; selectNum++) {
@@ -754,7 +761,7 @@ var loadProjects = function() {
 	        }
 	    });	
 	} else {
-	  emptyProjects();
+	  emptyProjects(false);
 	}
 };
 var updateRequiredHighlights = function() {
