@@ -26,21 +26,20 @@
 		</filter-class>
 		<init-param>
 			<param-name>ActionResolver.Packages</param-name>
-			<param-value>edu.colorado.csci5828.remotelypossible.dlap.stripes.action
-			</param-value>
+			<param-value>edu.colorado.csci5828.remotelypossible.dlap.stripes.action</param-value>
 		</init-param>
 		<init-param>
 			<param-name>LocalePicker.Locales</param-name>
 			<param-value>en_US</param-value>
 		</init-param>
 		<init-param>
-
 			<param-name>LocalePicker.Locales</param-name>
-
 			<param-value>en_US:UTF-8</param-value>
-
 		</init-param>
-
+		<init-param>
+		    <param-name>Extension.Packages</param-name>
+		    <param-value>edu.colorado.csci5828.remotelypossible.dlap.stripes.ext</param-value>
+		</init-param>
 		<init-param>
 			<param-name>Interceptor.Classes</param-name>
 			<param-value>
