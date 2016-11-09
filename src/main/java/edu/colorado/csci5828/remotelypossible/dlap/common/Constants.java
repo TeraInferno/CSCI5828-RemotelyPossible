@@ -9,4 +9,6 @@ public class Constants {
 	public static final String DB_PROD = new String("prod");
 	public static final String EMPTY_STRING = new String("");
 	
+	public static final String USER_PROFILE = new String("user_profile");
+	
 }
