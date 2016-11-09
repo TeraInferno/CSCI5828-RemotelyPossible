@@ -13,7 +13,7 @@ import net.sourceforge.stripes.action.UrlBinding;
 
 @UrlBinding("/do/project/faculty")
 @HttpCache(allow=false)
-public class ProjectListFacultyAction extends BaseAction {
+public class ProjectListFacultyAction extends BaseFacultyAction {
 	
 	@DefaultHandler
 	public Resolution list() {

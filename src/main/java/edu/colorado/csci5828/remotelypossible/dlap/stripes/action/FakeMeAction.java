@@ -38,7 +38,7 @@ public class FakeMeAction extends BaseAction {
       if("FACULTY".equals(role)) {
           authUser = new User(username,User.ROLE_FACULTY);
       } else {
-        authUser = new User(username,User.ROLE_USER);
+        authUser = new User(username,User.ROLE_STUDENT);
       }
       authUser.setAuth(true);
       setUser(authUser);

@@ -3,7 +3,7 @@ package edu.colorado.csci5828.remotelypossible.dlap.util;
 public class User {
 	
   public static String ROLE_NONE = new String("NONE_ROLE");
-  public static String ROLE_USER = new String("USER_ROLE");
+  public static String ROLE_STUDENT = new String("USER_ROLE");
   public static String ROLE_FACULTY = new String("FACULTY_ROLE");
   public static String ROLE_ADMIN = new String("ADMIN_ROLE");
   

@@ -55,7 +55,7 @@ public class LoginAction extends BaseAction {
       //Success (Faculty)
       return ResolutionUrl.REDIRECT_PROJECT_FACULTY_LIST;
       
-    } else if(authUser.getRole().equals(User.ROLE_USER)) {        
+    } else if(authUser.getRole().equals(User.ROLE_STUDENT)) {        
       //Success Student
       return ResolutionUrl.REDIRECT_PROJECT_LIST;
       
