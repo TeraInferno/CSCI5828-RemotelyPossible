@@ -20,6 +20,9 @@ public class Project {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id = null;
 	
+	@Column(length=64, nullable=false)
+	private String username; //Authentication Username (to track ownership)
+	
 	@Column(name="description", nullable=false, length=80)
 	private String description;
 	
@@ -260,6 +263,14 @@ public class Project {
 	public void setPublished(Boolean published) {
 		this.published = published;
 	}
+
+  public String getUsername() {
+    return username;
+  }
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
 	
 	
 }

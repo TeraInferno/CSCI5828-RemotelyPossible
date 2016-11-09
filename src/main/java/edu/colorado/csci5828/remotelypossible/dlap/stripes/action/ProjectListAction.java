@@ -32,7 +32,7 @@ public class ProjectListAction extends BaseAction {
   		
   		return ResolutionUrl.FORWARD_PROJECT_LIST;
 	  } else {
-	    //List by Major
+	    //List by Major (for the Student application drop-downs)
 	    return new StreamingResolution("application/json",(new Gson()).toJson(ps.findAllByMajor(major)));
 	  }
 	}

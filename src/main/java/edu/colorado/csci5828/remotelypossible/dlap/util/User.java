@@ -2,6 +2,12 @@ package edu.colorado.csci5828.remotelypossible.dlap.util;
 
 public class User {
 	
+  public static String ROLE_NONE = new String("NONE_ROLE");
+  public static String ROLE_USER = new String("USER_ROLE");
+  public static String ROLE_FACULTY = new String("FACULTY_ROLE");
+  public static String ROLE_ADMIN = new String("ADMIN_ROLE");
+  
+  
 	private boolean authenticated;
 	private String name;
 	private String role;
@@ -11,15 +17,21 @@ public class User {
 	{
 		authenticated = false;
 		name = "nameless";
-		role = "none";
+		role = ROLE_NONE;
 	}
 	
 	public User(String username)
 	{
 		authenticated = false;
 		name = username;
-		role = "none";
+		role = ROLE_NONE;
 	}
+	public User(String username, String role)
+  {
+    authenticated = false;
+    setName(username);
+    setRole(role);
+  }
 	
 	public boolean isAuthenticated()
 	{

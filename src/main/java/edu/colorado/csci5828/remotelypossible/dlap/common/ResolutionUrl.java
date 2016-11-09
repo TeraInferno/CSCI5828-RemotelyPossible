@@ -15,8 +15,8 @@ import net.sourceforge.stripes.action.Resolution;
 public class ResolutionUrl {
 
 	public static final Resolution FORWARD_INDEX = new ForwardResolution("/WEB-INF/jsp/index.jsp");
-	public static final Resolution FORWARD_PROJECT_FORM = new ForwardResolution("/WEB-INF/jsp/projectForm.jsp");
 	
+	public static final Resolution FORWARD_PROJECT_FORM = new ForwardResolution("/WEB-INF/jsp/projectForm.jsp");
 	public static final Resolution FORWARD_PROJECT_LIST = new ForwardResolution("/WEB-INF/jsp/projectList.jsp");
 	public static final Resolution REDIRECT_PROJECT_LIST = new RedirectResolution("/do/project/list");
 	
@@ -24,5 +24,7 @@ public class ResolutionUrl {
 	
 	public static final Resolution FORWARD_LOGIN = new ForwardResolution("/WEB-INF/jsp/login.jsp");
   public static final Resolution REDIRECT_LOGIN = new RedirectResolution("/do/login");
+  
+  public static final Resolution FORWARD_FAKEME = new ForwardResolution("/WEB-INF/jsp/fakeme.jsp");
 	
 }

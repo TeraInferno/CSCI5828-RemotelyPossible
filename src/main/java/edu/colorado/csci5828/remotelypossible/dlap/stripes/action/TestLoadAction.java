@@ -45,10 +45,14 @@ public class TestLoadAction extends BaseAction {
         String program = r.getCell(0).getStringCellValue();
         p.setDescription(r.getCell(1).getStringCellValue());
 
-        p.setFaculty1(getFaculty(r,2));
-        p.getFaculty1().setProgram(program);
+        Faculty f = getFaculty(r,2);
+        f.setProgram(program);
+        p.setFaculty1(f);
         p.setFaculty2(getFaculty(r,6));
         p.setGraduate(getFaculty(r,10));
+        
+        //Set the Project owner
+        p.setUsername(f.getEmail().substring(0,f.getEmail().indexOf("@")));
         
         p.setLongDescription(r.getCell(14).getStringCellValue());
         p.setUrl(r.getCell(15).getStringCellValue());

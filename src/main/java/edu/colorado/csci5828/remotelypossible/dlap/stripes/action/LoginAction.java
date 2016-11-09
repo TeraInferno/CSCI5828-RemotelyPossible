@@ -50,20 +50,20 @@ public class LoginAction extends BaseAction {
     return null;
   }
   
-  private Resolution direct(User authUser) {
-    if(authUser.getRole().equals("FACULTY")) {
+  public static Resolution direct(User authUser) {
+    if(authUser.getRole().equals(User.ROLE_FACULTY)) {
       //Success (Faculty)
       //TODO: Redirect to Faculty personalized project page (Non-existant)
-      return ResolutionUrl.FORWARD_PROJECT_LIST;
+      return ResolutionUrl.REDIRECT_PROJECT_LIST;
       
-    } else if(authUser.getRole().equals("STUDENT")) {        
+    } else if(authUser.getRole().equals(User.ROLE_USER)) {        
       //Success Student
-      return ResolutionUrl.FORWARD_PROJECT_LIST;
+      return ResolutionUrl.REDIRECT_PROJECT_LIST;
       
-    } else if(authUser.getRole().equals("ADMIN")) {
+    } else if(authUser.getRole().equals(User.ROLE_ADMIN)) {
       //Success (Admin)
       //TODO: Redirect to Admin Homepage (Non-existant)
-      return ResolutionUrl.FORWARD_PROJECT_LIST;
+      return ResolutionUrl.REDIRECT_PROJECT_LIST;
       
     } else {
       //TODO Unknown Role action 
