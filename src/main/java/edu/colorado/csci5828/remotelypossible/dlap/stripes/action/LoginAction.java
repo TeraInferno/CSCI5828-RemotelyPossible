@@ -53,8 +53,7 @@ public class LoginAction extends BaseAction {
   public static Resolution direct(User authUser) {
     if(authUser.getRole().equals(User.ROLE_FACULTY)) {
       //Success (Faculty)
-      //TODO: Redirect to Faculty personalized project page (Non-existant)
-      return ResolutionUrl.REDIRECT_PROJECT_LIST;
+      return ResolutionUrl.REDIRECT_PROJECT_FACULTY_LIST;
       
     } else if(authUser.getRole().equals(User.ROLE_USER)) {        
       //Success Student

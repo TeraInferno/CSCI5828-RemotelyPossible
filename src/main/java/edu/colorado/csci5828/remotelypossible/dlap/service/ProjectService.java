@@ -44,6 +44,14 @@ public class ProjectService extends BaseEntityService<Project,Long> {
 		return p.getId();
 	}
 	
+	/**
+	 * Find all project for a particular major
+	 * (Used by the student application form to populate
+	 * the project drop-downs)
+	 * 
+	 * @param major 4 letter major code
+	 * @return List of projects accepting a provided major
+	 */
 	public List<Tuple> findAllByMajor(String major) {
 	  CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
     CriteriaQuery<Tuple> cq = cb.createTupleQuery();
@@ -95,5 +103,24 @@ public class ProjectService extends BaseEntityService<Project,Long> {
     }
 
     return faculty;
+  }
+
+	/**
+	 * List the projects for a given Faculty username
+	 * 
+	 * @param username
+	 * @return list of projects for the given username
+	 */
+  public List<Project> findAllByFaculty(String username) {
+    CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
+    CriteriaQuery<Project> cq = cb.createQuery(entityClass());
+    Root<Project> root = cq.from(entityClass());
+    
+    cq.where(
+          cb.equal(root.get("username"), username)
+      );
+    
+    return getCurrentSession().createQuery(cq).getResultList();
+  
   }
 }

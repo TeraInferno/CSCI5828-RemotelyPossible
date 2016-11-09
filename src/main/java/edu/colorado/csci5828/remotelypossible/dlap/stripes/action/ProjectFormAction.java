@@ -63,8 +63,8 @@ public class ProjectFormAction extends BaseAction {
 		ProjectService ps = new ProjectService();
 		ps.save(project);
 		
-		//Return to Project List
-		return ResolutionUrl.REDIRECT_PROJECT_LIST;
+		//Return to Faculty Project List
+		return ResolutionUrl.REDIRECT_PROJECT_FACULTY_LIST;
 	}
 	
 	private Resolution edit() {

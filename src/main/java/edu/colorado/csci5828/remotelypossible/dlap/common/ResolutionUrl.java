@@ -26,5 +26,8 @@ public class ResolutionUrl {
   public static final Resolution REDIRECT_LOGIN = new RedirectResolution("/do/login");
   
   public static final Resolution FORWARD_FAKEME = new ForwardResolution("/WEB-INF/jsp/fakeme.jsp");
+  
+  public static final Resolution REDIRECT_PROJECT_FACULTY_LIST = new RedirectResolution("/do/project/faculty");
+  public static final Resolution FORWARD_PROJECT_FACULTY_LIST = new ForwardResolution("/WEB-INF/jsp/projectListFaculty.jsp");
 	
 }
