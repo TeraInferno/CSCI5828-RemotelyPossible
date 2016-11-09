@@ -29,6 +29,8 @@ tr > td
 <s:form id="application" method="post"
   beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ApplicantFormAction">
 
+<s:button name="save" id="saveButton" value="Save"/>
+
   <div id="tabs">
     <ul>
       <li><a href="#Overview">Overview</a></li>
@@ -127,7 +129,7 @@ tr > td
             <td>
               <s:text style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAALZJREFUOBFjYKAANDQ0rGWiQD9IqzgL0BQ3IKMXiB8AcSKQ/waIrYDsKUD8Fir2pKmpSf/fv3+zgPxfzMzMSbW1tbeBbAaQC+b+//9fB4h9gOwikCAQTAPyDYHYBciuBQkANfcB+WZAbPP37992kBgIUOoFBiZGRsYkIL4ExJvZ2NhAXmFgYmLKBPLPAfFuFhaWJpAYEBQC+SeA+BDQC5UQIQpJYFgdodQLLyh0w6j20RCgUggAAEREPpKMfaEsAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"
                 name="application.student.name" maxlength="50" id="textName"
-                onkeypress="return disableEnterKey(event)" type="text" onblur="updateRequiredHighlights();"/><br/>
+                onkeypress="return disableEnterKey(event)" type="text" onblur="updateRequiredHighlights();" /><br/>
             </td>
           </tr>
           <tr>
@@ -136,7 +138,7 @@ tr > td
               Gender:
             </td>
             <td>
-              <s:radio id="radioGender_0" name="application.student.gender" value="M" type="radio"  onblur="updateRequiredHighlights();" />
+              <s:radio id="radioGender_0" name="application.student.gender" value="M" type="radio"  onblur="updateRequiredHighlights();"  />
               <label for="radioGender_0">Male</label>
               <s:radio id="radioGender_1" name="application.student.gender" value="F" type="radio"  onblur="updateRequiredHighlights();" />
               <label for="radioGender_1">Female</label>
@@ -238,7 +240,7 @@ tr > td
             Boulder Address: (street, city, state, zip)</td>
             <td>
               <s:textarea name="application.student.boulderAddress" rows="3"
-                cols="20" id="textBoulderAddy" onblur="updateRequiredHighlights();"></s:textarea>
+                cols="20" id="textBoulderAddy" onblur="updateRequiredHighlights();" ></s:textarea>
           </tr>
           <tr>
             <td><strong><span style="color: #ff0000">*</span></strong>
@@ -248,15 +250,15 @@ tr > td
                 size="2" id="textbldrphone1"
                 onkeypress="return disableEnterKey(event)"
                 onkeyup="autotab(textbldrphone1, textbldrphone2)"
-                style="width: 26px;" type="text"  onblur="updateRequiredHighlights();"/> ) <s:text
+                style="width: 26px;" type="text"  onblur="updateRequiredHighlights();" /> ) <s:text
                 name="application.student.boulderPhone.prefix" maxlength="3" size="2"
                 id="textbldrphone2"
                 onkeypress="return disableEnterKey(event)"
                 onkeyup="autotab(textbldrphone2,textbldrphone3)"
-                style="width: 26px;" type="text"  onblur="updateRequiredHighlights();"/> - <s:text
+                style="width: 26px;" type="text"  onblur="updateRequiredHighlights();" /> - <s:text
                 name="application.student.boulderPhone.number" maxlength="4" size="4"
                 id="textbldrphone3"
-                onkeypress="return disableEnterKey(event)" type="text"  onblur="updateRequiredHighlights();"/>
+                onkeypress="return disableEnterKey(event)" type="text"  onblur="updateRequiredHighlights();" />
             </td>
           </tr>
           <tr>
@@ -329,7 +331,7 @@ tr > td
               Primary Major:
             </td>
             <td>
-              <s:select name="application.student.primaryMajor" id="listMajor"  onchange="updateRequiredHighlights();loadProjects();">
+              <s:select name="application.student.primaryMajor" id="listMajor"  onchange="updateRequiredHighlights();loadProjects();" >
                 <s:option selected="selected" value="">Please Select</s:option>
                 <s:option value="ASEN">Aerospace Engineering</s:option>
                 <s:option value="AMEN">Applied Mathematics</s:option>
@@ -400,17 +402,14 @@ tr > td
               Level in school as of next fall:
             </td>
             <td>
-              <s:select name="application.student.schoolLevel" id="listLevel" onchange="updateRequiredHighlights();">
+              <s:select name="application.student.schoolLevel" id="listLevel" onchange="updateRequiredHighlights();" >
                 <s:option selected="selected" value="">Please Select</s:option>
                 <s:option value="Freshman">Freshman</s:option>
                 <s:option value="Sophomore">Sophomore</s:option>
                 <s:option value="Junior">Junior</s:option>
                 <s:option value="Senior">Senior</s:option>
                 <s:option value="5th year Senior">5th Year Senior</s:option>
-
-              </s:select> <span id="RequiredFieldValidator31"
-              style="color: Red; visibility: hidden;">You must
-                indicate your level in school.</span></td>
+              </s:select>
           </tr>
           <tr>
             <td>
@@ -418,14 +417,14 @@ tr > td
               Anticipated Graduation Date:
             </td>
             <td>
-              <s:select name="application.student.graduationMonth" id="listGradMonth" onchange="updateRequiredHighlights();">
+              <s:select name="application.student.graduationMonth" id="listGradMonth" onchange="updateRequiredHighlights();" >
                 <s:option selected="selected" value="">Month</s:option>
                 <s:option value="05">May</s:option>
                 <s:option value="08">August</s:option>
                 <s:option value="12">December</s:option>
 
               </s:select>
-              <s:select name="application.student.graduationYear" id="listGradYear" onchange="updateRequiredHighlights();">
+              <s:select name="application.student.graduationYear" id="listGradYear" onchange="updateRequiredHighlights();" >
                 <s:option selected="selected" value="">Year</s:option>
                 <s:option value="2016">2016</s:option>
                 <s:option value="2017">2017</s:option>
@@ -520,7 +519,7 @@ tr > td
               First Choice
             </td>
             <td>
-              <s:select name="application.apprenticeshipInfo.firstChoice" id="listProject1"  onchange="updateRequiredHighlights();">
+              <s:select name="application.apprenticeshipInfo.firstChoice" id="listProject1"  onchange="updateRequiredHighlights();" >
                 <s:option selected="selected" value="">Please Select a Major first.</s:option>            
               </s:select>
             </td>
@@ -787,7 +786,7 @@ $(document).ready(function() {
   <!-- Pretty form elements -->
   $("input:text, input:password, textarea, select").addClass("ui-widget ui-state-default ui-corner-all");
   $("input:radio, input:checkbox" ).checkboxradio();
-  $("#save").button();
+  $("#saveButton").button();
   $( '[name="application.apprenticeshipInfo.backgroundCheckDate"]' ).datepicker();
   $( '[name="application.apprenticeshipInfo.discriminationTrainingDate"]' ).datepicker();
 
