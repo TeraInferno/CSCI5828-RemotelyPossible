@@ -17,6 +17,8 @@
 <br/><br/>
 <a href="/do/login">Login Page</a>
 <br/><br/>
+<a href="/do/fakeme">Fake Me</a>
+<br/><br/>
 <a href="/do/project/form">Project Submission Page</a>
 <br/><br/>
 <a href="/do/project/list">Project List Page</a>
