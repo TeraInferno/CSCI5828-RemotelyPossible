@@ -69,13 +69,13 @@ public class Student {
 	@Column
 	private boolean previousWorkExperienceExists;
 
-	@Column(length = 75)
+	@Column(length = 90)
 	private String firstSkill;
 
-	@Column(length = 75)
+	@Column(length = 90)
 	private String secondSkill;
 
-	@Column(length = 75)
+	@Column(length = 90)
 	private String thirdSkill;
 
 	@Column(length=256)
@@ -274,6 +274,14 @@ public class Student {
 
   public void setCoverLetterUrl(String coverLetterUrl) {
     this.coverLetterUrl = coverLetterUrl;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
 

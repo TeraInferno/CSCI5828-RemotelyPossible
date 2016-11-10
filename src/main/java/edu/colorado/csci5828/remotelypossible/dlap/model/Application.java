@@ -10,7 +10,7 @@ public class Application {
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id = null;
-
+    
     @OneToOne
     private Student student;
     

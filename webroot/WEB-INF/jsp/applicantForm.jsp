@@ -181,37 +181,37 @@ tr > td
                 <tbody>
                   <tr>
                     <td>
-                      <s:checkbox id="checkEth_0" name="application.student.race[0]" type="checkbox" />
+                      <s:checkbox id="checkEth_0" name="application.student.race[0]" type="checkbox" value="I" />
                       <label for="checkEth_0">American Indian or Alaskan Native</label>
                     </td>
                     <td>
-                      <s:checkbox id="checkEth_3" name="application.student.race[3]" type="checkbox" />
+                      <s:checkbox id="checkEth_3" name="application.student.race[3]" type="checkbox" value="A" />
                       <label for="checkEth_3">Asian</label>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <s:checkbox id="checkEth_1" name="application.student.race[1]" type="checkbox" />
+                      <s:checkbox id="checkEth_1" name="application.student.race[1]" type="checkbox" value="B" />
                       <label for="checkEth_1">Black or African-American</label>
                     </td>
                     <td>
-                      <s:checkbox id="checkEth_4" name="application.student.race[4]" type="checkbox" />
+                      <s:checkbox id="checkEth_4" name="application.student.race[4]" type="checkbox" value="W" />
                       <label for="checkEth_4">White</label>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <s:checkbox id="checkEth_2" name="application.student.race[2]" type="checkbox" />
+                      <s:checkbox id="checkEth_2" name="application.student.race[2]" type="checkbox" value="P" />
                       <label for="checkEth_2">Native Hawaiian or other Pacific Islander</label>
                     </td>
                     <td>
-                      <s:checkbox id="checkEth_5" name="application.student.race[5]" type="checkbox" />
+                      <s:checkbox id="checkEth_5" name="application.student.race[5]" type="checkbox" value="O" />
                       <label for="checkEth_5">Other</label>
                     </td>
                   </tr>
                   <tr>
                     <td colspan="2">
-                      <s:checkbox id="checkEth_6" name="application.student.race[6]" type="checkbox" />
+                      <s:checkbox id="checkEth_6" name="application.student.race[6]" type="checkbox" value="N" />
                       <label for="checkEth_6">Do Not Wish to Provide</label>
                     </td>
                   </tr>
