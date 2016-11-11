@@ -40,8 +40,10 @@ public class ProjectServiceTest extends BaseServiceTest {
 		
 		//Create a new Project
 		Project p = new Project();
-		//Set the only required fiedl
+		//Set the only required field
 		p.setDescription("Test Save Project");
+		
+		p.setUsername("testUser");
 		
 		//Try to save
 		ps.save(p);
