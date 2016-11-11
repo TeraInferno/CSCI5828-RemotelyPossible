@@ -1,10 +1,7 @@
 package edu.colorado.csci5828.remotelypossible.dlap.stripes.action;
 
 
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.Tuple;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -13,10 +10,8 @@ import com.google.gson.Gson;
 import edu.colorado.csci5828.remotelypossible.dlap.common.Constants;
 import edu.colorado.csci5828.remotelypossible.dlap.common.ResolutionUrl;
 import edu.colorado.csci5828.remotelypossible.dlap.model.Application;
-import edu.colorado.csci5828.remotelypossible.dlap.model.Project;
 import edu.colorado.csci5828.remotelypossible.dlap.model.validation.ApplicationValidator;
 import edu.colorado.csci5828.remotelypossible.dlap.service.ApplicationService;
-import edu.colorado.csci5828.remotelypossible.dlap.service.ProjectService;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.HttpCache;
 import net.sourceforge.stripes.action.Resolution;
