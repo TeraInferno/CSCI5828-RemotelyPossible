@@ -56,9 +56,6 @@
 
 <script type="text/javascript">
 <!-- Hyperlinks to filtered table list -->
-var autoFilter = function(dept) {
-  $("#projects_filter :input").val(dept+" - ").keyup();
-}
 
 $(document).ready(function() {
   <!-- Enable data table from project list -->
