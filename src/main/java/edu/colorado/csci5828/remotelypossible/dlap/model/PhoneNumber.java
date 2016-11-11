@@ -14,7 +14,7 @@ public class PhoneNumber {
 	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id = -1L;
+	private Long id = null;
 	
 	@Column(name="areacode", length=3)
 	private String areacode;

@@ -94,7 +94,15 @@ public class TestLoadAction extends BaseAction {
         Application a = new Application();
         Student s = new Student();
         ApprenticeshipInfo i = new ApprenticeshipInfo();
+        PhoneNumber phone = new PhoneNumber();
 
+        s.setBoulderAddress(y+" Way, Boulder, Colorado");
+        phone.setAreacode("303");
+        phone.setPrefix("123");
+        phone.setNumber(StringUtils.leftPad(String.valueOf(y), 4, '0'));
+        s.setBoulderPhone(phone);
+       
+        
         s.setName("Student"+y+" Name");
         s.setPrimaryMajor(r.getCell(2).getStringCellValue());        
         a.setUsername("Student"+y);
@@ -200,7 +208,7 @@ public class TestLoadAction extends BaseAction {
         }
         
         //Student ID
-        s.setStudentId(new Long(y));
+        s.setStudentId(new Long(StringUtils.rightPad(String.valueOf(y), 9, '0')));
         
         //BldrEmail 
         s.setBoulderEmail("Student"+y+"@email.com");

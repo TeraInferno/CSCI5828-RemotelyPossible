@@ -247,11 +247,11 @@ tr > td
               Boulder Phone:
             </td>
             <td>( <s:text name="application.student.boulderPhone.areacode" maxlength="3"
-                size="2" id="textbldrphone1"
+                size="3" id="textbldrphone1"
                 onkeypress="return disableEnterKey(event)"
                 onkeyup="autotab(textbldrphone1, textbldrphone2)"
                 style="width: 26px;" type="text"  onblur="updateRequiredHighlights();" /> ) <s:text
-                name="application.student.boulderPhone.prefix" maxlength="3" size="2"
+                name="application.student.boulderPhone.prefix" maxlength="3" size="3"
                 id="textbldrphone2"
                 onkeypress="return disableEnterKey(event)"
                 onkeyup="autotab(textbldrphone2,textbldrphone3)"
@@ -384,7 +384,7 @@ tr > td
               Student Number:
             </td>
             <td>
-              <s:text name="application.student.studentId" maxlength="9" size="2" id="textSID1" onblur="updateRequiredHighlights();" />&nbsp;(#########) 
+              <s:text name="application.student.studentId" maxlength="9" size="9" id="textSID1" onblur="updateRequiredHighlights();" />&nbsp;(#########) 
             </td>
           </tr>
           <tr>

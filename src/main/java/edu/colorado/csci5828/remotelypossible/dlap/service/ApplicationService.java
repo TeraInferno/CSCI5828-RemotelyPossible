@@ -27,7 +27,7 @@ public class ApplicationService extends BaseEntityService<Application,Long> {
 	    //Get the current transaction session
 	    Session db = getCurrentSession();
 	    
-	    //Persist all nested object
+	    //Persist all nested objects
 	    if(a.getApprenticeshipInfo().getId() == null) {
 	      db.save(a.getApprenticeshipInfo());
 	    }
@@ -36,7 +36,13 @@ public class ApplicationService extends BaseEntityService<Application,Long> {
 	      //Must have a phone number so FakeMe will work
 	      a.getStudent().setBoulderPhone(new PhoneNumber());
 	      db.save(a.getStudent().getBoulderPhone());
+	    } else if(a.getStudent().getBoulderPhone().getId() == null) {
+	      db.save(a.getStudent().getBoulderPhone());
 	    }
+	    
+	    if(a.getStudent().getSummerPhone() != null && a.getStudent().getSummerPhone().getId() == null) {
+        db.save(a.getStudent().getSummerPhone());
+      }
 	    
 	    if(a.getStudent().getId() == null) {
 	      db.save(a.getStudent());
