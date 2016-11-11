@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 
 import edu.colorado.csci5828.remotelypossible.dlap.common.ResolutionUrl;
+import edu.colorado.csci5828.remotelypossible.dlap.service.ApplicationService;
 import edu.colorado.csci5828.remotelypossible.dlap.service.ProjectService;
 import edu.colorado.csci5828.remotelypossible.dlap.util.User;
 import net.sourceforge.stripes.action.DefaultHandler;
@@ -23,12 +24,16 @@ public class FakeMeAction extends BaseAction {
   @DefaultHandler
   public Resolution login() {
     if(StringUtils.isBlank(username) || StringUtils.isBlank(role)) {
-      //Send a list of users
-      
+
+      //Send a list of faculty
       ProjectService ps = new ProjectService();
       List<Map<String,String>> faculty = ps.findAllFakeMeFaculty();
       getContext().getRequest().setAttribute("faculty", faculty);
       
+      //Send a list of students
+      ApplicationService as = new ApplicationService();
+      List<Map<String,String>> student = as.findAllFakeMeStudent();
+      getContext().getRequest().setAttribute("student", student);
       
       return ResolutionUrl.FORWARD_FAKEME;
       

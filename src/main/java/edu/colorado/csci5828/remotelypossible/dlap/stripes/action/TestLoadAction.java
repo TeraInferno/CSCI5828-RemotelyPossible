@@ -88,7 +88,7 @@ public class TestLoadAction extends BaseAction {
           continue;
         }
 
-System.out.println("Row# "+y+ " "+r.getCell(2).toString()+" "+r.getCell(5).toString());
+//System.out.println("Row# "+y+ " "+r.getCell(2).toString()+" "+r.getCell(5).toString());
 
 
         Application a = new Application();
@@ -97,7 +97,8 @@ System.out.println("Row# "+y+ " "+r.getCell(2).toString()+" "+r.getCell(5).toStr
 
         s.setName("Student"+y+" Name");
         s.setPrimaryMajor(r.getCell(2).getStringCellValue());        
-
+        a.setUsername("Student"+y);
+        
         val = r.getCell(3).getStringCellValue();
         if(!"None".equals(val)) {
           s.setSecondaryMajor(val);

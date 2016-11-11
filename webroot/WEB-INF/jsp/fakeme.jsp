@@ -22,7 +22,12 @@
 <br/>
 
 <br/><br/><br/>
-<a id="tableTop"></a>
+<div id="tabs">
+  <ul>
+  	<li><a href="#facultyTab">Faculty</a></li>
+    <li><a href="#studentTab">Students</a></li>
+  </ul>
+<div id="facultyTab">
 <table id="faculty" class="display">
         <thead>
             <tr>
@@ -51,6 +56,41 @@
 		</c:forEach>
         </tbody>
 </table>
+</div>
+
+
+<div id="studentTab">
+<table id="student" class="display">
+        <thead>
+            <tr>
+            	<th>Name</th>
+            	<th>E-mail</th>
+            	<th>Phone Number</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+            	<th>Name</th>
+            	<th>E-mail</th>
+            	<th>Phone Number</th>
+                <th>Username</th>
+            </tr>
+        </tfoot>
+        <tbody>
+        <c:forEach items="${student}" var="member" varStatus="loop">
+			<tr>
+			  <td>${member.name}</td>
+			  <td>${member.email}</td>
+			  <td>${member.phone}</td>
+			  <td>${member.username}</td>
+			</tr>
+		</c:forEach>
+        </tbody>
+</table>
+</div>
+
+</div>
 <s:form id="fakeme" method="post" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.FakeMeAction">
  <s:hidden id="username" name="username"/>
  <s:hidden id="role" name="role"/>
@@ -63,8 +103,18 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+
+  <!-- Setup the Tabs -->
+  $("#tabs").tabs();
+
   <!-- Enable data table from project list -->
   $('#faculty').DataTable({
+      "search": {
+	  "smart": false
+    }
+   
+  });
+  $('#student').DataTable({
       "search": {
 	  "smart": false
     }
@@ -80,9 +130,18 @@ $(document).ready(function() {
     	$('#fakeme').submit();
     }
   });
+  $('#student tbody').on( 'click', 'tr', function () {
+ 	var fakeUsr = $(this).find('td:last').text();
+    if( confirm('Are you sure you want to switch to '+$(this).find('td:first').text()) ) {
+    	$('#username').val(fakeUsr);
+    	$('#role').val('STUDENT');
+    	$('#fakeme').submit();
+    }
+  });
 
   <!-- Style the DataTable filter with JQueryUI -->
   $("#faculity_filter :input").addClass("ui-widget ui-state-default ui-corner-all");
+  $("#student_filter :input").addClass("ui-widget ui-state-default ui-corner-all");
 });
 </script>
 </body>
