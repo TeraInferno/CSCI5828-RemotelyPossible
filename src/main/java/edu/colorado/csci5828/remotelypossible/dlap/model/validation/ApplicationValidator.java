@@ -74,7 +74,7 @@ public class ApplicationValidator extends BaseValidator {
         //application.student.graduationYear
       }
       
-      if(s.getStudentId() == null || s.getStudentId() < 10000000 || s.getStudentId() > 99999999) {
+      if(s.getStudentId() == null || s.getStudentId() < 100000000 || s.getStudentId() > 999999999) {
         errors.add("application.student.studentId");
       }
  		  

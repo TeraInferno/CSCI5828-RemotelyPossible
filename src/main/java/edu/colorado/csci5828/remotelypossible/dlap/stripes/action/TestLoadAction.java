@@ -60,7 +60,7 @@ public class TestLoadAction extends BaseAction {
       List<Project> pl = ps.findAll();
       Map<String,Project> projectIdByTitle = new HashMap<String,Project>(pl.size());
       for(Project p: pl) {
-        projectIdByTitle.put(p.getDescription(), p);
+        projectIdByTitle.put(p.getDescription(), p);        
       }
       
       
@@ -178,33 +178,53 @@ public class TestLoadAction extends BaseAction {
         s.setThirdSkill(r.getCell(skillPos+2).getStringCellValue());
         
         //Project1
-        p = projectIdByTitle.get(r.getCell(skillPos+3).getStringCellValue());
-        if(p != null) {
-          i.setFirstChoice(p);
+        val = r.getCell(skillPos+3).getStringCellValue();
+        if(val.indexOf(" - ") > 0) {
+          val = val.substring(val.indexOf(" - ")+3);
+          p = projectIdByTitle.get(val);
+          if(p != null) {
+            i.setFirstChoice(p);
+          }
         }
         
         //Project2
-        p = projectIdByTitle.get(r.getCell(skillPos+4).getStringCellValue());
-        if(p != null) {
-          i.setSecondChoice(p);
+        val = r.getCell(skillPos+4).getStringCellValue();
+        if(val.indexOf(" - ") > 0) {
+          val = val.substring(val.indexOf(" - ")+3);
+          p = projectIdByTitle.get(val);
+          if(p != null) {
+            i.setSecondChoice(p);
+          }
         }
         
         //Project3
-        p = projectIdByTitle.get(r.getCell(skillPos+5).getStringCellValue());
-        if(p != null) {
-          i.setThirdChoice(p);
+        val = r.getCell(skillPos+5).getStringCellValue();
+        if(val.indexOf(" - ") > 0) {
+          val = val.substring(val.indexOf(" - ")+3);
+          p = projectIdByTitle.get(val);
+          if(p != null) {
+            i.setThirdChoice(p);
+          }
         }
         
         //Project4
-        p = projectIdByTitle.get(r.getCell(skillPos+6).getStringCellValue());
-        if(p != null) {
-          i.setFourthChoice(p);
+        val = r.getCell(skillPos+6).getStringCellValue();
+        if(val.indexOf(" - ") > 0) {
+          val = val.substring(val.indexOf(" - ")+3);
+          p = projectIdByTitle.get(val);
+          if(p != null) {
+            i.setFourthChoice(p);
+          }
         }
         
         //Project5
-        p = projectIdByTitle.get(r.getCell(skillPos+7).getStringCellValue());
-        if(p != null) {
-          i.setFifthChoice(p);
+        val = r.getCell(skillPos+7).getStringCellValue();
+        if(val.indexOf(" - ") > 0) {
+          val = val.substring(val.indexOf(" - ")+3);
+          p = projectIdByTitle.get(val);
+          if(p != null) {
+            i.setFifthChoice(p);
+          }
         }
         
         //Student ID
@@ -239,7 +259,6 @@ public class TestLoadAction extends BaseAction {
   }
   
   private void loadProjects() {
-    Map<String,Project> projectIdByTitle = new HashMap<String,Project>(110);
     NPOIFSFileSystem fs;
     try {
       fs = new NPOIFSFileSystem(getClass().getClassLoader().getResourceAsStream("testData/projects.xls"));
@@ -283,7 +302,6 @@ public class TestLoadAction extends BaseAction {
         
         ps.save(p);
                 
-        projectIdByTitle.put(p.getDescription(), p);
       }
       
       ps.getCurrentSession().getTransaction().commit();

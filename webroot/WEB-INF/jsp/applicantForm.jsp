@@ -1,5 +1,5 @@
-<%@ taglib prefix="s"
-  uri="http://stripes.sourceforge.net/stripes-dynattr.tld"%>
+<%@ taglib prefix="s" uri="http://stripes.sourceforge.net/stripes-dynattr.tld"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -520,7 +520,7 @@ tr > td
             </td>
             <td>
               <s:select name="application.apprenticeshipInfo.firstChoice" id="listProject1"  onchange="updateRequiredHighlights();" >
-                <s:option selected="selected" value="">Please Select a Major first.</s:option>            
+                <s:option selected="selected" value="">Please Select a Major first.</s:option>
               </s:select>
             </td>
           </tr>
@@ -539,9 +539,8 @@ tr > td
               Third Choice
             </td>
             <td>
-              <s:select name="application.apprenticeshipInfo.thirdChoice" id="listProject3">
+              <s:select name="application.apprenticeshipInfo.thirdChoice"  id="listProject3">
                 <s:option selected="selected" value="">Please Select a Major first.</s:option>
-
               </s:select>
             </td>
           </tr>
@@ -552,7 +551,6 @@ tr > td
             <td>
               <s:select name="application.apprenticeshipInfo.fourthChoice" id="listProject4">
                 <s:option selected="selected" value="">Please Select a Major first.</s:option>
-
               </s:select>
             </td>
           </tr>
@@ -745,6 +743,7 @@ var setProjects = function(projectList, status) {
 			}));
 		}
 	}
+	projectSelect();
 };
 var loadProjects = function() {
 	var selectedVal = $('[name="application.student.primaryMajor"]').val();
@@ -778,6 +777,12 @@ var checkDateNeeded = function(selfName, dateName) {
 		$('input[name="'+dateName+'"]').hide();
 	}
 };
+var projectSelect = function() {
+	var selected = ['${application.apprenticeshipInfo.firstChoice.id}','${application.apprenticeshipInfo.secondChoice.id}','${application.apprenticeshipInfo.thirdChoice.id}','${application.apprenticeshipInfo.fourthChoice.id}','${application.apprenticeshipInfo.fifthChoice.id}'];
+	for(var x = 0; x < selected.length; x++) {
+	  $("[name='"+projectSelects[x]+"'").val(selected[x]);
+	}
+};
 
 $(document).ready(function() {
   <!-- Setup the Tabs -->
@@ -800,6 +805,10 @@ $(document).ready(function() {
     
   <!-- Highlight required fields -->
   updateRequiredHighlights();
+  
+  <!-- Load projects if ready -->
+  loadProjects();
+  
 });
 </script>
 
