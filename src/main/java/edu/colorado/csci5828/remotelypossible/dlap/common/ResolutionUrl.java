@@ -29,5 +29,8 @@ public class ResolutionUrl {
   
   public static final Resolution REDIRECT_PROJECT_FACULTY_LIST = new RedirectResolution("/do/project/faculty");
   public static final Resolution FORWARD_PROJECT_FACULTY_LIST = new ForwardResolution("/WEB-INF/jsp/projectListFaculty.jsp");
+  
+  public static final Resolution REDIRECT_PROJECT_STUDENT_LIST = new RedirectResolution("/do/student/application");
+  public static final Resolution FORWARD_PROJECT_STUDENT_LIST = new ForwardResolution("/WEB-INF/jsp/applicationListStudent.jsp");
 	
 }

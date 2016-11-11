@@ -47,6 +47,12 @@ public class ApplicationService extends BaseEntityService<Application,Long> {
 	    
 	    return a.getId();
 	  }
+	 
+	 /**
+	  * Returns a list of known Students
+	  * 
+	  * @return
+	  */
 
   public List<Map<String, String>> findAllFakeMeStudent() {
     CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
@@ -79,5 +85,22 @@ public class ApplicationService extends BaseEntityService<Application,Long> {
     return student;
 
   }
-
+  /**
+   * List the projects for a given Student username
+   * 
+   * @param username
+   * @return list of projects for the given username
+   */
+  public List<Application> findAllByStudent(String username) {
+    CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
+    CriteriaQuery<Application> cq = cb.createQuery(entityClass());
+    Root<Application> root = cq.from(entityClass());
+    
+    cq.where(
+          cb.equal(root.get("username"), username)
+      );
+    
+    return getCurrentSession().createQuery(cq).getResultList();
+  
+  }
 }

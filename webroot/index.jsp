@@ -24,11 +24,15 @@
 <a href="/do/applicant/form">Applicant Form</a>
 <br/><br/>
 <p>
-  The Faculty Project listing page requires that you be authenticated. Until authentication is ready, you must first use the Fake Me page to "psuedo authenticate" as a faculty member. Then you can go to the Faculty project listing page.
+  The following pages require that you be authenticated.<br/>
+  Until authentication is ready, you must first use the Fake Me page to "authenticate."<br/>
+  Then you can go to the listing pages.
 </p>
 <a href="/do/fakeme">Fake Me</a>
 <br/><br/>
 <a href="/do/project/faculty">Faculty Project Listing Page</a>
+<br/><br/>
+<a href="/do/student/application">Student Application Listing Page</a>
 <br/><br/>
 
 </body>
