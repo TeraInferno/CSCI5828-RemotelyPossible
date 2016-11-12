@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.naming.AuthenticationException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.unboundid.ldap.sdk.Attribute;
 import com.unboundid.ldap.sdk.BindRequest;
 import com.unboundid.ldap.sdk.BindResult;
@@ -17,22 +20,24 @@ import com.unboundid.ldap.sdk.SearchResultEntry;
 import com.unboundid.ldap.sdk.SearchScope;
 import com.unboundid.ldap.sdk.SimpleBindRequest;
 
+import edu.colorado.csci5828.remotelypossible.dlap.common.Settings;
+
 public class LdapUtil {
 
-	private static final String LDAP_HOST = "54.218.73.5";
-	private static final int LDAP_PORT = 10389;
-	private static final String LDAP_BASE_DN = "dc=example,dc=com";
-	
-	
+	private final String LDAP_HOST;
+	private final int LDAP_PORT;
+	private final String LDAP_BASE_DN;
 
-	
+	private final Logger log = LoggerFactory.getLogger(LdapUtil.class);
+
 	public LdapUtil()
 	{
-		// TODO
-	}
-	
-	
-	
+		Settings.loadAppProperties(getClass().getClassLoader().getResourceAsStream("app.properties"));
+		LDAP_HOST = Settings.getLdapHost();
+		LDAP_PORT = Settings.getLdapPort();
+		LDAP_BASE_DN = Settings.getLdapBaseDN();
+	}	
+
 	/**
 	 * This method searches the LDAP for the provided uid
 	 * and returns the BindDN for that user.
@@ -44,34 +49,34 @@ public class LdapUtil {
 	{
 		String result = "";
 		Filter filter = Filter.createEqualityFilter("uid", uid);
-	
+
 		try (LDAPConnection searchConnection = new LDAPConnection(LDAP_HOST, LDAP_PORT))
 		{		
 			SearchRequest searchRequest = new SearchRequest(LDAP_BASE_DN, SearchScope.SUB, filter);
 
-	        final SearchResult searchResult = searchConnection.search(searchRequest);
+			final SearchResult searchResult = searchConnection.search(searchRequest);
 			List<SearchResultEntry> searchEntries = searchResult.getSearchEntries();
-			
-			
-			 if (searchEntries.size() != 1)
-			 {
-			   // The search didn't match exactly one entry.
-			 }
-			 else
-			 {
-			   SearchResultEntry entry = searchEntries.get(0);
-			   result = entry.getDN();
-			 }
 
-			
+
+			if (searchEntries.size() != 1)
+			{
+				log.warn("ldap search did not match exactly one entry");
+			}
+			else
+			{
+				SearchResultEntry entry = searchEntries.get(0);
+				result = entry.getDN();
+				log.debug("ldap search returned baseDN={}", result);
+			}
+
+
 		} catch (LDAPException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("Exception occured while searching for BaseDN", e);
 		}
-		
+
 		return result;
 	}
-	
+
 	/**
 	 * This method will search and return the eduPersonAffiliation for the
 	 * provided uid.
@@ -82,40 +87,39 @@ public class LdapUtil {
 	public String searchForRoleByUID(String uid)
 	{
 		String role = "";
-		
+
 		Filter filter = Filter.createEqualityFilter("uid", uid);
-		
+
 		try (LDAPConnection searchConnection = new LDAPConnection(LDAP_HOST, LDAP_PORT))
 		{		
 			SearchRequest searchRequest = new SearchRequest(LDAP_BASE_DN, SearchScope.SUB, filter);
 
-	        final SearchResult searchResult = searchConnection.search(searchRequest);
+			final SearchResult searchResult = searchConnection.search(searchRequest);
 			List<SearchResultEntry> searchEntries = searchResult.getSearchEntries();
-			
-			
-			 if (searchEntries.size() != 1)
-			 {
-			   // The search didn't match exactly one entry.
-			 }
-			 else
-			 {
-			   SearchResultEntry entry = searchEntries.get(0);
-			   role = entry.getAttribute("eduPersonAffiliation").getValue();
-			 }
 
-			
+
+			if (searchEntries.size() != 1)
+			{
+				// The search didn't match exactly one entry.
+			}
+			else
+			{
+				SearchResultEntry entry = searchEntries.get(0);
+				role = entry.getAttribute("eduPersonAffiliation").getValue();
+			}
+
+
 		} catch (LDAPException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("Exception occured while searching for role", e);
 		}
 
-		
+
 		return role;
 	}
-	
+
 	public void printSearch(String name)
 	{
-		
+
 		Filter filter = Filter.createEqualityFilter("cn", name);
 
 		try (LDAPConnection searchConnection = new LDAPConnection(LDAP_HOST, LDAP_PORT))
@@ -123,27 +127,26 @@ public class LdapUtil {
 			SearchRequest searchRequest = new SearchRequest(LDAP_BASE_DN, SearchScope.SUB, filter);
 
 
-	        final SearchResult searchResult = searchConnection.search(searchRequest);
-	        if (searchResult.getEntryCount() > 0)
-	        {
-	            SearchResultEntry entry = searchResult.getSearchEntries().get(0);
-	            
-	            for (Attribute a : entry.getAttributes()) {
+			final SearchResult searchResult = searchConnection.search(searchRequest);
+			if (searchResult.getEntryCount() > 0)
+			{
+				SearchResultEntry entry = searchResult.getSearchEntries().get(0);
+
+				for (Attribute a : entry.getAttributes()) {
 					System.out.println("Value: " + a.getValue());
 				}
-	        	
-	        }
 
-			
-			
+			}
+
+
+
 		} catch (LDAPException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("Exception occured while printing search", e);
 		}
 
-		
+
 	}
-		
+
 	/**
 	 * This method takes the BindDN and Password for a user. It then will authenticate
 	 * against the LDAP server and create a User object populated
@@ -162,21 +165,19 @@ public class LdapUtil {
 			ResultCode resultCode = bindResult.getResultCode();
 			if (resultCode.equals(ResultCode.SUCCESS)) {
 				// Do stuff. You have been authenticated. 
-				
+
 				user.setAuth(true);				
 			} else {
-				// You have not been authenticated. 
+				log.warn("User {} was not authenticated", user.getUID());
 			}			
 
-
 		} catch (LDAPException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("Exception occured while authenticating DN", e);
 		}
-		
+
 		return user;
 	}
-	
+
 	/**
 	 * This method is the master authenticate method. It takes a users uid and password.
 	 * It will then search for that user in LDAP. If found, it will then authenticate that user 
@@ -193,19 +194,22 @@ public class LdapUtil {
 	{
 		User user = new User();
 		user.setUID(uid);
-		
+
 		String userBindDN = searchForUserDN(uid);
 
 		user = authenticateDN(user, userBindDN, password);
-		
-		if (user.isAuthenticated()) {
+
+		// Check if user was authenticated
+		if (user.isAuthenticated()) {			
+			// Setup User object
 			String role = searchForRoleByUID(uid);
 			user.setRole(role);
-			
+
+			// Return user
 			return user;
 		} else {
 			throw new AuthenticationException("Unable to Authenticate");
 		}
 	}
-		
+
 }

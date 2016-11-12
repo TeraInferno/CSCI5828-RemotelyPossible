@@ -87,6 +87,18 @@ public class Settings {
 		return getProperty("s3.cover_letter_key_prefix");
 	}
 	
+	public static String getLdapHost(){
+		return getProperty("ldap.host");
+	}
+	
+	public static int getLdapPort(){
+		return Integer.parseInt(getProperty("ldap.port"));
+	}
+	
+	public static String getLdapBaseDN(){
+		return getProperty("ldap.basedn");
+	}
+	
 	public static void loadAppProperties(InputStream is) {
 		props = new Properties();
 		try {
