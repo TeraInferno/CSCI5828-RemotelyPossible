@@ -43,11 +43,11 @@
 			<tr>
 			  <td>
 			    <ol>
-			  	  <li>${app.apprenticeshipInfo.firstChoice}
-			  	  <li>${app.apprenticeshipInfo.secondChoice}
-			  	  <li>${app.apprenticeshipInfo.thirdChoice}
-			  	  <li>${app.apprenticeshipInfo.fourthChoice}
-			  	  <li>${app.apprenticeshipInfo.fifthChoice}
+			  	  <li>${app.apprenticeshipInfo.firstChoice.description}
+			  	  <li>${app.apprenticeshipInfo.secondChoice.description}
+			  	  <li>${app.apprenticeshipInfo.thirdChoice.description}
+			  	  <li>${app.apprenticeshipInfo.fourthChoice.description}
+			  	  <li>${app.apprenticeshipInfo.fifthChoice.description}
 			  	</ol>
 			  </td>
 			  <td>

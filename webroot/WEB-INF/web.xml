@@ -24,6 +24,10 @@
 		<filter-name>StripesFilter</filter-name>
 		<filter-class>net.sourceforge.stripes.controller.StripesFilter
 		</filter-class>
+		  <init-param>
+		  <param-name>TypeConverterFactory.Class</param-name>
+		  <param-value>edu.colorado.csci5828.remotelypossible.dlap.stripes.utils.DlapTypeConverterFactory</param-value>
+		</init-param> 
 		<init-param>
 			<param-name>ActionResolver.Packages</param-name>
 			<param-value>edu.colorado.csci5828.remotelypossible.dlap.stripes.action</param-value>

@@ -38,6 +38,7 @@ public class ApplicantFormAction extends BaseStudentAction {
 	public Resolution process() {
 	  if(validate) {
       return validate();
+      
     } else if(StringUtils.isNotBlank(save)) {
       return save();
       
@@ -65,7 +66,7 @@ public class ApplicantFormAction extends BaseStudentAction {
     as.save(application);
     
     //Return to Project List
-    return ResolutionUrl.REDIRECT_PROJECT_LIST;
+    return ResolutionUrl.REDIRECT_PROJECT_STUDENT_LIST;
   }
 	
 	private Resolution edit() {

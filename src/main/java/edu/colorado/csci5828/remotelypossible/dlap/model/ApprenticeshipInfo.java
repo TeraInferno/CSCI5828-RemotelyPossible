@@ -17,6 +17,7 @@ public class ApprenticeshipInfo {
     @Column(length=300)
     private String otherPlannedEmployment;
 
+
     @ManyToOne(cascade = CascadeType.ALL)
     private Project firstChoice;
 

@@ -29,7 +29,7 @@ tr > td
 <s:form id="application" method="post"
   beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ApplicantFormAction">
 
-<s:button name="save" id="saveButton" value="Save"/>
+<s:submit id="saveButton" name="save" value="Save"/>
 <s:hidden name="application.id"/>
   <div id="tabs">
     <ul>
