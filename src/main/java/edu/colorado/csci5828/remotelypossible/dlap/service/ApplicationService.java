@@ -109,4 +109,28 @@ public class ApplicationService extends BaseEntityService<Application,Long> {
     return getCurrentSession().createQuery(cq).getResultList();
   
   }
+
+  /**
+   * Final all Applications related to a particular Project
+   * 
+   * @param id The Project ID 
+   * @return A list of Application for the Project
+   */
+  public List<Application> findAllBYProject(Long id) {
+    CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
+    CriteriaQuery<Application> cq = cb.createQuery(entityClass());
+    Root<Application> root = cq.from(entityClass());
+    
+    cq.where(
+        cb.or(
+          cb.equal(root.get("apprenticeshipInfo").get("firstChoice"), id),
+          cb.equal(root.get("apprenticeshipInfo").get("secondChoice"), id),
+          cb.equal(root.get("apprenticeshipInfo").get("thirdChoice"), id),
+          cb.equal(root.get("apprenticeshipInfo").get("fourthChoice"), id),
+          cb.equal(root.get("apprenticeshipInfo").get("fifthChoice"), id)
+        )
+      );
+    
+    return getCurrentSession().createQuery(cq).getResultList();
+  }
 }

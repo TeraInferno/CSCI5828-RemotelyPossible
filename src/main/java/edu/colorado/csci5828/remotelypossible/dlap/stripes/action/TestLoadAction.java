@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.apache.commons.lang3.StringUtils;
@@ -32,8 +34,8 @@ import net.sourceforge.stripes.action.UrlBinding;
 @HttpCache(allow=false)
 public class TestLoadAction extends BaseAction {
 
-  private List<String> MAJORS = Arrays.asList(new String[] { "ASEN","AMEN","AREN","CHEN","CBEN","CVEN","CSEN","EEEN","ECEN","EPEN","EVEN","GEEN","MCEN","TMEN" });
-  String[] RACES = new String[] {"I","A","B","W","P","O","N"};
+  private static final List<String> MAJORS = Arrays.asList(new String[] { "ASEN","AMEN","AREN","CHEN","CBEN","CVEN","CSEN","EEEN","ECEN","EPEN","EVEN","GEEN","MCEN","TMEN" });
+  private static final String[] RACES = new String[] {"I","A","B","W","P","O","N"};
   
   private ApplicationService as = new ApplicationService();
   private ProjectService ps = new ProjectService();
@@ -43,7 +45,43 @@ public class TestLoadAction extends BaseAction {
     
     loadProjects();
     loadApplications();
+    fixAcceptedMajors();
     
+    
+  }
+  
+  private void fixAcceptedMajors() {
+    // Load all projects
+    List<Project> pl = ps.findAll();
+    
+    //For each project
+    for(Project p: pl) {
+      
+      //Find all applicants for the project
+      List<Application> appList = as.findAllBYProject(p.getId());
+      if(appList.size() == 0) {
+        continue;
+      }
+      
+      //Create a unique list of majors
+      Set<String> majors = new HashSet<String>(MAJORS.size());
+      for(Application a: appList) {
+        majors.add(a.getStudent().getPrimaryMajor());
+      }
+      
+      
+      //Create a new List of accepted majors
+      List<String> acceptedMajors = new ArrayList<String>(majors.size());
+      for(String major: MAJORS) {
+        if(majors.contains(major)) {
+          acceptedMajors.add(major);
+        }
+      }
+      
+      p.setAcceptedMajors(acceptedMajors);
+      ps.saveOrUpdate(p);
+      
+    }
     
   }
   
@@ -251,6 +289,10 @@ public class TestLoadAction extends BaseAction {
       
       wb.close();
       fs.close();
+      
+      ps.getCurrentSession().getTransaction().commit();
+      ps.getCurrentSession().beginTransaction();
+
       
     } catch (IOException e) {
       e.printStackTrace();
