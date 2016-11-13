@@ -20,7 +20,7 @@ import net.sourceforge.stripes.action.UrlBinding;
 
 @UrlBinding("/do/applicant/form/{id}")
 @HttpCache(allow=false)
-public class ApplicantFormAction extends BaseAction {
+public class ApplicantFormAction extends BaseStudentAction {
 	
 	//URL link ID
 	private String id = Constants.EMPTY_STRING;
@@ -61,6 +61,7 @@ public class ApplicantFormAction extends BaseAction {
   private Resolution save() {
     //Save Project
     ApplicationService as = new ApplicationService();
+    application.setUsername(getUser().getName());
     as.save(application);
     
     //Return to Project List
