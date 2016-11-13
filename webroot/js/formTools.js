@@ -1,9 +1,8 @@
 function autotab(original, destination) {
-	original = document.getElementById(original);
-	destination = document.getElementById(destination);
-	if (original.getAttribute
-			&& original.value.length == original.getAttribute("maxlength"))
-		destination.focus()
+	var current = $('#'+original);
+	if (current.val().length == current.attr("maxlength")) {
+		$('#'+destination).focus();
+	}
 };
 
 function textCounter(field, cntfield, maxlimit) {
@@ -23,16 +22,17 @@ function fScrollMove(what) {
 	var hidScroll = document.getElementById('hidScroll');
 	document.getElementById(what).scrollTop = hidScroll.value;
 };
-function disableEnterKey(e) {
-	var key;
-	if (window.event) {
-		key = window.event.keyCode; // IE
-	} else {
-		key = e.which; // firefox
-	}
-	return (key != 13);
-};
 
+
+
+$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
 
 var checkOtherEnabled = function(self,otherField) {
 	if( $(self).val() == "Other" ) {
