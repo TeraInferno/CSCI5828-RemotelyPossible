@@ -63,7 +63,7 @@ tr > td
        <tr>
            <td>
                <label for="project.description">A title/description for the apprenticeship:</label><br/>
-               <s:text name="project.description" size="80" maxlength="80" id="textDescription" placeholder="Project Title (Required)" onKeyUp="textCounter(this,remLen1,80);" onKeyDown="textCounter(this,remLen1,80);" onKeyPress="textCounter(this,remLen1,80);" required="true"  onblur="updateRequiredHighlights();"></s:text>
+               <s:text name="project.description" size="80" maxlength="80" id="textDescription" placeholder="Project Title (Required)" onKeyUp="textCounter(this,remLen1,80);" required="true"  onblur="updateRequiredHighlights();"></s:text>
            </td>
             <td>
             	<s:submit id="save" name="save" value="Save"/>
@@ -97,7 +97,7 @@ tr > td
                 information to interested students?</label>
             </td>
             <td>
-                <s:text name="project.url" size="79" id="textWeb" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.url" size="79" id="textWeb"  />
             </td>
         </tr>
         <tr>
@@ -107,7 +107,7 @@ tr > td
                 in 2 5-hour blocks, etc.)<br />
                 (may not exceed 1000 characters)</td>
             <td>
-                <s:textarea name="project.requirement" rows="5" cols="60" id="textSpecialRequirements" onKeyUp="textCounter(this,remLen3,1000);" onKeyDown="textCounter(this,remLen3,1000);" onKeyPress="textCounter(this,remLen3,1000);"></s:textarea>
+                <s:textarea name="project.requirement" rows="5" cols="60" id="textSpecialRequirements" onKeyUp="textCounter(this,remLen3,1000);"></s:textarea>
                 <br />
 <input type="text" name="remLen3" id="remLen3" size="6" maxlength="3" value="1000" tabindex="-1" /></td>
         </tr>
@@ -117,7 +117,7 @@ tr > td
                 A longer description of the apprenticeship:<br />
                 (may not exceed 1200 characters)</td>
             <td>
-                <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(this,remLen2,1200);" onKeyDown="textCounter(this,remLen2,1200);" onKeyPress="textCounter(this,remLen2,1200);" onblur="updateRequiredHighlights();" onfocus="updateRequiredHighlights();"></s:textarea>
+                <s:textarea name="project.longDescription" rows="5" cols="60" id="textLongDescription" onKeyUp="textCounter(this,remLen2,1200);" onblur="updateRequiredHighlights();" onfocus="updateRequiredHighlights();"></s:textarea>
                 <br />
 <input type="text" name="remLen2" id="remLen2" size="6" maxlength="3" value="1200" tabindex="-1" />&nbsp;
             </td>
@@ -196,7 +196,7 @@ tr > td
             		<s:option value="Other">Other, specify:</s:option>
             	</s:select>
             	<br/>
-                <s:text name="project.natureOfWorkOther" id="textNattyWo" onKeyPress="return disableEnterKey(event)"  onblur="updateRequiredHighlights();" />
+                <s:text name="project.natureOfWorkOther" id="textNattyWo"   onblur="updateRequiredHighlights();" />
 			</td>
         </tr>
         <tr>
@@ -212,7 +212,7 @@ tr > td
             		<s:option value="Other">Other, specify:</s:option>
             	</s:select>
 				<br/>
-                <s:text name="project.priorWorkOther" id="textAmountPro" onKeyPress="return disableEnterKey(event)"  onblur="updateRequiredHighlights();" />
+                <s:text name="project.priorWorkOther" id="textAmountPro"   onblur="updateRequiredHighlights();" />
             </td>
         </tr>
 
@@ -220,7 +220,7 @@ tr > td
             <td>
                 Name of specific student desired: (if any) and be sure to ask them to apply!</td>
             <td>
-                <s:text name="project.desiredStudent" id="textStudName" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.desiredStudent" id="textStudName"  />
             </td>
         </tr>
         <tr>
@@ -255,9 +255,9 @@ tr > td
                 Faculty phone number:
              </td>
             <td>
-               ( <s:text name="project.faculty1.phone.areacode"  maxlength="3" size="2" id="textbldrphone1" onkeyup="autotab(textbldrphone1, textbldrphone2)" />
-                ) <s:text name="project.faculty1.phone.prefix" maxlength="3" size="2" id="textbldrphone2" onkeyup="autotab(textbldrphone2,textbldrphone3)" />
-                - <s:text name="project.faculty1.phone.number" maxlength="4" size="4" id="textbldrphone3" onKeyPress="return disableEnterKey(event)" />
+               ( <s:text name="project.faculty1.phone.areacode"  maxlength="3" size="2" id="textbldrphone1" onkeyup="autotab('textbldrphone1', 'textbldrphone2')" />
+                ) <s:text name="project.faculty1.phone.prefix" maxlength="3" size="2" id="textbldrphone2" onkeyup="autotab('textbldrphone2','textbldrphone3')" />
+                - <s:text name="project.faculty1.phone.number" maxlength="4" size="4" id="textbldrphone3"  />
                         &nbsp;
                         &nbsp;
                         &nbsp;
@@ -267,7 +267,7 @@ tr > td
             <td width="300">
                 <span>*</span> Faculty email address:</td>
             <td>
-                <s:text name="project.faculty1.email" maxlength="50" size="30" id="textEmail" onKeyPress="return disableEnterKey(event)"  onblur="updateRequiredHighlights();"/>
+                <s:text name="project.faculty1.email" maxlength="50" size="30" id="textEmail"   onblur="updateRequiredHighlights();"/>
                 &nbsp;
 
                 </td>
@@ -315,18 +315,18 @@ tr > td
             <td>
                 Faculty name:</td>
             <td>
-                <s:text name="project.faculty2.name" id="textNameAlt" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.faculty2.name" id="textNameAlt"  />
                 </td>
         </tr>
         <tr>
             <td>
                 Faculty phone number:</td>
             <td>
-                &nbsp;(<s:text name="project.faculty2.phone.areacode" maxlength="3" size="2" id="textbldrphone1alt" onkeyup="autotab(textbldrphone1alt, textbldrphone2alt)" />
+                &nbsp;(<s:text name="project.faculty2.phone.areacode" maxlength="3" size="2" id="textbldrphone1alt" onkeyup="autotab('textbldrphone1alt', 'textbldrphone2alt')" />
                 )
-                <s:text name="project.faculty2.phone.prefix" maxlength="3" size="2" id="textbldrphone2alt" onkeyup="autotab(textbldrphone2alt,textbldrphone3alt)" />
+                <s:text name="project.faculty2.phone.prefix" maxlength="3" size="2" id="textbldrphone2alt" onkeyup="autotab('textbldrphone2alt','textbldrphone3alt')" />
                 -
-                <s:text name="project.faculty2.phone.number" maxlength="4" size="4" id="textbldrphone3alt" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.faculty2.phone.number" maxlength="4" size="4" id="textbldrphone3alt"  />
                         &nbsp;
                         &nbsp;
                         &nbsp;
@@ -336,7 +336,7 @@ tr > td
             <td>
                 Faculty email address:</td>
             <td>
-                <s:text name="project.faculty2.email" maxlength="50" size="30" id="textEmailalt" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.faculty2.email" maxlength="50" size="30" id="textEmailalt"  />
 
                 </td>
         </tr>
@@ -375,7 +375,7 @@ tr > td
             <td>
                 Grad Student/Post Doc name:</td>
             <td>
-                <s:text name="project.graduate.name" id="textGradName" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.graduate.name" id="textGradName"  />
                 </td>
         </tr>
         <tr>
@@ -383,9 +383,9 @@ tr > td
                 Grad Student/Post Doc phone number:</td>
             <td>
                (
-                <s:text name="project.graduate.phone.areacode" maxlength="3" size="2" id="textGradphone1" onkeyup="autotab(textGradphone1, textGradphone2)" />
+                <s:text name="project.graduate.phone.areacode" maxlength="3" size="2" id="textGradphone1" onkeyup="autotab('textGradphone1', 'textGradphone2')" />
                 )
-                <s:text name="project.graduate.phone.prefix" maxlength="3" size="2" id="textGradphone2" onkeyup="autotab(textGradphone2,textGradphone3)" />
+                <s:text name="project.graduate.phone.prefix" maxlength="3" size="2" id="textGradphone2" onkeyup="autotab('textGradphone2','textGradphone3')" />
                 -
                 <s:text name="project.graduate.phone.number" maxlength="4" size="4" id="textGradphone3" />
                         &nbsp;
@@ -397,7 +397,7 @@ tr > td
             <td>
                 Grad Student/Post Doc email address:</td>
             <td>
-                <s:text name="project.graduate.name" maxlength="50" size="30" id="textGradEmail" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.graduate.name" maxlength="50" size="30" id="textGradEmail"  />
 
                 </td>
         </tr>
@@ -423,7 +423,7 @@ tr > td
                 <span>* </span>What speed type will you use for your 50% match of the funding?
                 (should be in the form XXXXXXXX, all numbers)</td>
             <td>
-                <s:text name="project.speedType" maxlength="8" id="textSpeedType" onKeyPress="return disableEnterKey(event)" />
+                <s:text name="project.speedType" maxlength="8" id="textSpeedType"  />
 &nbsp;or
                 <s:checkbox id="speedTypeNotSure" name="project.speedTypeNotSure" /><label for="speedTypeNotSure"> Not Sure</label>
                 <br />
@@ -434,7 +434,7 @@ tr > td
             <td>
                 <span>*</span>Accounting contact for your project:</td>
             <td>
-                <s:text name="project.accountingContact" id="textAccounting" onKeyPress="return disableEnterKey(event)" onblur="updateRequiredHighlights();"/>
+                <s:text name="project.accountingContact" id="textAccounting" onblur="updateRequiredHighlights();"/>
                 &nbsp;
             </td>
         </tr>

@@ -30,7 +30,7 @@ tr > td
   beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ApplicantFormAction">
 
 <s:button name="save" id="saveButton" value="Save"/>
-
+<s:hidden name="application.id"/>
   <div id="tabs">
     <ul>
       <li><a href="#Overview">Overview</a></li>
@@ -129,7 +129,7 @@ tr > td
             <td>
               <s:text style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAALZJREFUOBFjYKAANDQ0rGWiQD9IqzgL0BQ3IKMXiB8AcSKQ/waIrYDsKUD8Fir2pKmpSf/fv3+zgPxfzMzMSbW1tbeBbAaQC+b+//9fB4h9gOwikCAQTAPyDYHYBciuBQkANfcB+WZAbPP37992kBgIUOoFBiZGRsYkIL4ExJvZ2NhAXmFgYmLKBPLPAfFuFhaWJpAYEBQC+SeA+BDQC5UQIQpJYFgdodQLLyh0w6j20RCgUggAAEREPpKMfaEsAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"
                 name="application.student.name" maxlength="50" id="textName"
-                onkeypress="return disableEnterKey(event)" type="text" onblur="updateRequiredHighlights();" /><br/>
+                 type="text" onblur="updateRequiredHighlights();" /><br/>
             </td>
           </tr>
           <tr>
@@ -246,19 +246,18 @@ tr > td
             <td><strong><span style="color: #ff0000">*</span></strong>
               Boulder Phone:
             </td>
-            <td>( <s:text name="application.student.boulderPhone.areacode" maxlength="3"
-                size="3" id="textbldrphone1"
-                onkeypress="return disableEnterKey(event)"
-                onkeyup="autotab(textbldrphone1, textbldrphone2)"
-                style="width: 26px;" type="text"  onblur="updateRequiredHighlights();" /> ) <s:text
-                name="application.student.boulderPhone.prefix" maxlength="3" size="3"
-                id="textbldrphone2"
-                onkeypress="return disableEnterKey(event)"
-                onkeyup="autotab(textbldrphone2,textbldrphone3)"
-                style="width: 26px;" type="text"  onblur="updateRequiredHighlights();" /> - <s:text
-                name="application.student.boulderPhone.number" maxlength="4" size="4"
-                id="textbldrphone3"
-                onkeypress="return disableEnterKey(event)" type="text"  onblur="updateRequiredHighlights();" />
+            <td>
+              (&nbsp;<s:text name="application.student.boulderPhone.areacode" maxlength="3"
+                size="3" id="textbldrphone1" 
+                onkeyup="autotab('textbldrphone1', 'textbldrphone2')" 
+                type="text"  onblur="updateRequiredHighlights();" />&nbsp;)&nbsp;
+                <s:text name="application.student.boulderPhone.prefix" maxlength="3" size="3"
+                id="textbldrphone2" 
+                onkeyup="autotab('textbldrphone2','textbldrphone3')" 
+                type="text"  onblur="updateRequiredHighlights();" />&nbsp;-&nbsp;
+                <s:text name="application.student.boulderPhone.number" maxlength="4" size="4"
+                id="textbldrphone3" 
+                type="text"  onblur="updateRequiredHighlights();" />
             </td>
           </tr>
           <tr>
@@ -267,7 +266,7 @@ tr > td
             </td>
             <td><s:text name="application.student.boulderEmail" maxlength="50"
                 size="30" id="textBoulderEmail"
-                onkeypress="return disableEnterKey(event)" type="text" />
+                 type="text" onblur="updateRequiredHighlights();" />
             </td>
           </tr>
           <tr>
@@ -284,25 +283,25 @@ tr > td
           <tr>
             <td>Summer Phone:</td>
             <td>( <s:text name="application.student.summerPhone.areacode" maxlength="3"
-                size="2" id="textsmmrphone1"
-                onkeypress="return disableEnterKey(event)"
-                onkeyup="autotab(textsmmrphone1, textsmmrphone2)"
-                style="width: 26px;" type="text" /> ) <s:text
-                name="application.student.summerPhone.prefix" maxlength="3" size="2"
+                size="3" id="textsmmrphone1"
+                
+                onkeyup="autotab('textsmmrphone1', 'textsmmrphone2')"
+                type="text" /> ) <s:text
+                name="application.student.summerPhone.prefix" maxlength="3" size="3"
                 id="textsmmrphone2"
-                onkeypress="return disableEnterKey(event)"
-                onkeyup="autotab(textsmmrphone2,textsmmrphone3)"
-                style="width: 26px;" type="text" /> - <s:text
+                
+                onkeyup="autotab('textsmmrphone2','textsmmrphone3')"
+                type="text" /> - <s:text
                 name="application.student.summerPhone.number" maxlength="4" size="4"
                 id="textsmmrphone3"
-                onkeypress="return disableEnterKey(event)" type="text" />
+                 type="text" />
             </td>
           </tr>
           <tr>
             <td>Summer Email:</td>
             <td><s:text name="application.student.summerEmail" maxlength="50"
                 size="30" id="textSummerEmail"
-                onkeypress="return disableEnterKey(event)" type="text" />
+                 type="text" />
           </tr>
         </tbody>
       </table>
@@ -393,7 +392,7 @@ tr > td
               GPA: (X.XXX)
             </td>
             <td>
-                  <s:text name="application.student.gpa" maxlength="5" size="10" id="textGPA" onkeypress="return disableEnterKey(event)" type="text" onblur="updateRequiredHighlights();" />
+                  <s:text name="application.student.gpa" maxlength="5" size="10" id="textGPA"  type="text" onblur="updateRequiredHighlights();" />
             </td>
           </tr>
           <tr>
@@ -638,9 +637,7 @@ tr > td
           <tr>
             <td colspan="2">1.&nbsp; <s:text
                 name="application.student.firstSkill" size="100" id="textSkill1"
-                onkeypress="textCounter(textSkill1,remLen1,75);"
                 onkeyup="textCounter(textSkill1,remLen1,75);"
-                onkeydown="textCounter(textSkill1,remLen1,75);"
                 type="text" /> <input name="remLen1" id="remLen1"
               size="4" maxlength="3" value="75" disabled="disabled"
               type="text" tabindex="-1" /></td>
@@ -648,9 +645,7 @@ tr > td
           <tr>
             <td colspan="2">2.&nbsp; <s:text
                 name="application.student.secondSkill" size="100" id="textSkill2"
-                onkeypress="textCounter(textSkill2,remLen2,75);"
                 onkeyup="textCounter(textSkill2,remLen2,75);"
-                onkeydown="textCounter(textSkill2,remLen2,75);"
                 type="text" /> <input name="remLen2" id="remLen2"
               size="4" maxlength="3" value="75" disabled="disabled"
               type="text"  tabindex="-1" /></td>
@@ -658,9 +653,7 @@ tr > td
           <tr>
             <td colspan="2">3.&nbsp; <s:text
                 name="application.student.thirdSkill" size="100" id="textSkill3"
-                onkeypress="textCounter(textSkill3,remLen3,75);"
                 onkeyup="textCounter(textSkill3,remLen3,75);"
-                onkeydown="textCounter(textSkill3,remLen3,75);"
                 type="text" /> <input name="remLen3" id="remLen3"
               size="4" maxlength="3" value="75" disabled="disabled"
               type="text" tabindex="-1" /></td>
@@ -766,7 +759,7 @@ var updateRequiredHighlights = function() {
 	validateForm('application',highlightErrors);
 };
 var submitForm = function() {
-	$( "[name='save']" ).click();
+	$( "#application" ).submit();
 };
 
 var checkDateNeeded = function(selfName, dateName) {
