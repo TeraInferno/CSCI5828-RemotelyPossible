@@ -185,23 +185,23 @@ tr > td
                       <label for="checkEth_0">American Indian or Alaskan Native</label>
                     </td>
                     <td>
-                      <s:checkbox id="checkEth_3" name="application.student.race[3]" type="checkbox" value="A" />
+                      <s:checkbox id="checkEth_3" name="application.student.race[1]" type="checkbox" value="A" />
                       <label for="checkEth_3">Asian</label>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <s:checkbox id="checkEth_1" name="application.student.race[1]" type="checkbox" value="B" />
+                      <s:checkbox id="checkEth_1" name="application.student.race[2]" type="checkbox" value="B" />
                       <label for="checkEth_1">Black or African-American</label>
                     </td>
                     <td>
-                      <s:checkbox id="checkEth_4" name="application.student.race[4]" type="checkbox" value="W" />
+                      <s:checkbox id="checkEth_4" name="application.student.race[3]" type="checkbox" value="W" />
                       <label for="checkEth_4">White</label>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <s:checkbox id="checkEth_2" name="application.student.race[2]" type="checkbox" value="P" />
+                      <s:checkbox id="checkEth_2" name="application.student.race[4]" type="checkbox" value="P" />
                       <label for="checkEth_2">Native Hawaiian or other Pacific Islander</label>
                     </td>
                     <td>

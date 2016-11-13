@@ -75,6 +75,8 @@ public class TestLoadAction extends BaseAction {
       for(String major: MAJORS) {
         if(majors.contains(major)) {
           acceptedMajors.add(major);
+        } else {
+          acceptedMajors.add(Constants.EMPTY_STRING);
         }
       }
       
@@ -175,6 +177,7 @@ public class TestLoadAction extends BaseAction {
             race.add(Constants.EMPTY_STRING);
           }
         }
+        s.setRace(race);
         
         //Hispanic Descent
         if(val.indexOf("H") > -1) {
