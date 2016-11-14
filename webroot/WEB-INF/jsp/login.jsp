@@ -17,22 +17,29 @@
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  
 </head>
 
-<body class="ui-widget-content">
+<body>
 
 <div id="loginDialog">
 <s:form id="loginForm" method="post" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.LoginAction">
-<br/><br/>
+<br/>
 Welcome to the Discovery Learning Apprenticeship Program.
-<br/><br/>
+<br/><br/><br/>
 <fieldset>
+<legend>Please Login</legend>
 <table>
   <tr>
     <td>Username</td>
-    <td><s:text name="username" maxlength="64"></s:text></td>
+    <td><s:text name="username" maxlength="64"/></td>
    </tr>
    <tr>
     <td>Password</td>
-    <td><s:password name="username" maxlength="64"></s:password></td>
+    <td><s:password name="username" maxlength="64"/></td>
+   </tr>
+   <tr>
+     <td colspan=2">
+     <br/>
+     No login? No problem. Just <a href="/do/fakeme">Fake Me</a> and pretend to be someone else.
+     </td>
    </tr>
 </table>
 

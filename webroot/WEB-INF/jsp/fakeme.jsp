@@ -19,8 +19,7 @@
 </head>
 
 <body class="ui-widget-content">
-<br/>
-No Login. No problem. Just pick a Faculty or Student below to login as them and see what they see.
+<br/>Just pick a Faculty or Student below to login as them and see what they see.
 <br/><br/><br/>
 <div id="tabs">
   <ul>
