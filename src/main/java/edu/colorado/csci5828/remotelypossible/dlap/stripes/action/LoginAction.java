@@ -35,6 +35,7 @@ public class LoginAction extends BaseAction {
 
 		} else {
 			//Authenticate Here
+			log.info("Test Message");
 			User authUser = authenticate();
 
 			if(authUser != null && authUser.isAuthenticated()) {
@@ -55,6 +56,7 @@ public class LoginAction extends BaseAction {
 		try {
 			// Try to authenticate user with provided credentials
 			User user = ldap.authenticateUser(username, password);
+			log.info("Authentication Successful for {}", username);
 			return user;
 		} catch (AuthenticationException e) {
 			log.error("Unable to authenticate user with username=" + username, e);
