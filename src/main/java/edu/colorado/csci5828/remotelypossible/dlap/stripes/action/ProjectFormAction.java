@@ -20,7 +20,7 @@ import net.sourceforge.stripes.action.UrlBinding;
 
 @UrlBinding("/do/project/form/{id}")
 @HttpCache(allow=false)
-public class ProjectFormAction extends BaseAction {
+public class ProjectFormAction extends BaseFacultyAction {
 	
 	//URL link ID
 	private String id = Constants.EMPTY_STRING;
@@ -71,7 +71,9 @@ public class ProjectFormAction extends BaseAction {
 		//Load existing project
 		ProjectService ps = new ProjectService();
 		project = ps.get(Long.valueOf(id));
-		getContext().getRequest().setAttribute("project", project);
+		if(isOwner(project)) {
+		  getContext().getRequest().setAttribute("project", project);
+		}
 		return form();
 	}
 	private Resolution form() {

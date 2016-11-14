@@ -2,6 +2,7 @@ package edu.colorado.csci5828.remotelypossible.dlap.util;
 
 public class User {
 	
+  //If these role are changed, navbar.jsp needs to be udated
   public static String ROLE_NONE = new String("NONE_ROLE");
   public static String ROLE_STUDENT = new String("USER_ROLE");
   public static String ROLE_FACULTY = new String("FACULTY_ROLE");

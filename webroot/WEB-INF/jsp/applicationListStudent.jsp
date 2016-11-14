@@ -15,10 +15,12 @@
 
   <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.jqueryui.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/navbar.css"/>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  
 </head>
 
-<body class="ui-widget-content">
+<body>
+<jsp:include page="navbar.jsp" />
 <br/>
 
 <br/><br/><br/>
@@ -83,7 +85,12 @@ $(document).ready(function() {
 <!-- Style the DataTable filter with JQueryUI -->
 $("#application_filter :input").addClass("ui-widget ui-state-default ui-corner-all");
 } );
-1</script>
+
+<!-- Setup the navigation -->
+$( "#nav" ).menu({position: {at: "left bottom"}});
+
+
+</script>
 </body>
 </html>
 

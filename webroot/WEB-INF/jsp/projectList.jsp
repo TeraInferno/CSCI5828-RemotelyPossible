@@ -15,10 +15,13 @@
 
   <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.jqueryui.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/navbar.css"/>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  
 </head>
 
-<body class="ui-widget-content">
+<body>
+<jsp:include page="navbar.jsp" />
+
 <s:useActionBean var="actionBean" beanclass="edu.colorado.csci5828.remotelypossible.dlap.stripes.action.ProjectListAction"  />
 <br/>
 
@@ -104,6 +107,10 @@ $(document).ready(function() {
 <!-- Style the DataTable filter with JQueryUI -->
 $("#projects_filter :input").addClass("ui-widget ui-state-default ui-corner-all");
 } );
+
+<!-- Setup the navigation -->
+$( "#nav" ).menu({position: {at: "left bottom"}});
+
 1</script>
 </body>
 </html>
