@@ -73,8 +73,8 @@ public class ApplicantFormAction extends BaseStudentAction {
 		//Load existing project
 		ApplicationService as = new ApplicationService();
 		application = as.get(Long.valueOf(id));
-		if(isOwner(application)) {
-		  getContext().getRequest().setAttribute("application", application);
+		if(!isOwner(application)) {
+		  application = null;
 		}
 		
 		return form();

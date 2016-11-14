@@ -22,7 +22,7 @@
 <body>
 <jsp:include page="navbar.jsp" />
 <br/>
-
+<a id="addButton" href="/do/applicant/form/">Apply</a>
 <br/><br/><br/>
 <a id="tableTop"></a>
 <table id="application" class="display">
@@ -58,7 +58,7 @@
 			  		<li>${app.student.summerEmail}
 			  	<ul>
 			  </td>
-			  <td></td>
+			  <td><a href="/do/applicant/form/${app.id}">Edit</a></td>
 			</tr>
 		</c:forEach>
         </tbody>
@@ -80,14 +80,18 @@ $(document).ready(function() {
     },
     "stateSave": true,
     "stateDuration": -1
-});
+  });
 
-<!-- Style the DataTable filter with JQueryUI -->
-$("#application_filter :input").addClass("ui-widget ui-state-default ui-corner-all");
+  <!-- Style the DataTable filter with JQueryUI -->
+  $("#application_filter :input").addClass("ui-widget ui-state-default ui-corner-all");
+
+  <!-- Setup the navigation -->
+  $( "#nav" ).menu({position: {at: "left bottom"}});
+
+  
+  $("#addButton").button();
 } );
 
-<!-- Setup the navigation -->
-$( "#nav" ).menu({position: {at: "left bottom"}});
 
 
 </script>
