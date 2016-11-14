@@ -22,7 +22,7 @@
 <body>
 <jsp:include page="navbar.jsp" />
 <br/>
-
+<a id="addButton" href="/do/project/form">Add a Project</a>
 <br/><br/><br/>
 <a id="tableTop"></a>
 <table id="projects" class="display">
@@ -45,7 +45,7 @@
 			<tr>
 			  <td>${project.faculty1.program} - ${project.description}</td>
 			  <td>${project.longDescription}</td>
-			  <td></td>
+			  <td><a href="/do/project/form/${project.id}">Edit</a></td>
 			</tr>
 		</c:forEach>
         </tbody>
@@ -57,7 +57,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.jqueryui.min.js"></script>
 
 <script type="text/javascript">
-<!-- Hyperlinks to filtered table list -->
+
 
 $(document).ready(function() {
   <!-- Enable data table from project list -->
@@ -67,14 +67,19 @@ $(document).ready(function() {
     },
     "stateSave": true,
     "stateDuration": -1
-});
+  });
 
-<!-- Style the DataTable filter with JQueryUI -->
-$("#projects_filter :input").addClass("ui-widget ui-state-default ui-corner-all");
+  <!-- Style the DataTable filter with JQueryUI -->
+  $("#projects_filter :input").addClass("ui-widget ui-state-default ui-corner-all");
+
+  <!-- Setup the navigation -->
+  $( "#nav" ).menu({position: {at: "left bottom"}});
+  
+  $("#addButton").button();
+
+
 } );
 
-<!-- Setup the navigation -->
-$( "#nav" ).menu({position: {at: "left bottom"}});
 
 </script>
 </body>

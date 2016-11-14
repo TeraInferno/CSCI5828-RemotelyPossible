@@ -71,8 +71,8 @@ public class ProjectFormAction extends BaseFacultyAction {
 		//Load existing project
 		ProjectService ps = new ProjectService();
 		project = ps.get(Long.valueOf(id));
-		if(isOwner(project)) {
-		  getContext().getRequest().setAttribute("project", project);
+		if(!isOwner(project)) {
+		  project=null;
 		}
 		return form();
 	}
