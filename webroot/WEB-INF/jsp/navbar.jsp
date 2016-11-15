@@ -11,6 +11,7 @@
     <li><a href="/do/student/application">My Applications</a></li>
       </c:when>
     </c:choose>
+    <li><a href="/do/matrix">Matrix</a></li>
     <li><a href="/do/fakeme">Fake Me</a></li>
     <li><a href="/do/logout">Logout</a></li>
 </ul>
