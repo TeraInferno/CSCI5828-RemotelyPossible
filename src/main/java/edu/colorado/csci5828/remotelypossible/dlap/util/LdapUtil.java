@@ -204,6 +204,8 @@ public class LdapUtil {
 			// Setup User object
 			String role = searchForRoleByUID(uid);
 			user.setRole(role);
+			
+			log.info("Was able to authenticate user " + uid + " in ldapUtil");
 
 			// Return user
 			return user;

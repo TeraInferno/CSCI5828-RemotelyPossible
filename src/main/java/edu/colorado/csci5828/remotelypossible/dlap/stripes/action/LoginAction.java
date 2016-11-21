@@ -31,6 +31,7 @@ public class LoginAction extends BaseAction {
 	public Resolution login() {
 		if(StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
 			//Blank inputs. Send the login page
+			log.info("was blank");
 			return ResolutionUrl.FORWARD_LOGIN;
 
 		} else {
