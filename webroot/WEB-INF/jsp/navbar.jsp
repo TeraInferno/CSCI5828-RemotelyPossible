@@ -4,10 +4,10 @@
 <ul id="nav">
     <li><a href="/do/project/list">Project List</a></li>
     <c:choose>
-      <c:when test="${sessionScope.user_profile.role == 'FACULTY_ROLE'}">
+      <c:when test="${sessionScope.user_profile.role == 'Faculty'}">
     <li><a href="/do/project/faculty">My Projects</a></li>
       </c:when>
-      <c:when test="${sessionScope.user_profile.role == 'USER_ROLE' }">
+      <c:when test="${sessionScope.user_profile.role == 'Student' }">
     <li><a href="/do/student/application">My Applications</a></li>
       </c:when>
     </c:choose>
