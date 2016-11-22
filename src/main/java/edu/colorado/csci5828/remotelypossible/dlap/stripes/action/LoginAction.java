@@ -57,7 +57,7 @@ public class LoginAction extends BaseAction {
 		try {
 			// Try to authenticate user with provided credentials
 			User user = ldap.authenticateUser(username, password);
-			log.info("Authentication Successful for {}", username);
+			log.info("Authentication Successful for {} as {}", username, user.getRole());
 			return user;
 		} catch (AuthenticationException e) {
 			log.error("Unable to authenticate user with username=" + username, e);

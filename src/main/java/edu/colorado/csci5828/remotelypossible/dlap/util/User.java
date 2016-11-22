@@ -4,9 +4,9 @@ public class User {
 	
   //If these role are changed, navbar.jsp needs to be udated
   public static String ROLE_NONE = new String("NONE_ROLE");
-  public static String ROLE_STUDENT = new String("USER_ROLE");
-  public static String ROLE_FACULTY = new String("FACULTY_ROLE");
-  public static String ROLE_ADMIN = new String("ADMIN_ROLE");
+  public static String ROLE_STUDENT = new String("Student");
+  public static String ROLE_FACULTY = new String("Faculty");
+  public static String ROLE_ADMIN = new String("Admin");
   
   
 	private boolean authenticated;

@@ -33,7 +33,7 @@ Welcome to the Discovery Learning Apprenticeship Program.
    </tr>
    <tr>
     <td>Password</td>
-    <td><s:password name="username" maxlength="64"/></td>
+    <td><s:password name="password" maxlength="64"/></td>
    </tr>
    <tr>
      <td colspan=2">
