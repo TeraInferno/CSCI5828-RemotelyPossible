@@ -57,7 +57,11 @@ public class MatrixCalcAction extends BaseAction {
 	  if(a.getApprenticeshipInfo().getAppliedPreviously().equals("Yes")) {
 	    score = score + 100;
 	  }
-      //PLACEHOLDER
+      
+	  //Females Carefully considered
+	  if( a.getStudent().getGender().equals("Female") ) {
+	    score = score + 100;
+	  }
 	  
 	  a.setScore(score);
 	  
