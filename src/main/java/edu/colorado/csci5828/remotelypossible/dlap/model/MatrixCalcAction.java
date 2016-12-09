@@ -46,7 +46,16 @@ public class MatrixCalcAction extends BaseAction {
 	    a.setScore(Application.SCORE_DISQUALIFIED);
 	    a.setDisqualReason("Reported GPA too low");
 	    return true;
-		
+	  }
+
+      //Eliminate students who are unable to serve all year
+	  //EDIT getServeAllYear() when appropriate field is added to application
+	  if(a.getApprenticeshipInfo().getServeAllYear().equals("No")){
+        a.setScore(Application.SCORE_DISQUALIFIED);
+        a.setDisqualReason("Students must be able to serve in DLA all year");
+        return true		
+      }
+	  
 	  //Eliminate students in DLA in the past year - PLACEHOLDER
 	  
 	  //Eliminate MS/BS students in MS year - PLACEHOLDER
@@ -54,8 +63,7 @@ public class MatrixCalcAction extends BaseAction {
 	  //Eliminate students not in College of Engineering and Applied Science - Currently other majors cannot apply
 	  
 	  //Eliminate graduate students - Graduate students are not able to apply currently  (only undergrad under option)
-	  }
-	  
+
 	  return false;
 	}
 	
