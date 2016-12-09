@@ -63,6 +63,11 @@ public class MatrixCalcAction extends BaseAction {
 	    score = score + 100;
 	  }
 	  
+	  //Minorities carefully considered
+	  if( ! a.getStudent().getRace().equals("White") ){
+	    score= score + 100;
+	  }
+	  
 	  a.setScore(score);
 	  
 	}
