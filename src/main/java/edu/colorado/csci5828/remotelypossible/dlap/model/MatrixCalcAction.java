@@ -47,14 +47,6 @@ public class MatrixCalcAction extends BaseAction {
 	    a.setDisqualReason("Reported GPA too low");
 	    return true;
 	  }
-
-      //Eliminate students who are unable to serve all year
-	  //EDIT getServeAllYear() when appropriate field is added to application
-	  if(a.getApprenticeshipInfo().getServeAllYear().equals("No")){
-        a.setScore(Application.SCORE_DISQUALIFIED);
-        a.setDisqualReason("Students must be able to serve in DLA all year");
-        return true		
-      }
 	  
 	  //Eliminate students in DLA in the past year - PLACEHOLDER
 	  
