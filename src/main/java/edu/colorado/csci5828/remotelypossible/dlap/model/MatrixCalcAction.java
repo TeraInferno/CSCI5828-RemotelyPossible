@@ -56,6 +56,14 @@ public class MatrixCalcAction extends BaseAction {
         return true		
       }
 	  
+	  //Eliminate students who do not meet project requirements
+	  //EDIT getMeetRequirements() when field is added to application
+	  if(a.getApprenticeshipInfo().getMeetRequirements().equals("No")){
+        a.setScore(Application.SCORE_DISQUALIFIED);
+		a.setDisqualReason("Students must meet project requirements");
+		return true;
+	  }
+	  
 	  //Eliminate students in DLA in the past year - PLACEHOLDER
 	  
 	  //Eliminate MS/BS students in MS year - PLACEHOLDER
