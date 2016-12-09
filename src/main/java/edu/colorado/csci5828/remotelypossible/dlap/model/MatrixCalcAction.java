@@ -53,7 +53,10 @@ public class MatrixCalcAction extends BaseAction {
 	
 	private void score(Application a) {
 	  int score = 0;
-	  
+	  //Applied before (give them an extra point)
+	  if(a.getApprenticeshipInfo().getAppliedPreviously().equals("Yes")) {
+	    score = score + 100;
+	  }
       //PLACEHOLDER
 	  
 	  a.setScore(score);
