@@ -12,6 +12,7 @@ For project information, design, and deployment, please visit
 * [Boards & Issues](https://github.com/TeraInferno/CSCI5828-RemotelyPossible#boards?repos=69412069)
 * [Burndown chart] (https://github.com/TeraInferno/CSCI5828-RemotelyPossible#reports?report=burndown&milestoneId=2095123)
 * [Velocity chart] (https://github.com/TeraInferno/CSCI5828-RemotelyPossible#reports?report=velocity)
+* [Progress report] (https://github.com/TeraInferno/CSCI5828-RemotelyPossible/wiki/Progress-Report)
 * [Wiki] (https://github.com/TeraInferno/CSCI5828-RemotelyPossible/wiki)
 
 # Quick Start
