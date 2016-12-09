@@ -1,12 +1,18 @@
 [![Stories in Ready](https://badge.waffle.io/TeraInferno/CSCI5828-RemotelyPossible.png?label=ready&title=Ready)](https://waffle.io/TeraInferno/CSCI5828-RemotelyPossible)
-# CSCI5828-RemotelyPossible
+# CSCI5828-RemotelyPossible - DEVELOPER README
 CSCI5828 Final Project for Team RemotelyPossible
 
-[![Throughput Graph](https://graphs.waffle.io/TeraInferno/CSCI5828-RemotelyPossible/throughput.svg)](https://waffle.io/TeraInferno/CSCI5828-RemotelyPossible/metrics/throughput)
+This README is for developers and getting a local copy of the project set up.
+For project information, design, and deployment, please visit
+
+[RemotelyPossible Team Wiki](https://github.com/TeraInferno/CSCI5828-RemotelyPossible/wiki)
 
 ###Common Links
 * [Gitter IM Room](https://gitter.im/CSCI5828-RemotelyPossible/Lobby)
-* [Waffle.io Planner](https://waffle.io/TeraInferno/CSCI5828-RemotelyPossible)
+* [Boards & Issues](https://github.com/TeraInferno/CSCI5828-RemotelyPossible#boards?repos=69412069)
+* [Burndown chart] (https://github.com/TeraInferno/CSCI5828-RemotelyPossible#reports?report=burndown&milestoneId=2095123)
+* [Velocity chart] (https://github.com/TeraInferno/CSCI5828-RemotelyPossible#reports?report=velocity)
+* [Wiki] (https://github.com/TeraInferno/CSCI5828-RemotelyPossible/wiki)
 
 # Quick Start
 1. Get a local copy
