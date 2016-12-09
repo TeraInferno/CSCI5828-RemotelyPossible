@@ -47,7 +47,7 @@ public class MatrixCalcAction extends BaseAction {
 	    a.setDisqualReason("Reported GPA too low");
 	    return true;
 	  }
-
+      /*
       //Eliminate students who are unable to serve all year
 	  //EDIT getServeAllYear() when appropriate field is added to application
 	  if(a.getApprenticeshipInfo().getServeAllYear().equals("No")){
@@ -72,11 +72,13 @@ public class MatrixCalcAction extends BaseAction {
 		return true;
 	  }
 	  
-	  //Eliminate MS/BS students in MS year - PLACEHOLDER
+	  //PLACEHOLDER
+	  //Eliminate MS/BS students in MS year
 	  //MS/BS students would be eliminated as graduate students above
 	  //However, if separation is required, it can be done here
 	  
-	  //Eliminate students not in College of Engineering - PLACEHOLDER
+	  //PLACEHOLDER
+	  //Eliminate students not in College of Engineering
 	  //Currently, these students shouldn't be able to apply as their
 	  //majors would not show up under the student application
 	  //majors list
@@ -95,12 +97,14 @@ public class MatrixCalcAction extends BaseAction {
 		return true;
 	  }
 	  
+	  */
 	  return false;
 	}
 	
 	private void score(Application a) {
 	  int score = 0;
 	  
+	  /*
 	  //If student is selected by faculty, set score to 1M and exit
 	  ApplicationService bs = new ApplicationService();
 	  List<Application> applicationList = (new ApplicationService()).findAllByStudent("USERNAME");
@@ -110,6 +114,11 @@ public class MatrixCalcAction extends BaseAction {
 		  score = 1000000;
 		}
 	  }
+	  */
+	  
+	  if ( 1 == 0 ){
+		  score = 0;
+	  } //DELETE THIS when section above is operational
 	  
 	  //Evaluate students on rest of attributes ONLY if they aren't selected by faculty for a project
 	  else {
@@ -133,10 +142,12 @@ public class MatrixCalcAction extends BaseAction {
 		  //Subtract 300 since every qualified student has at least 3.00 GPA
 		  score = score + (Float.parseFloat(a.getStudent().getGpa()).Math.round() * 100) - 300;
 		  
+		  /*
 		  //Prefer students who are GoldShirts
 		  if ( a.getStudent().getGoldshirt.equals("Yes") ) {
 			  score = score + 50;
 		  }
+		  */
 	  }
 	  
 	  a.setScore(score);
