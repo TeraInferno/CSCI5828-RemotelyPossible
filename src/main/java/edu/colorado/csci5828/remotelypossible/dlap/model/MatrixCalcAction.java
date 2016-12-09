@@ -73,6 +73,9 @@ public class MatrixCalcAction extends BaseAction {
 	  }
 	  
 	  //Eliminate MS/BS students in MS year - PLACEHOLDER
+	  //MS/BS students would be eliminated as graduate students above
+	  //However, if separation is required, it can be done here
+	  
 	  
 	  //Eliminate students not in College of Engineering and Applied Science - Currently other majors cannot apply
 	  
