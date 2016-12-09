@@ -98,6 +98,11 @@ public class MatrixCalcAction extends BaseAction {
 	  
 	  //If student is selected by faculty, set score to 1M - PLACEHOLDER
 	  
+	  //Prefer students who are GoldShirts
+	  if ( a.getStudent().getGoldshirt.equals("Yes") ) {
+		  score = score + 50;
+	  }
+	  
 	  a.setScore(score);
 	  
 	}
