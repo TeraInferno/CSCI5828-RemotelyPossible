@@ -46,6 +46,14 @@ public class MatrixCalcAction extends BaseAction {
 	    a.setScore(Application.SCORE_DISQUALIFIED);
 	    a.setDisqualReason("Reported GPA too low");
 	    return true;
+		
+	  //Eliminate students in DLA in the past year - PLACEHOLDER
+	  
+	  //Eliminate MS/BS students in MS year - PLACEHOLDER
+	  
+	  //Eliminate students not in College of Engineering and Applied Science - Currently other majors cannot apply
+	  
+	  //Eliminate graduate students - Graduate students are not able to apply currently  (only undergrad under option)
 	  }
 	  
 	  return false;
@@ -55,18 +63,24 @@ public class MatrixCalcAction extends BaseAction {
 	  int score = 0;
 	  //Applied before (give them an extra point)
 	  if(a.getApprenticeshipInfo().getAppliedPreviously().equals("Yes")) {
-	    score = score + 100;
+	    score = score + 50;
 	  }
       
 	  //Females Carefully considered
 	  if( a.getStudent().getGender().equals("Female") ) {
-	    score = score + 100;
+	    score = score + 50;
 	  }
 	  
 	  //Minorities carefully considered
 	  if( ! a.getStudent().getRace().equals("White") ){
-	    score= score + 100;
+	    score= score + 50;
 	  }
+	  
+	  //GPA over 3.0 affects qualification by a factor of 100 - This accounts for .01 GPA
+	  //Subtract 300 since every qualified student has at least 3.00 GPA
+	  score = score + (Float.parseFloat(a.getStudent().getGpa()).Math.round() * 100) - 300;
+	  
+	  //If student is selected by faculty, set score to 1M - PLACEHOLDER
 	  
 	  a.setScore(score);
 	  
