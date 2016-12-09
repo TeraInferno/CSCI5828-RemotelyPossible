@@ -65,6 +65,12 @@ public class MatrixCalcAction extends BaseAction {
 	  }
 	  
 	  //Eliminate students in DLA in the past year - PLACEHOLDER
+	  //EDIT getServed() when field is added to student application
+	  if(a.getApprenticeshipInfo().getServed().equals("Yes")){
+        a.setScore(Application.SCORE_DISQUALIFIED);
+		a.setDisqualReason("Students who served in the DLA in the past year are ineligible");
+		return true;
+	  }
 	  
 	  //Eliminate MS/BS students in MS year - PLACEHOLDER
 	  
