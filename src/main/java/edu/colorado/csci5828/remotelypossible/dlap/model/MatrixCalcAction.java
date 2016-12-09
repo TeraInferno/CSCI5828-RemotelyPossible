@@ -76,6 +76,18 @@ public class MatrixCalcAction extends BaseAction {
 	  //MS/BS students would be eliminated as graduate students above
 	  //However, if separation is required, it can be done here
 	  
+	  //Eliminate students not in College of Engineering - PLACEHOLDER
+	  //Currently, these students shouldn't be able to apply as their
+	  //majors would not show up under the student application
+	  //majors list
+	  //If this functionality is changed in the future, the following
+	  //can be used to eliminate them, modify getEngineering() when added
+	  //if(a.getStudent.getEngineering.equals("No")){
+      //  a.setScore(Application.SCORE_DISQUALIFIED);
+	  //  a.setDisqualReason("Students not in College of Engineering and Applied Science are ineligible");
+	  //return true;
+	  //}
+	  
 	  
 	  //Eliminate students not in College of Engineering and Applied Science - Currently other majors cannot apply
 	  
