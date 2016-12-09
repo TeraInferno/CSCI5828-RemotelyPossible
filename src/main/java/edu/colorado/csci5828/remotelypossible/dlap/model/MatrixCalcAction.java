@@ -64,11 +64,11 @@ public class MatrixCalcAction extends BaseAction {
 		return true;
 	  }
 	  
-	  //Eliminate students in DLA in the past year - PLACEHOLDER
-	  //EDIT getServed() when field is added to student application
-	  if(a.getApprenticeshipInfo().getServed().equals("Yes")){
+	  //Eliminate students in DLA in the past year
+	  //EDIT getGraduateStudent() when field is added to student application
+	  if(a.getApprenticeshipInfo().getGraduateStudent().equals("Yes")){
         a.setScore(Application.SCORE_DISQUALIFIED);
-		a.setDisqualReason("Students who served in the DLA in the past year are ineligible");
+		a.setDisqualReason("Graduate students are ineligible");
 		return true;
 	  }
 	  
@@ -76,8 +76,13 @@ public class MatrixCalcAction extends BaseAction {
 	  
 	  //Eliminate students not in College of Engineering and Applied Science - Currently other majors cannot apply
 	  
-	  //Eliminate graduate students - Graduate students are not able to apply currently  (only undergrad under option)
-
+	  //Eliminate graduate students
+	  if(a.getApprenticeshipInfo().getServed().equals("Yes")){
+        a.setScore(Application.SCORE_DISQUALIFIED);
+		a.setDisqualReason("Students who served in the DLA in the past year are ineligible");
+		return true;
+	  }
+	  
 	  return false;
 	}
 	
